@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nosea Global - Your One-Stop Solution for Mexico Imports</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "inverse-surface": "#2e3132",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#44474e",
+              "on-tertiary-fixed": "#261900",
+              "on-error": "#ffffff",
+              "outline-variant": "#c4c6cf",
+              "on-tertiary-container": "#00BFFF",
+              "on-primary-fixed-variant": "#2d476f",
+              "secondary-fixed": "#d5e3ff",
+              "surface-container-low": "#f3f4f5",
+              "on-secondary": "#ffffff",
+              "tertiary-fixed": "#33CCFF",
+              "primary-fixed-dim": "#aec7f6",
+              "error-container": "#ffdad6",
+              "surface-tint": "#465f88",
+              "on-primary": "#ffffff",
+              "secondary-container": "#9fc2fe",
+              "outline": "#74777f",
+              "background": "#f8f9fa",
+              "tertiary-fixed-dim": "#00BFFF",
+              "on-error-container": "#93000a",
+              "primary-container": "#002147",
+              "on-surface": "#191c1d",
+              "on-secondary-container": "#294f83",
+              "on-secondary-fixed": "#001b3c",
+              "secondary": "#3a5f94",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#000a1e",
+              "on-primary-fixed": "#001b3d",
+              "on-primary-container": "#708ab5",
+              "surface-bright": "#f8f9fa",
+              "on-tertiary-fixed-variant": "#00BFFF",
+              "secondary-fixed-dim": "#a7c8ff",
+              "inverse-on-surface": "#f0f1f2",
+              "on-tertiary": "#ffffff",
+              "surface": "#f8f9fa",
+              "surface-container-high": "#e7e8e9",
+              "surface-container-highest": "#e1e3e4",
+              "primary-fixed": "#d6e3ff",
+              "on-secondary-fixed-variant": "#1f477b",
+              "inverse-primary": "#aec7f6",
+              "tertiary-container": "#002147",
+              "primary": "#000a1e",
+              "on-background": "#191c1d",
+              "surface-variant": "#e1e3e4",
+              "cyan-blue": "#00BFFF",
+              "cyan-blue-light": "#33CCFF",
+              "gold-primary": "#00BFFF",
+              "brand-navy": "#0a1628",
+              "brand-red": "#E53E3E"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "serif": ["Playfair Display"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      :root {
+        --blue: #00BFFF;
+        --blue-light: #33CCFF;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      @keyframes fade {
+        0%, 100% { opacity: 0; }
+        10%, 30% { opacity: 1; }
+      }
+      .slider-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: fade 16s infinite;
+      }
+      .slider-img:nth-child(1) { animation-delay: 0s; }
+      .slider-img:nth-child(2) { animation-delay: 4s; }
+      .slider-img:nth-child(3) { animation-delay: 8s; }
+      .slider-img:nth-child(4) { animation-delay: 12s; }
+      
+      @keyframes pulse-cyan {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 191, 255, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 191, 255, 0); }
+      }
+      @keyframes pulse-ring { 0% { r: 12; opacity: 0.25; } 100% { r: 22; opacity: 0; } }
+      .pulse { animation: pulse-ring 2s ease-out infinite; }
+      
+      .marker-pulse {
+        animation: pulse-cyan 2s infinite;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-[#002147] shadow-[0_12px_32px_rgba(0,33,71,0.08)]">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="relative w-6 h-6">
+<svg class="absolute inset-0 text-white" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4l16 8-16 8z"></path>
+</svg>
+<svg class="absolute inset-0 text-cyan-blue translate-x-1" fill="currentColor" style="width: 14px; height: 14px; top: 5px;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4l16 8-16 8z"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-white uppercase font-headline">Nosea Global</span>
+</div>
+<div class="hidden md:flex items-center space-x-8 font-headline font-bold tracking-tight">
+<a class="text-cyan-blue border-b-2 border-cyan-blue pb-1" href="index.html">Home</a>
+<a class="text-white/80 hover:text-white transition-colors" href="services.html">Services</a>
+<a class="text-white/80 hover:text-white transition-colors" href="#">How It Works</a>
+<a class="text-white/80 hover:text-white transition-colors" href="contact.html">Get a Quote</a>
+</div>
+<a class="bg-cyan-blue text-primary px-6 py-2 font-bold hover:scale-[1.02] duration-300 ease-in-out" href="contact.html">
+                Get a Quote
+            </a>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section with Image Slider -->
+<section class="relative min-h-[819px] flex items-center bg-primary-container overflow-hidden">
+<div class="absolute inset-0 bg-[#002147]">
+<img alt="Cargo Terminal" class="slider-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKGD7lvDqc3DDO1IP9nC-Y4f3iHRjuOa9ONH2bveRGlhQ8p8Z6H_eDc3DR-lEQq7GyqpyPuIcx5yWf4gB_UZbwVT_-OY3SH1ZUwJhuNrO5x28RRcVT1MsnG__ZJqQ5ROjN2pm9BjPDSUTEfR4bvPoJxl8HpXXDCjH6IrYmivZcVkhVnCB9b-E-3oIlGpEZM2NJQMZOUm6vCJGZ4rJeNF-jut2QILdN6Q-AFUTzMg0ucVJGNoA-Kjm7DFpmbgkthuuiiqFwoLH-mqI"/>
+<img alt="Port Vessel" class="slider-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWyKGMlE40MAXVcCFzYwq1_0x4KiRSlxccWaIkZUp-_GS4TQ5_-D6PHixYEO520EE8sgR2EdDpqs6zafn0CWw37ffBl7Ezd0R_hBZKbN5Mia0e82UAOp8X0BvDDnQsfR-TrAIcxb0VLkfLCxKU6S1IMPsp4VOeD_4WSi_crITDpaB99-ocx_01u8ukTbBy68xneaPG2Z7mfZRbJx_MM9BiMYRLaFfyf_8r_As22gs_zkID5wf2p-Hs8KjO4REIE0R3C3ovKmivzi8"/>
+<img alt="Logistics Hub" class="slider-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7SneY4rTKmO5tGhqvJvCFxu72PVmPsWbCsUix38yqOVEtZK0bY5P3cgSIph8CX7Iftq6ZP27MeiF0zUiPzmmaw0BWZT8z8sKAXStGHYog7hFpWA3k-zhd4k1vknySR5dDQEBZrtCn5D-ktJQhBlZTMRx4Ml1CQkVzr-cT-SI8fySVgYyGgBksVJIjIyZkGoxMSEJFtHUqpAsCZcQBcr7WB46jcjLwYhXbJ3jlC5h-Feo8p_-yrFytl1MyITOxHiPfRExwYw8KAaY"/>
+<img alt="Shipping Containers" class="slider-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2rul3Ae1HnzDOrAxvvbOisiuv8A7T69e9xLn0mh2k2U0WIuxPgfKK8dB-Ayb-m3hneRLPoqnVPVzCKOA3CKITKxZMQcm8_5UIlnBkdqHMI5Wbdin6W4YZ6q9HCUpC_zBtiHSvqcIgXd5V9CeFBzQOoQdWo9sw2R4HLJyEHNTvY3gc_5G3n94TfGvYsfo9MzCar_IUB8tyLYJ9hQC4wMirBdU060g2_h6cTqjDFgSofPJqH83s62OdjMLcb_mZyKCWR-rbm4hXT0I"/>
+<div class="absolute inset-0 bg-[#000a1e]/60 z-10"></div>
+</div>
+<div class="relative z-20 max-w-screen-2xl mx-auto px-8 w-full">
+<div class="max-w-4xl">
+<h1 class="leading-tight tracking-tight mb-8">
+<span class="block text-4xl md:text-5xl text-white mb-2 uppercase font-headline font-extrabold">NOSEA GLOBAL IS</span>
+<span class="block text-5xl md:text-7xl text-cyan-blue uppercase font-headline font-extrabold">YOUR ONE-STOP SOLUTION FOR IMPORTS TO MEXICO</span>
+</h1>
+<p class="text-xl text-white/80 mb-10 max-w-2xl font-body leading-relaxed">
+                        End-to-end logistics from Korea to Mexico — sea, air, and customs, all in one place.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-cyan-blue text-primary px-10 py-4 font-bold text-lg hover:scale-[1.05] transition-transform inline-block" href="contact.html">
+                            Get a Quote
+                        </a>
+<a class="border border-white/30 text-white px-10 py-4 font-bold text-lg hover:bg-white/10 transition-colors inline-block" href="services.html">
+                            Our Services
+                        </a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+<div class="w-2 h-2 rounded-full bg-white"></div>
+<div class="w-2 h-2 rounded-full bg-white/40"></div>
+<div class="w-2 h-2 rounded-full bg-white/40"></div>
+<div class="w-2 h-2 rounded-full bg-white/40"></div>
+</div>
+</section>
+<!-- Introduction Section Update -->
+<section style="padding: 80px 32px; background: #ffffff;">
+<div style="max-width: 800px; margin: 0 auto; text-align: center;">
+<p style="font-size: 1.45rem; line-height: 2; color: #5a5650;">
+      Nosea Global is a
+      <strong style="color: #0a1628; font-weight: 700;">specialized logistics forwarder</strong>
+      focused on
+      <strong style="color: #00BFFF; font-weight: 700;">import operations into Mexico</strong>,
+      providing
+      <strong style="color: #0a1628; font-weight: 700;">end-to-end solutions</strong>
+      from origin to final delivery.
+    </p>
+</div>
+</section>
+<!-- Comprehensive Logistics Service Cards -->
+<section class="py-24 bg-surface">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<span class="text-cyan-blue font-bold tracking-[0.2em] text-sm uppercase">Our Expertise</span>
+<h2 class="text-4xl font-extrabold text-primary font-headline mt-2">Comprehensive Logistics</h2>
+</div>
+<div class="h-px flex-grow bg-outline-variant/20 mx-12 hidden lg:block"></div>
+<p class="max-w-md text-on-surface-variant">From sea to air, and through complex customs clearance, Nosea Global takes responsibility for your entire supply chain.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Sea Freight -->
+<div class="bg-surface-container-lowest p-10 group hover:shadow-[0_20px_40px_rgba(0,191,255,0.08)] transition-all border-b-4 border-transparent hover:border-cyan-blue">
+<div class="w-16 h-16 bg-primary-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-cyan-blue text-3xl" data-icon="directions_boat">directions_boat</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 font-headline">Sea Freight</h3>
+<p class="text-on-surface-variant mb-8 font-body leading-relaxed">Cost-effective and secure sea transportation solutions connecting major global ports to Mexico.</p>
+<button class="flex items-center gap-2 text-primary font-bold group-hover:text-cyan-blue transition-colors">
+                            Learn More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Air Freight -->
+<div class="bg-surface-container-lowest p-10 group hover:shadow-[0_20px_40px_rgba(0,191,255,0.08)] transition-all border-b-4 border-transparent hover:border-cyan-blue">
+<div class="w-16 h-16 bg-primary-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-cyan-blue text-3xl" data-icon="flight">flight</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 font-headline">Air Freight</h3>
+<p class="text-on-surface-variant mb-8 font-body leading-relaxed">The fastest way for urgent cargo. Real-time tracking and priority allocation systems ensure on-time delivery.</p>
+<button class="flex items-center gap-2 text-primary font-bold group-hover:text-cyan-blue transition-colors">
+                            Learn More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Customs -->
+<div class="bg-surface-container-lowest p-10 group hover:shadow-[0_20px_40px_rgba(0,191,255,0.08)] transition-all border-b-4 border-transparent hover:border-cyan-blue">
+<div class="w-16 h-16 bg-primary-container flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-cyan-blue text-3xl" data-icon="description">description</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 font-headline">Customs Brokerage</h3>
+<p class="text-on-surface-variant mb-8 font-body leading-relaxed">Our expert team handles complex customs regulations to ensure smooth, delay-free clearance in Mexico.</p>
+<button class="flex items-center gap-2 text-primary font-bold group-hover:text-cyan-blue transition-colors">
+                            Learn More <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Shipping Process Section -->
+<section class="py-24 bg-white" id="process">
+<div class="max-w-screen-2xl mx-auto px-8 text-center">
+<span class="text-cyan-blue font-bold tracking-[0.2em] text-sm uppercase">Step by Step</span>
+<h2 class="text-4xl font-extrabold text-primary font-headline mt-2 mb-20">Shipping Process</h2>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Step 1 -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-8 text-left flex flex-col group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+<div class="text-cyan-blue font-black font-headline text-2xl mb-6">01</div>
+<span class="material-symbols-outlined text-cyan-blue text-4xl mb-6" data-icon="support_agent">support_agent</span>
+<h4 class="text-xl font-bold mb-4 font-headline text-primary">Consultation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Expert consultants analyze your cargo characteristics and routes to suggest optimal solutions.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-8 text-left flex flex-col group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+<div class="text-cyan-blue font-black font-headline text-2xl mb-6">02</div>
+<span class="material-symbols-outlined text-cyan-blue text-4xl mb-6" data-icon="request_quote">request_quote</span>
+<h4 class="text-xl font-bold mb-4 font-headline text-primary">Quotation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Transparent and competitive fixed quotes including all surcharges and handling fees.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-8 text-left flex flex-col group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+<div class="text-cyan-blue font-black font-headline text-2xl mb-6">03</div>
+<span class="material-symbols-outlined text-cyan-blue text-4xl mb-6" data-icon="description">description</span>
+<h4 class="text-xl font-bold mb-4 font-headline text-primary">Documentation</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Review and processing of essential documents like invoices and packing lists for customs.</p>
+</div>
+<!-- Step 4 -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-8 text-left flex flex-col group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+<div class="text-cyan-blue font-black font-headline text-2xl mb-6">04</div>
+<span class="material-symbols-outlined text-cyan-blue text-4xl mb-6" data-icon="local_shipping">local_shipping</span>
+<h4 class="text-xl font-bold mb-4 font-headline text-primary">Transit</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Real-time monitoring systems manage the location and status of your cargo from port to port.</p>
+</div>
+<!-- Step 5 -->
+<div class="bg-white border border-outline-variant/30 rounded-xl p-8 text-left flex flex-col group hover:-translate-y-2 transition-all duration-300 hover:shadow-xl">
+<div class="text-cyan-blue font-black font-headline text-2xl mb-6">05</div>
+<span class="material-symbols-outlined text-cyan-blue text-4xl mb-6" data-icon="inventory">inventory</span>
+<h4 class="text-xl font-bold mb-4 font-headline text-primary">Delivery</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Final destination delivery confirmation, post-settlement, and final cargo status reporting.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Instant Rate Inquiry Section (Freight Rates) -->
+<section class="bg-[#f5f3ef] py-24">
+<div class="max-w-4xl mx-auto px-8">
+<div class="text-center mb-12">
+<span class="text-cyan-blue font-bold tracking-[0.2em] text-sm uppercase">Freight Rates</span>
+<h2 class="text-4xl font-extrabold text-primary font-headline mt-2">Instant Rate Inquiry</h2>
+<p class="text-on-surface-variant mt-4">Get an estimated freight rate instantly based on your shipping needs.</p>
+</div>
+<div class="bg-white rounded-xl shadow-2xl overflow-hidden border border-outline-variant/20">
+<div class="flex border-b border-outline-variant/20 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="px-6 py-4 font-bold text-sm text-cyan-blue border-b-2 border-cyan-blue">Sea Freight (FCL)</button>
+<button class="px-6 py-4 font-bold text-sm text-on-surface-variant hover:text-cyan-blue transition-colors">Sea Freight (LCL)</button>
+<button class="px-6 py-4 font-bold text-sm text-on-surface-variant hover:text-cyan-blue transition-colors">Air Freight</button>
+<button class="px-6 py-4 font-bold text-sm text-on-surface-variant hover:text-cyan-blue transition-colors">Customs Only</button>
+</div>
+<div class="p-8">
+<button class="w-full bg-cyan-blue text-[#000a1e] font-black py-4 rounded-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 text-lg">
+                            Request a Quote <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Local Network Section (Refined) -->
+<section class="bg-[#000000] py-[56px] px-[32px] text-white">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-12">
+<span class="text-cyan-blue font-bold tracking-[0.2em] text-sm uppercase">OUR COVERAGE</span>
+<h2 class="text-4xl font-extrabold font-headline mt-2">Local Network</h2>
+<p class="text-white/50 mt-4 max-w-2xl font-body">Strategically located operations ensuring seamless logistics throughout the Mexican territory and cross-border regions.</p>
+</div>
+<div class="flex border-b border-white/10 mb-12 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="region-tab px-6 py-4 font-bold text-sm text-cyan-blue border-b-2 border-cyan-blue" data-target="all">All</button>
+<button class="region-tab px-6 py-4 font-bold text-sm text-white/60 hover:text-white transition-colors" data-target="north">Northern Region</button>
+<button class="region-tab px-6 py-4 font-bold text-sm text-white/60 hover:text-white transition-colors" data-target="mty">Monterrey</button>
+<button class="region-tab px-6 py-4 font-bold text-sm text-white/60 hover:text-white transition-colors" data-target="cdmx">Central</button>
+<button class="region-tab px-6 py-4 font-bold text-sm text-white/60 hover:text-white transition-colors" data-target="ports">Pacific &amp; Gulf</button>
+</div>
+<div class="relative w-full max-h-[360px] bg-black overflow-hidden flex items-center justify-center rounded-xl border border-white/5">
+<!-- SVG Map Mockup -->
+<svg class="w-full h-full max-w-4xl" viewbox="0 0 600 196" xmlns="http://www.w3.org/2000/svg">
+<path d="M150,100 L250,50 L450,70 L550,200 L450,300 L300,270 L200,230 L120,150 Z" fill="#00BFFF" opacity="0.1"></path>
+<!-- Refined Markers -->
+<g class="marker-group transition-opacity duration-500" data-region="north" id="marker-north">
+<circle class="pulse" cx="220" cy="80" fill="#00BFFF" r="16"></circle>
+<circle cx="220" cy="80" fill="#00BFFF" r="6"></circle>
+<line stroke="#00BFFF" stroke-dasharray="2,2" stroke-width="1" x1="220" x2="220" y1="80" y2="40"></line>
+<foreignobject height="40" width="160" x="140" y="0">
+<div class="bg-black/80 backdrop-blur-md px-3 py-1 border border-white/20 rounded text-center">
+<div class="text-[10px] font-bold text-white uppercase">Northern Region</div>
+<div class="text-[9px] text-white/70">Cross-border network</div>
+</div>
+</foreignobject>
+</g>
+<g class="marker-group transition-opacity duration-500" data-region="mty" id="marker-mty">
+<circle class="pulse" cx="310" cy="100" fill="#00BFFF" r="16"></circle>
+<circle cx="310" cy="100" fill="#00BFFF" r="6"></circle>
+<line stroke="#00BFFF" stroke-dasharray="2,2" stroke-width="1" x1="310" x2="310" y1="100" y2="60"></line>
+<foreignobject height="40" width="160" x="230" y="20">
+<div class="bg-black/80 backdrop-blur-md px-3 py-1 border border-white/20 rounded text-center">
+<div class="text-[10px] font-bold text-white uppercase">Monterrey</div>
+<div class="text-[9px] text-white/70">Logistics Hub &amp; Warehouse</div>
+</div>
+</foreignobject>
+</g>
+<g class="marker-group transition-opacity duration-500" data-region="cdmx" id="marker-cdmx">
+<circle class="pulse" cx="255" cy="200" fill="#00BFFF" r="16"></circle>
+<circle cx="255" cy="200" fill="#00BFFF" r="6"></circle>
+<line stroke="#00BFFF" stroke-dasharray="2,2" stroke-width="1" x1="255" x2="190" y1="200" y2="200"></line>
+<foreignobject height="40" width="160" x="30" y="180">
+<div class="bg-black/80 backdrop-blur-md px-3 py-1 border border-white/20 rounded text-center">
+<div class="text-[10px] font-bold text-white uppercase">Mexico City (CDMX)</div>
+<div class="text-[9px] text-white/70">HQ &amp; Ops Control Tower</div>
+</div>
+</foreignobject>
+</g>
+<g class="marker-group transition-opacity duration-500" data-region="ports" id="marker-ports">
+<circle class="pulse" cx="330" cy="210" fill="#00BFFF" r="16"></circle>
+<circle cx="330" cy="210" fill="#00BFFF" r="6"></circle>
+<line stroke="#00BFFF" stroke-dasharray="2,2" stroke-width="1" x1="330" x2="390" y1="210" y2="210"></line>
+<foreignobject height="40" width="160" x="390" y="190">
+<div class="bg-black/80 backdrop-blur-md px-3 py-1 border border-white/20 rounded text-center">
+<div class="text-[10px] font-bold text-white uppercase">Manzanillo / Veracruz</div>
+<div class="text-[9px] text-white/70">Port Operations</div>
+</div>
+</foreignobject>
+</g>
+</svg>
+</div>
+<div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12">
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 rounded-full bg-cyan-blue marker-pulse"></div>
+<span class="text-sm font-bold text-white/80">HQ &amp; Control Tower</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 rounded-full bg-cyan-blue marker-pulse"></div>
+<span class="text-sm font-bold text-white/80">Logistics Hub</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 rounded-full bg-cyan-blue marker-pulse"></div>
+<span class="text-sm font-bold text-white/80">Port Operations</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-3 h-3 rounded-full bg-cyan-blue marker-pulse"></div>
+<span class="text-sm font-bold text-white/80">Border Network</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+</main>
+<!-- Footer -->
+<footer class="bg-[#002147] border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="relative w-5 h-5">
+<svg class="absolute inset-0 text-white" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4l16 8-16 8z"></path>
+</svg>
+<svg class="absolute inset-0 text-cyan-blue translate-x-1" fill="currentColor" style="width: 12px; height: 12px; top: 4px;" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4l16 8-16 8z"></path>
+</svg>
+</div>
+<div class="text-lg font-black text-white uppercase font-headline">Nosea Global</div>
+</div>
+<p class="text-white/60 text-sm leading-relaxed font-body">
+                    Setting new standards in global logistics. As a leader in Korea-Mexico logistics, we provide the best service based on honesty and trust.
+                </p>
+</div>
+<div>
+<h5 class="text-cyan-blue font-bold text-sm mb-6 uppercase tracking-wider">Services</h5>
+<ul class="space-y-4">
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Sea Freight</a></li>
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Air Freight</a></li>
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Customs Clearance</a></li>
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Warehousing</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-cyan-blue font-bold text-sm mb-6 uppercase tracking-wider">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Carrier Network</a></li>
+<li><a class="text-white/60 text-sm hover:text-cyan-blue transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-cyan-blue font-bold text-sm mb-6 uppercase tracking-wider">Contact</h5>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 text-white/60 text-sm">
+<span class="material-symbols-outlined text-xs" data-icon="location_on">location_on</span>
+                        Seoul, South Korea / Mexico City
+                    </li>
+<li class="flex items-center gap-3 text-white/60 text-sm">
+<span class="material-symbols-outlined text-xs" data-icon="mail">mail</span>
+                        info@noseaglobal.com
+                    </li>
+<li class="flex items-center gap-3 text-white/60 text-sm">
+<span class="material-symbols-outlined text-xs" data-icon="call">call</span>
+                        +82 2-1234-5678
+                    </li>
+</ul>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto px-8 py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-white/40 text-xs font-label">© 2024 Nosea Global. All Rights Reserved.</span>
+<div class="flex gap-6">
+<a class="text-white/40 hover:text-cyan-blue transition-colors" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-white/40 hover:text-cyan-blue transition-colors" href="#"><span class="material-symbols-outlined" data-icon="hub">hub</span></a>
+<a class="text-white/40 hover:text-cyan-blue transition-colors" href="#"><span class="material-symbols-outlined" data-icon="security">security</span></a>
+</div>
+</div>
+</footer>
+<script>
+document.querySelectorAll('.region-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-target');
+        
+        // Update tab styles
+        document.querySelectorAll('.region-tab').forEach(t => {
+            t.classList.remove('text-cyan-blue', 'border-b-2', 'border-cyan-blue');
+            t.classList.add('text-white/60');
+        });
+        tab.classList.add('text-cyan-blue', 'border-b-2', 'border-cyan-blue');
+        tab.classList.remove('text-white/60');
+        
+        // Update markers
+        document.querySelectorAll('.marker-group').forEach(group => {
+            if (target === 'all' || group.getAttribute('data-region') === target) {
+                group.style.opacity = '1';
+            } else {
+                group.style.opacity = '0.25';
+            }
+        });
+    });
+});
+</script>
+</body></html>
