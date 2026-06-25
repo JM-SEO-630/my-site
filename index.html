@@ -99,9 +99,11 @@ nav{display:flex;align-items:center;justify-content:space-between;width:100%;max
 .card:hover .card-icon{background:var(--cyan);}
 .card-icon .material-symbols-outlined{color:#fff;font-size:2.2rem;}
 .card h3{font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:1rem;}
-.card p{color:#6b7280;line-height:1.7;margin-bottom:2.5rem;}
-.card-link{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--navy);transition:color .2s;}
-.card-link:hover{color:var(--cyan);}
+.card p{color:#6b7280;line-height:1.7;margin-bottom:0;}
+.learn-more-box{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:2.5rem auto 0;max-width:280px;padding:1.1rem 2rem;border:2px solid var(--navy);color:var(--navy);font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;transition:background .2s,color .2s,border-color .2s;}
+.learn-more-box:hover{background:var(--navy);color:#fff;}
+.learn-more-box .material-symbols-outlined{font-size:1.1rem;transition:transform .2s;}
+.learn-more-box:hover .material-symbols-outlined{transform:translateX(4px);}
 
 /* Process */
 #process{padding:6rem 2rem;background:#fff;overflow:hidden;}
@@ -226,7 +228,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
   .card-icon{width:60px;height:60px;margin-bottom:1.5rem;}
   .card-icon .material-symbols-outlined{font-size:1.7rem;}
   .card h3{font-size:1.2rem;}
-  .card p{font-size:.9rem;margin-bottom:1.75rem;}
+  .card p{font-size:.9rem;margin-bottom:0;}
 
   /* ─ 프로세스 ─ */
   #process{padding:3.5rem 1.25rem;}
@@ -431,21 +433,22 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
         <div class="card-icon"><span class="material-symbols-outlined">directions_boat</span></div>
         <h3>Sea Freight</h3>
         <p>Cost-effective and secure sea transportation solutions connecting major global ports directly to Mexico's coastal hubs.</p>
-        <a href="services.html#sea-freight" class="card-link">Explore <span class="material-symbols-outlined" style="font-size:1rem;">arrow_forward</span></a>
       </div>
       <div class="card fade-up" style="transition-delay:100ms" onclick="location.href='services.html#air-freight'">
         <div class="card-icon"><span class="material-symbols-outlined">flight</span></div>
         <h3>Air Freight</h3>
         <p>The fastest solution for urgent cargo. Real-time priority allocation systems ensure your time-sensitive goods arrive on schedule.</p>
-        <a href="services.html#air-freight" class="card-link">Explore <span class="material-symbols-outlined" style="font-size:1rem;">arrow_forward</span></a>
       </div>
       <div class="card fade-up" style="transition-delay:200ms" onclick="location.href='services.html#inland'">
         <div class="card-icon"><span class="material-symbols-outlined">local_shipping</span></div>
         <h3>Inland Distribution</h3>
         <p>Door-to-door trucking network covering every Mexican state, delivering your cargo from the port directly to its final destination.</p>
-        <a href="services.html#inland" class="card-link">Explore <span class="material-symbols-outlined" style="font-size:1rem;">arrow_forward</span></a>
       </div>
     </div>
+    <a href="services.html" class="learn-more-box fade-up">
+      LEARN MORE
+      <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
   </div>
 </section>
 
