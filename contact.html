@@ -7,9 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
+@font-face{font-family:Pretendard;font-style:normal;font-weight:45 920;src:url(https://ssl.pstatic.net/static/papago/service/papago-plus/assets/PretendardJPVariable.woff2) format("woff2-variations");font-display:swap}@property --os-scroll-percent{syntax: "<number>"; inherits: true; initial-value: 0;}@property --os-viewport-percent{syntax: "<number>"; inherits: true; initial-value: 0;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Roboto',sans-serif;background:#fff;color:#0a1628;}
+body{font-family:'Pretendard',sans-serif;background:#fff;color:#0a1628;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 :root{--cyan:#00BFFF;--navy:#0a1628;--surface:#f8f9fa;}
@@ -38,18 +39,18 @@ nav{display:flex;align-items:center;justify-content:space-between;width:100%;max
 @media(max-width:768px){.nav-links{display:none;}.btn-quote{display:none;}.nav-hamburger{display:flex;}nav{padding:0 1.25rem;}}
 
 /* ── PAGE HERO ── */
-.page-hero{background:var(--surface);border-bottom:1px solid rgba(0,191,255,.12);padding:100px 2rem 60px;}
+.page-hero{background:var(--surface);border-bottom:1px solid rgba(0,191,255,.12);padding:100px 2rem 36px;}
 .page-hero-inner{max-width:1200px;margin:0 auto;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px;}
 .eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--cyan);}
-.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.13;color:var(--navy);max-width:640px;margin-bottom:20px;}
+.page-hero h1{font-family:'Pretendard',sans-serif;font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.13;color:var(--navy);max-width:640px;margin-bottom:20px;}
 .page-hero p{font-size:1.05rem;line-height:1.7;color:#4b5563;max-width:560px;}
 
 /* ── SECTION BASE ── */
 section{padding:5rem 2rem;}
 .container{max-width:1200px;margin:0 auto;}
 .section-label{color:var(--cyan);font-weight:700;letter-spacing:.2em;font-size:.8rem;text-transform:uppercase;display:block;margin-bottom:1rem;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--navy);margin-bottom:14px;}
+.section-title{font-family:'Pretendard',sans-serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--navy);margin-bottom:14px;}
 .section-sub{font-size:1rem;color:#6b7280;line-height:1.7;max-width:540px;margin-bottom:3.5rem;}
 
 /* ── TIMELINE (메인 5단계 확장) ── */
@@ -112,7 +113,7 @@ section{padding:5rem 2rem;}
   padding:3px 10px;margin-bottom:.75rem;
 }
 .tl-content h3{
-  font-family:'Playfair Display',serif;
+  font-family:'Pretendard',sans-serif;
   font-size:1.3rem;font-weight:700;color:var(--navy);
   margin-bottom:.75rem;line-height:1.2;
 }
@@ -172,7 +173,7 @@ section{padding:5rem 2rem;}
 /* ── CTA ── */
 .cta-section{background:var(--navy);}
 .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2.5rem;}
-.cta-inner h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;max-width:500px;line-height:1.2;}
+.cta-inner h2{font-family:'Pretendard',sans-serif;font-size:clamp(1.6rem,3vw,2.3rem);color:#fff;max-width:500px;line-height:1.2;}
 .cta-inner h2 em{font-style:normal;color:var(--cyan);}
 .cta-btns{display:flex;gap:1rem;flex-shrink:0;}
 .btn-primary{background:var(--cyan);color:var(--navy);padding:.9rem 2rem;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;transition:filter .2s,transform .2s;display:inline-flex;align-items:center;gap:.5rem;}
@@ -241,18 +242,18 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
 }
 
 /* ── QUOTE STEP FORM (Toss-style one-question-per-screen) ── */
-.quote-section{background:var(--surface);min-height:calc(100vh - 64px);display:flex;align-items:center;justify-content:center;padding:3rem 1.25rem;}
+.quote-section{background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.25rem 1.25rem 4rem;}
 .quote-container{width:100%;max-width:560px;background:#fff;border-radius:20px;box-shadow:0 12px 40px rgba(10,22,40,.08);overflow:hidden;}
 .quote-progress{height:4px;background:rgba(0,191,255,.12);}
 .quote-progress-bar{height:100%;width:20%;background:var(--cyan);transition:width .4s ease;}
-.quote-steps{position:relative;padding:2.75rem 2.25rem 2.5rem;min-height:420px;}
+.quote-steps{position:relative;padding:2.25rem 2.25rem 2rem;}
 .quote-step{display:none;animation:quoteIn .35s ease;}
 .quote-step.active{display:block;}
 @keyframes quoteIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:translateX(0);}}
 .step-back{background:none;border:none;cursor:pointer;color:#9aa3af;display:inline-flex;align-items:center;margin-bottom:1.25rem;padding:6px;margin-left:-6px;border-radius:50%;transition:background .2s,color .2s;}
 .step-back:hover{background:var(--surface);color:var(--navy);}
 .quote-step-tag{display:block;color:var(--cyan);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.85rem;}
-.quote-q{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:.6rem;}
+.quote-q{font-family:'Pretendard',sans-serif;font-size:1.55rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:.6rem;}
 .quote-sub{font-size:.88rem;color:#6b7280;line-height:1.6;margin-bottom:2rem;}
 .option-grid{display:flex;flex-direction:column;gap:.85rem;}
 .option-card{display:flex;align-items:center;gap:1rem;width:100%;text-align:left;background:#fff;border:2px solid #e9ecef;border-radius:14px;padding:1.1rem 1.25rem;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;font-family:inherit;}
@@ -276,13 +277,16 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
 .quote-complete{text-align:center;padding:1.5rem 0;}
 .quote-complete-icon{width:72px;height:72px;border-radius:50%;background:rgba(0,191,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;}
 .quote-complete-icon .material-symbols-outlined{font-size:2.2rem;color:var(--cyan);}
-.quote-complete h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:.6rem;}
+.quote-complete h2{font-family:'Pretendard',sans-serif;font-size:1.5rem;color:var(--navy);margin-bottom:.6rem;}
 .quote-complete p{font-size:.88rem;color:#6b7280;line-height:1.7;margin-bottom:1.75rem;}
 .summary-card{background:var(--surface);border-radius:14px;padding:1.25rem 1.4rem;margin-bottom:1.75rem;text-align:left;}
 .summary-row{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.85rem;}
 .summary-row:last-child{border-bottom:none;}
 .summary-row span:first-child{color:#9aa3af;font-weight:700;flex-shrink:0;}
 .summary-row span:last-child{color:var(--navy);text-align:right;}
+.contact-person{width:100%;max-width:560px;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.5rem;font-size:.82rem;color:#9aa3af;}
+.contact-person a{color:var(--cyan);font-weight:700;}
+.contact-person .material-symbols-outlined{font-size:1rem;}
 .autocomplete-wrap{position:relative;}
 .autocomplete-list{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #e9ecef;border-radius:10px;box-shadow:0 8px 24px rgba(10,22,40,.1);max-height:220px;overflow-y:auto;z-index:10;}
 .autocomplete-list.open{display:block;}
@@ -308,7 +312,7 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
 <header>
   <nav>
     <a href="index.html" style="display:inline-flex;align-items:center;">
-      <svg viewBox="0 0 210 48" style="height:42px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
+      <svg viewBox="0 0 210 48" style="height:42px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
@@ -458,18 +462,23 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
 
       <!-- Step 5: Complete -->
       <div class="quote-step" data-step="5">
+        <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
         <div class="quote-complete">
           <div class="quote-complete-icon"><span class="material-symbols-outlined">check_circle</span></div>
-          <h2>Your Quote Request is Ready</h2>
-          <p>Review the details below, then click the button to open your email app.<br>Once sent, our team will respond within 24 hours.</p>
+          <h2 id="completeTitle">Your Quote Request is Ready</h2>
+          <p id="completeSub">Review the details below, then click the button to send it directly to our team.<br>We'll respond within 24 hours.</p>
           <div class="summary-card" id="summaryCard"></div>
           <div class="quote-actions">
-            <button class="btn-next" id="sendEmailBtn">Send via Email<span class="material-symbols-outlined">mail</span></button>
+            <button class="btn-next" id="sendEmailBtn">Send Quote Request<span class="material-symbols-outlined">send</span></button>
           </div>
         </div>
       </div>
 
     </div>
+  </div>
+  <div class="contact-person">
+    <span class="material-symbols-outlined">support_agent</span>
+    <span>Quote Contact: <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a></span>
   </div>
 </section>
 
@@ -477,7 +486,7 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
   <div class="footer-grid">
     <div>
       <div class="footer-logo">
-        <svg viewBox="0 0 210 48" style="height:36px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
+        <svg viewBox="0 0 210 48" style="height:36px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
       </div>
       <p class="footer-desc">Your specialist in Mexico import and export logistics. Integrity, speed, and precision in every shipment.</p>
     </div>
@@ -493,10 +502,7 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
     <div class="footer-col">
       <h5>Process</h5>
       <ul>
-        <li><a href="process.html">Consultation &amp; Route Planning</a></li>
-        <li><a href="process.html">Transparent Quotation</a></li>
-        <li><a href="process.html">Documentation &amp; Compliance</a></li>
-        <li><a href="process.html">Customs Clearance &amp; Delivery</a></li>
+        <li><a href="process.html#faq">FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -573,11 +579,23 @@ document.querySelectorAll('[data-autocomplete]').forEach(input=>{
 
   function renderList(query){
     const q=query.trim().toLowerCase();
-    const matches=q===''?[]:CITY_DATA.filter(c=>
-      c.city.toLowerCase().includes(q)||c.country.toLowerCase().includes(q)||c.code.toLowerCase().includes(q)
-    ).slice(0,8);
+    let matches;
+    if(q===''){
+      const seen=new Set();
+      matches=[];
+      for(const c of CITY_DATA){
+        if(seen.has(c.country)) continue;
+        seen.add(c.country);
+        matches.push(c);
+        if(matches.length>=8) break;
+      }
+    }else{
+      matches=CITY_DATA.filter(c=>
+        c.city.toLowerCase().includes(q)||c.country.toLowerCase().includes(q)||c.code.toLowerCase().includes(q)
+      ).slice(0,8);
+    }
     if(matches.length===0){
-      list.innerHTML=q===''?'':'<div class="autocomplete-empty">No matching city or port found</div>';
+      list.innerHTML='<div class="autocomplete-empty">No matching city or port found</div>';
     }else{
       list.innerHTML=matches.map(c=>
         `<div class="autocomplete-item" data-city="${c.city}" data-country="${c.country}" data-code="${c.code}">
@@ -589,11 +607,11 @@ document.querySelectorAll('[data-autocomplete]').forEach(input=>{
         </div>`
       ).join('');
     }
-    list.classList.toggle('open',q!=='');
+    list.classList.add('open');
   }
 
   input.addEventListener('input',()=>renderList(input.value));
-  input.addEventListener('focus',()=>{ if(input.value.trim()!=='') renderList(input.value); });
+  input.addEventListener('focus',()=>renderList(input.value));
   list.addEventListener('click',e=>{
     const item=e.target.closest('.autocomplete-item');
     if(!item) return;
@@ -683,24 +701,43 @@ function renderSummary(){
     .join('');
 }
 
-document.getElementById('sendEmailBtn').addEventListener('click',()=>{
-  const subject=encodeURIComponent('[Quote Request] '+(quoteData.company||quoteData.name||'New Inquiry'));
-  const bodyLines=[
-    'Mode of Transport: '+(quoteData.mode||'-'),
-    'Origin: '+(quoteData.origin||'-'),
-    'Destination: '+(quoteData.destination||'-'),
-    'Incoterms: '+(quoteData.incoterms||'-'),
-    'Commodity: '+(quoteData.item||'-'),
-    'Weight (kg): '+(quoteData.weight||'-'),
-    'Volume (CBM): '+(quoteData.cbm||'-'),
-    'Quantity: '+(quoteData.quantity||'-'),
-    'Name: '+(quoteData.name||'-'),
-    'Company: '+(quoteData.company||'-'),
-    'Phone: '+(quoteData.phone||'-'),
-    'Email: '+(quoteData.email||'-'),
-  ];
-  const body=encodeURIComponent(bodyLines.join('\n'));
-  window.location.href=`mailto:operation.nosea@gmail.com?subject=${subject}&body=${body}`;
+const sendEmailBtn=document.getElementById('sendEmailBtn');
+sendEmailBtn.addEventListener('click',async()=>{
+  sendEmailBtn.disabled=true;
+  sendEmailBtn.innerHTML='Sending…<span class="material-symbols-outlined">progress_activity</span>';
+
+  const payload={
+    _subject:'[Quote Request] '+(quoteData.company||quoteData.name||'New Inquiry'),
+    'Mode of Transport':quoteData.mode||'-',
+    'Origin':quoteData.origin||'-',
+    'Destination':quoteData.destination||'-',
+    'Incoterms':quoteData.incoterms||'-',
+    'Commodity':quoteData.item||'-',
+    'Weight (kg)':quoteData.weight||'-',
+    'Volume (CBM)':quoteData.cbm||'-',
+    'Quantity':quoteData.quantity||'-',
+    'Name':quoteData.name||'-',
+    'Company':quoteData.company||'-',
+    'Phone':quoteData.phone||'-',
+    'Email':quoteData.email||'-',
+  };
+
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/operation.nosea@gmail.com',{
+      method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(payload),
+    });
+    if(!res.ok) throw new Error('Request failed');
+
+    document.getElementById('completeTitle').textContent='Your Quote Request Has Been Sent';
+    document.getElementById('completeSub').innerHTML='Your request was delivered directly to our team.<br>We\'ll respond within 24 hours.';
+    sendEmailBtn.innerHTML='Sent<span class="material-symbols-outlined">check_circle</span>';
+  }catch(err){
+    sendEmailBtn.disabled=false;
+    sendEmailBtn.innerHTML='Send Quote Request<span class="material-symbols-outlined">send</span>';
+    document.getElementById('completeSub').innerHTML='Something went wrong sending your request.<br>Please try again, or email us directly at <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a>.';
+  }
 });
 </script>
 </body>

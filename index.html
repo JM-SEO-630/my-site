@@ -7,9 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
+@font-face{font-family:Pretendard;font-style:normal;font-weight:45 920;src:url(https://ssl.pstatic.net/static/papago/service/papago-plus/assets/PretendardJPVariable.woff2) format("woff2-variations");font-display:swap}@property --os-scroll-percent{syntax: "<number>"; inherits: true; initial-value: 0;}@property --os-viewport-percent{syntax: "<number>"; inherits: true; initial-value: 0;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Roboto',sans-serif;background:#fff;color:#0a1628;}
+body{font-family:'Pretendard',sans-serif;background:#fff;color:#0a1628;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 :root{--cyan:#00BFFF;--navy:#0a1628;--red:#E53E3E;--surface:#f8f9fa;}
@@ -89,7 +90,7 @@ nav{display:flex;align-items:center;justify-content:space-between;width:100%;max
 #services{padding:6rem 2rem;background:var(--surface);}
 .container{max-width:1536px;margin:0 auto;}
 .section-label{color:var(--cyan);font-weight:700;letter-spacing:.2em;font-size:.8rem;text-transform:uppercase;display:block;margin-bottom:1rem;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);}
+.section-title{font-family:'Pretendard',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);}
 .section-header{text-align:center;margin-bottom:4rem;}
 .cards-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
 .card{background:#fff;padding:3rem;border-bottom:4px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s,border-color .3s;cursor:pointer;}
@@ -139,7 +140,7 @@ nav{display:flex;align-items:center;justify-content:space-between;width:100%;max
 .network-grid{display:grid;gap:5rem;align-items:center;grid-template-columns:1fr 1fr;}
 
 .network-label{color:var(--cyan);font-weight:700;letter-spacing:.2em;font-size:.8rem;text-transform:uppercase;display:block;margin-bottom:1rem;}
-.network-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:2rem;}
+.network-title{font-family:'Pretendard',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:2rem;}
 .network-desc{color:rgba(255,255,255,.6);font-size:1.1rem;line-height:1.8;margin-bottom:3rem;}
 .region-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;cursor:pointer;transition:background .2s;margin-bottom:1rem;font-family:inherit;}
 .region-btn:hover,.region-btn.active-region{background:rgba(0,191,255,.1);border-color:var(--cyan);}
@@ -348,7 +349,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
   <nav>
     <div id="logo-upload-zone">
       <div id="default-logo">
-        <svg viewBox="0 0 210 48" style="height:42px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
+        <svg viewBox="0 0 210 48" style="height:42px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
       </div>
       <div class="upload-overlay">
         <div class="upload-label">
@@ -457,28 +458,38 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
     <div class="steps-grid">
       <div class="process-step fade-up">
         <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">chat</span></div></div>
-        <h4>01. Consultation</h4>
-        <p>Analyzing cargo specs and requirements to plan the optimal route.</p>
+        <div class="step-text">
+          <h4>01. Consultation</h4>
+          <p>Analyzing cargo specs and requirements to plan the optimal route.</p>
+        </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:100ms">
         <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">description</span></div></div>
-        <h4>02. Quotation</h4>
-        <p>Transparent fixed-rate quotes including all fees and surcharges.</p>
+        <div class="step-text">
+          <h4>02. Quotation</h4>
+          <p>Transparent fixed-rate quotes including all fees and surcharges.</p>
+        </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:200ms">
         <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">inventory_2</span></div></div>
-        <h4>03. Documentation</h4>
-        <p>Preparation and verification of all import/export legal paperwork.</p>
+        <div class="step-text">
+          <h4>03. Documentation</h4>
+          <p>Preparation and verification of all import/export legal paperwork.</p>
+        </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:300ms">
         <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">local_shipping</span></div></div>
-        <h4>04. Transit</h4>
-        <p>Real-time GPS monitoring and cargo status reporting during voyage.</p>
+        <div class="step-text">
+          <h4>04. Transit</h4>
+          <p>Real-time GPS monitoring and cargo status reporting during voyage.</p>
+        </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:400ms">
         <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">task_alt</span></div></div>
-        <h4>05. Delivery</h4>
-        <p>Final destination clearance and proof of delivery confirmation.</p>
+        <div class="step-text">
+          <h4>05. Delivery</h4>
+          <p>Final destination clearance and proof of delivery confirmation.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -540,7 +551,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
   <div class="footer-grid">
     <div>
       <div class="footer-logo">
-        <svg viewBox="0 0 210 48" style="height:36px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
+        <svg viewBox="0 0 210 48" style="height:36px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
       </div>
       <p class="footer-desc">Your specialist in Mexico import and export logistics. Integrity, speed, and precision in every shipment.</p>
     </div>
@@ -556,10 +567,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
     <div class="footer-col">
       <h5>Process</h5>
       <ul>
-        <li><a href="process.html">Consultation &amp; Route Planning</a></li>
-        <li><a href="process.html">Transparent Quotation</a></li>
-        <li><a href="process.html">Documentation &amp; Compliance</a></li>
-        <li><a href="process.html">Customs Clearance &amp; Delivery</a></li>
+        <li><a href="process.html#faq">FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
