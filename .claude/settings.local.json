@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk 'NR==1,NR==5' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==1,NR==30' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\index.html\")",
+      "mcp__Claude_in_Chrome__navigate",
+      "WebFetch(domain:www.ship-da.com)",
+      "Bash(awk 'NR==330,NR==420' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==247,NR==335' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==247,NR==335{ if \\(length\\($0\\) > 500\\) print NR\": [LONG LINE omitted, len=\"length\\($0\\)\"]\"; else print NR\": \"$0 }' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==1,NR==246{ if \\(length\\($0\\) > 500\\) print NR\": [LONG LINE omitted, len=\"length\\($0\\)\"]\"; else print NR\": \"$0 }' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==521,NR==579{ if \\(length\\($0\\) > 500\\) print NR\": [LONG LINE omitted]\"; else print NR\": \"$0 }' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==1,NR==271' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Bash(awk 'NR==521,NR==579' \"C:\\\\Users\\\\SAMSUNG\\\\Desktop\\\\test-project\\\\process.html\")",
+      "Read(//tmp/**)",
+      "Bash(awk 'NR==242 || NR==6 || NR==252 || NR==253 || NR==254 || NR==255 || NR==256 || NR==257 || NR==258 || NR==265 || NR==266 || NR==267 || NR==268 || NR==269 || NR==270' /tmp/contact_head.txt)",
+      "Bash(sed -e 's#<title>Our Process — Nosea Global</title>#<title>Get a Quote — Nosea Global</title>#' -e 's#<a href=\"process.html\" class=\"active\">Process</a>#<a href=\"process.html\">Process</a>#g' -e 's#<a href=\"contact.html\">Contact</a>#<a href=\"contact.html\" class=\"active\">Contact</a>#g' contact_head.txt)",
+      "Bash(awk '1; /^<\\\\/style>$/{ if\\(!done\\){ system\\(\"cat /tmp/contact_style.txt\"\\); done=1 } }' contact_head2.txt)",
+      "Bash(sed -e 's#<title>Our Process — Nosea Global</title>#<title>Get a Quote — Nosea Global</title>#' -e 's#<a href=\"process.html\" class=\"active\">Process</a>#<a href=\"process.html\">Process</a>#g' -e 's#<a href=\"contact.html\">Contact</a>#<a href=\"contact.html\" class=\"active\">Contact</a>#g' _tmp_head.txt)",
+      "Bash(awk 'NR==1,NR==271' process.html)",
+      "Bash(awk 'NR==521,NR==579' process.html)",
+      "Bash(sed -e 's#<title>Our Process — Nosea Global</title>#<title>Get a Quote — Nosea Global</title>#' -e 's#<a href=\"process.html\" class=\"active\">Process</a>#<a href=\"process.html\">Process</a>#g' -e 's#<a href=\"contact.html\">Contact</a>#<a href=\"contact.html\" class=\"active\">Contact</a>#g' _tmp_head_raw.txt)",
+      "Bash(awk '1; /^<\\\\/style>$/{ while\\(\\(getline line < \"_tmp_style.txt\"\\)>0\\) print line; close\\(\"_tmp_style.txt\"\\) }' _tmp_head_fixed.txt)",
+      "Bash(awk -v scriptfile=_tmp_script.txt ' *)",
+      "Bash(mv contact_final.html contact.html)",
+      "Bash(rm -f _tmp_head.txt _tmp_head_raw.txt _tmp_foot_raw.txt _tmp_head_fixed.txt _tmp_head_final.txt _tmp_style.txt _tmp_body.txt _tmp_script.txt)",
+      "Bash(awk 'NR==550,NR==596{ if \\(length\\($0\\) > 500\\) print NR\": [LONG]\"; else print NR\": \"$0 }' contact.html)",
+      "Bash(sed -i -e '364s#<a href=\"#contact\">Contact</a>#<a href=\"contact.html\">Contact</a>#' -e '366s#<a href=\"#contact\" class=\"btn-quote\">Get a Quote</a>#<a href=\"contact.html\" class=\"btn-quote\">Get a Quote</a>#' -e '375s#<a href=\"#contact\">Contact</a>#<a href=\"contact.html\">Contact</a>#' -e '376s#<a href=\"#contact\" class=\"drawer-cta\">Get a Quote</a>#<a href=\"contact.html\" class=\"drawer-cta\">Get a Quote</a>#' index.html)",
+      "Bash(awk 'NR==363,NR==377' index.html)",
+      "Bash(awk '{ if \\(length\\($0\\) > 500\\) print NR\": [LONG]\"; else print NR\": \"$0 }' contact.html)",
+      "Bash(awk 'NR>=240 && NR<=320')",
+      "Bash(awk 'NR>=320 && NR<=460')",
+      "Bash(awk 'NR>=478 && NR<=510')",
+      "Bash(awk 'NR>=515 && NR<=525' contact.html)",
+      "Bash(awk '{ if \\(length\\($0\\) > 300\\) print substr\\($0,1,300\\)\"...[TRUNC]\"; else print }')",
+      "Bash(awk 'NR==514 && NR<=535' contact.html)",
+      "Bash(node -e ' *)",
+      "PowerShell(Get-Command node -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-Command npx -ErrorAction SilentlyContinue)"
+    ]
+  }
+}
