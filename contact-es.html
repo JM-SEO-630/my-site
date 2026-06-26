@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Get a Quote — Nosea Global</title>
+<title>Solicitar Cotización — Nosea Global</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
@@ -319,19 +319,19 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
 <!-- HEADER -->
 <header>
   <nav>
-    <a href="index.html" style="display:inline-flex;align-items:center;">
+    <a href="index-es.html" style="display:inline-flex;align-items:center;">
       <svg viewBox="0 0 210 48" style="height:42px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
     </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="process.html">Process</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="index-es.html">Inicio</a>
+      <a href="services-es.html">Servicios</a>
+      <a href="process-es.html">Proceso</a>
+      <a href="contact-es.html" class="active">Contacto</a>
     </div>
     <div class="lang-switch">
-      <a href="contact.html" class="active">EN</a>
+      <a href="contact.html">EN</a>
       <span class="lang-sep">|</span>
-      <a href="contact-es.html">ES</a>
+      <a href="contact-es.html" class="active">ES</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -340,19 +340,19 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
 </header>
 
 <div class="nav-drawer" id="navDrawer">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="process.html">Process</a>
-  <a href="contact.html" class="active">Contact</a>
-  <a href="contact.html" class="drawer-cta">Get a Quote</a>
-  <div class="drawer-lang"><a href="contact.html" class="active">EN</a><span class="lang-sep">|</span><a href="contact-es.html">ES</a></div>
+  <a href="index-es.html">Inicio</a>
+  <a href="services-es.html">Servicios</a>
+  <a href="process-es.html">Proceso</a>
+  <a href="contact-es.html" class="active">Contacto</a>
+  <a href="contact-es.html" class="drawer-cta">Solicitar Cotización</a>
+  <div class="drawer-lang"><a href="contact.html">EN</a><span class="lang-sep">|</span><a href="contact-es.html" class="active">ES</a></div>
 </div>
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="eyebrow">Get a Quote</div>
-    <h1>Tell Us About Your Shipment</h1>
-    <p>Just a few quick questions —<br>it takes about a minute to request your quote.</p>
+    <div class="eyebrow">Solicitar Cotización</div>
+    <h1>Cuéntenos Sobre Su Envío</h1>
+    <p>Solo unas preguntas rápidas —<br>tarda apenas un minuto solicitar su cotización.</p>
   </div>
 </div>
 
@@ -364,21 +364,21 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
 
       <!-- Step 1: Mode of Transport -->
       <div class="quote-step active" data-step="1">
-        <span class="quote-step-tag">Step 1 of 5</span>
-        <h2 class="quote-q">How would you like to ship?</h2>
-        <p class="quote-sub">Choose the transport mode that fits your cargo.</p>
+        <span class="quote-step-tag">Paso 1 de 5</span>
+        <h2 class="quote-q">¿Cómo desea enviar su carga?</h2>
+        <p class="quote-sub">Elija la modalidad de transporte que se ajuste a su carga.</p>
         <div class="option-grid">
-          <button class="option-card" data-field="mode" data-value="Ocean Freight (FCL/LCL)">
+          <button class="option-card" data-field="mode" data-value="Transporte Marítimo (FCL/LCL)">
             <span class="material-symbols-outlined">directions_boat</span>
-            <span class="opt-text"><b>Ocean Freight</b><small>FCL / LCL · Cost-efficient</small></span>
+            <span class="opt-text"><b>Transporte Marítimo</b><small>FCL / LCL · Económico</small></span>
           </button>
-          <button class="option-card" data-field="mode" data-value="Air Freight">
+          <button class="option-card" data-field="mode" data-value="Transporte Aéreo">
             <span class="material-symbols-outlined">flight</span>
-            <span class="opt-text"><b>Air Freight</b><small>Fast transit time</small></span>
+            <span class="opt-text"><b>Transporte Aéreo</b><small>Tránsito rápido</small></span>
           </button>
-          <button class="option-card" data-field="mode" data-value="Multimodal (Sea+Air)">
+          <button class="option-card" data-field="mode" data-value="Multimodal (Marítimo+Aéreo)">
             <span class="material-symbols-outlined">alt_route</span>
-            <span class="opt-text"><b>Multimodal</b><small>Sea + Air · Balanced option</small></span>
+            <span class="opt-text"><b>Multimodal</b><small>Marítimo + Aéreo · Opción balanceada</small></span>
           </button>
         </div>
       </div>
@@ -386,23 +386,23 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
       <!-- Step 2: Route & Incoterms -->
       <div class="quote-step" data-step="2">
         <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
-        <span class="quote-step-tag">Step 2 of 5</span>
-        <h2 class="quote-q">What's the route?</h2>
-        <p class="quote-sub">Search by city or port name (e.g. Manzanillo, Shanghai).</p>
+        <span class="quote-step-tag">Paso 2 de 5</span>
+        <h2 class="quote-q">¿Cuál es la ruta?</h2>
+        <p class="quote-sub">Busque por nombre de ciudad o puerto (ej. Manzanillo, Shanghai).</p>
         <div class="field-group autocomplete-wrap">
-          <label>Origin (City / Port)</label>
-          <input type="text" class="field-input" data-field="origin" data-autocomplete="origin" placeholder="e.g. Shenzhen, China (CNSZX)" autocomplete="off">
+          <label>Origen (Ciudad / Puerto)</label>
+          <input type="text" class="field-input" data-field="origin" data-autocomplete="origin" placeholder="ej. Shenzhen, China (CNSZX)" autocomplete="off">
           <div class="autocomplete-list" data-list="origin"></div>
         </div>
         <div class="field-group autocomplete-wrap">
-          <label>Destination (City / Port)</label>
-          <input type="text" class="field-input" data-field="destination" data-autocomplete="destination" placeholder="e.g. Manzanillo, Mexico (MXZLO)" autocomplete="off">
+          <label>Destino (Ciudad / Puerto)</label>
+          <input type="text" class="field-input" data-field="destination" data-autocomplete="destination" placeholder="ej. Manzanillo, México (MXZLO)" autocomplete="off">
           <div class="autocomplete-list" data-list="destination"></div>
         </div>
         <div class="field-group">
           <label>Incoterms</label>
           <select class="field-input" data-field="incoterms">
-            <option value="">Select Incoterms 2020</option>
+            <option value="">Seleccione Incoterms 2020</option>
             <option value="EXW">EXW — Ex Works</option>
             <option value="FCA">FCA — Free Carrier</option>
             <option value="FAS">FAS — Free Alongside Ship</option>
@@ -417,60 +417,60 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
           </select>
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Next<span class="material-symbols-outlined">arrow_forward</span></button>
+          <button class="btn-next" data-next disabled>Siguiente<span class="material-symbols-outlined">arrow_forward</span></button>
         </div>
       </div>
 
       <!-- Step 3: Cargo Details -->
       <div class="quote-step" data-step="3">
         <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
-        <span class="quote-step-tag">Step 3 of 5</span>
-        <h2 class="quote-q">Tell us about your cargo</h2>
-        <p class="quote-sub">Rough estimates are fine.</p>
+        <span class="quote-step-tag">Paso 3 de 5</span>
+        <h2 class="quote-q">Cuéntenos sobre su carga</h2>
+        <p class="quote-sub">Estimaciones aproximadas están bien.</p>
         <div class="field-group">
-          <label>Commodity</label>
-          <input type="text" class="field-input" data-field="item" placeholder="e.g. Electronics">
+          <label>Mercancía</label>
+          <input type="text" class="field-input" data-field="item" placeholder="ej. Electrónicos">
         </div>
         <div class="field-group">
-          <label>Weight / Volume</label>
+          <label>Peso / Volumen</label>
           <div class="field-row">
-            <input type="text" class="field-input" data-field="weight" placeholder="Weight (kg)">
-            <input type="text" class="field-input" data-field="cbm" placeholder="Volume (CBM)">
+            <input type="text" class="field-input" data-field="weight" placeholder="Peso (kg)">
+            <input type="text" class="field-input" data-field="cbm" placeholder="Volumen (CBM)">
           </div>
         </div>
         <div class="field-group">
-          <label>Boxes / Pallets</label>
-          <input type="text" class="field-input" data-field="quantity" placeholder="e.g. 20 boxes">
+          <label>Cajas / Tarimas</label>
+          <input type="text" class="field-input" data-field="quantity" placeholder="ej. 20 cajas">
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Next<span class="material-symbols-outlined">arrow_forward</span></button>
+          <button class="btn-next" data-next disabled>Siguiente<span class="material-symbols-outlined">arrow_forward</span></button>
         </div>
       </div>
 
       <!-- Step 4: Contact Info -->
       <div class="quote-step" data-step="4">
         <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
-        <span class="quote-step-tag">Step 4 of 5</span>
-        <h2 class="quote-q">How can we reach you?</h2>
-        <p class="quote-sub">Our team will review and respond shortly.</p>
+        <span class="quote-step-tag">Paso 4 de 5</span>
+        <h2 class="quote-q">¿Cómo podemos contactarlo?</h2>
+        <p class="quote-sub">Nuestro equipo revisará y responderá pronto.</p>
         <div class="field-group">
-          <label>Full Name</label>
-          <input type="text" class="field-input" data-field="name" placeholder="John Doe">
+          <label>Nombre Completo</label>
+          <input type="text" class="field-input" data-field="name" placeholder="Juan Pérez">
         </div>
         <div class="field-group">
-          <label>Company</label>
+          <label>Empresa</label>
           <input type="text" class="field-input" data-field="company" placeholder="Nosea Global Co., Ltd.">
         </div>
         <div class="field-group">
-          <label>Phone Number</label>
-          <input type="tel" class="field-input" data-field="phone" placeholder="+1 000-000-0000">
+          <label>Teléfono</label>
+          <input type="tel" class="field-input" data-field="phone" placeholder="+52 000-000-0000">
         </div>
         <div class="field-group">
-          <label>Email</label>
-          <input type="email" class="field-input" data-field="email" placeholder="example@email.com">
+          <label>Correo Electrónico</label>
+          <input type="email" class="field-input" data-field="email" placeholder="ejemplo@correo.com">
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Send Quote Request<span class="material-symbols-outlined">send</span></button>
+          <button class="btn-next" data-next disabled>Enviar Solicitud<span class="material-symbols-outlined">send</span></button>
         </div>
       </div>
 
@@ -479,11 +479,11 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
         <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
         <div class="quote-complete">
           <div class="quote-complete-icon"><span class="material-symbols-outlined">check_circle</span></div>
-          <h2 id="completeTitle">Your Quote Request is Ready</h2>
-          <p id="completeSub">Review the details below, then click the button to send it directly to our team.<br>We'll respond within 24 hours.</p>
+          <h2 id="completeTitle">Su Solicitud de Cotización Está Lista</h2>
+          <p id="completeSub">Revise los detalles a continuación, luego haga clic en el botón para enviarla directamente a nuestro equipo.<br>Responderemos dentro de 24 horas.</p>
           <div class="summary-card" id="summaryCard"></div>
           <div class="quote-actions">
-            <button class="btn-next" id="sendEmailBtn">Send Quote Request<span class="material-symbols-outlined">send</span></button>
+            <button class="btn-next" id="sendEmailBtn">Enviar Solicitud<span class="material-symbols-outlined">send</span></button>
           </div>
         </div>
       </div>
@@ -492,7 +492,7 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
   </div>
   <div class="contact-person">
     <span class="material-symbols-outlined">support_agent</span>
-    <span>Quote Contact: <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a></span>
+    <span>Contacto de Cotizaciones: <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a></span>
   </div>
 </section>
 
@@ -502,32 +502,32 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
       <div class="footer-logo">
         <svg viewBox="0 0 210 48" style="height:36px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
       </div>
-      <p class="footer-desc">Your specialist in Mexico import and export logistics. Integrity, speed, and precision in every shipment.</p>
+      <p class="footer-desc">Su especialista en logística de importación y exportación para México. Integridad, velocidad y precisión en cada envío.</p>
     </div>
     <div class="footer-col">
-      <h5>Services</h5>
+      <h5>Servicios</h5>
       <ul>
-        <li><a href="services.html#sea-freight">Ocean Logistics</a></li>
-        <li><a href="services.html#air-freight">Air Freight</a></li>
-        <li><a href="services.html#customs">Customs Brokerage</a></li>
-        <li><a href="services.html#inland">LTL / FTL Trucking</a></li>
+        <li><a href="services-es.html#sea-freight">Logística Marítima</a></li>
+        <li><a href="services-es.html#air-freight">Transporte Aéreo</a></li>
+        <li><a href="services-es.html#customs">Agenciamiento Aduanal</a></li>
+        <li><a href="services-es.html#inland">Transporte LTL/FTL</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Process</h5>
+      <h5>Proceso</h5>
       <ul>
-        <li><a href="process.html#timeline">Shipping Process</a></li>
-        <li><a href="process.html#faq">FAQ</a></li>
+        <li><a href="process-es.html#timeline">Proceso de Envío</a></li>
+        <li><a href="process-es.html#faq">Preguntas Frecuentes</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Contact</h5>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">location_on</span><span>Mexico City HQ · Asia Operations Branch</span></div>
+      <h5>Contacto</h5>
+      <div class="footer-contact-item"><span class="material-symbols-outlined">location_on</span><span>HQ Ciudad de México · Sucursal de Operaciones Asia</span></div>
       <div class="footer-contact-item"><span class="material-symbols-outlined">mail</span><a href="mailto:operation.nosea@gmail.com" style="color:rgba(255,255,255,.6);">operation.nosea@gmail.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&#169; 2025 Nosea Global Logistics. All Rights Reserved.</span>
+    <span>&#169; 2025 Nosea Global Logistics. Todos los derechos reservados.</span>
   </div>
 </footer>
 
@@ -551,16 +551,16 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 
 // City / Port dataset for origin-destination autocomplete (UN/LOCODE style codes)
 const CITY_DATA=[
-  {city:'Manzanillo',country:'Mexico',code:'MXZLO'},
-  {city:'Lazaro Cardenas',country:'Mexico',code:'MXLZC'},
-  {city:'Veracruz',country:'Mexico',code:'MXVER'},
-  {city:'Altamira',country:'Mexico',code:'MXATM'},
-  {city:'Ensenada',country:'Mexico',code:'MXENS'},
-  {city:'Mexico City',country:'Mexico',code:'MXMEX'},
-  {city:'Guadalajara',country:'Mexico',code:'MXGDL'},
-  {city:'Monterrey',country:'Mexico',code:'MXMTY'},
-  {city:'Tijuana',country:'Mexico',code:'MXTIJ'},
-  {city:'Nuevo Laredo',country:'Mexico',code:'MXNLD'},
+  {city:'Manzanillo',country:'México',code:'MXZLO'},
+  {city:'Lazaro Cardenas',country:'México',code:'MXLZC'},
+  {city:'Veracruz',country:'México',code:'MXVER'},
+  {city:'Altamira',country:'México',code:'MXATM'},
+  {city:'Ensenada',country:'México',code:'MXENS'},
+  {city:'Ciudad de México',country:'México',code:'MXMEX'},
+  {city:'Guadalajara',country:'México',code:'MXGDL'},
+  {city:'Monterrey',country:'México',code:'MXMTY'},
+  {city:'Tijuana',country:'México',code:'MXTIJ'},
+  {city:'Nuevo Laredo',country:'México',code:'MXNLD'},
   {city:'Shanghai',country:'China',code:'CNSHA'},
   {city:'Shenzhen',country:'China',code:'CNSZX'},
   {city:'Ningbo',country:'China',code:'CNNGB'},
@@ -569,22 +569,22 @@ const CITY_DATA=[
   {city:'Tianjin',country:'China',code:'CNTSN'},
   {city:'Xiamen',country:'China',code:'CNXMN'},
   {city:'Hong Kong',country:'Hong Kong',code:'HKHKG'},
-  {city:'Busan',country:'South Korea',code:'KRPUS'},
-  {city:'Incheon',country:'South Korea',code:'KRICN'},
+  {city:'Busan',country:'Corea del Sur',code:'KRPUS'},
+  {city:'Incheon',country:'Corea del Sur',code:'KRICN'},
   {city:'Ho Chi Minh City',country:'Vietnam',code:'VNSGN'},
   {city:'Hai Phong',country:'Vietnam',code:'VNHPH'},
-  {city:'Singapore',country:'Singapore',code:'SGSIN'},
-  {city:'Port Klang',country:'Malaysia',code:'MYPKG'},
-  {city:'Laem Chabang',country:'Thailand',code:'THLCH'},
+  {city:'Singapore',country:'Singapur',code:'SGSIN'},
+  {city:'Port Klang',country:'Malasia',code:'MYPKG'},
+  {city:'Laem Chabang',country:'Tailandia',code:'THLCH'},
   {city:'Jakarta',country:'Indonesia',code:'IDJKT'},
-  {city:'Tokyo',country:'Japan',code:'JPTYO'},
-  {city:'Yokohama',country:'Japan',code:'JPYOK'},
-  {city:'Los Angeles',country:'United States',code:'USLAX'},
-  {city:'Long Beach',country:'United States',code:'USLGB'},
-  {city:'New York',country:'United States',code:'USNYC'},
-  {city:'Houston',country:'United States',code:'USHOU'},
-  {city:'Rotterdam',country:'Netherlands',code:'NLRTM'},
-  {city:'Hamburg',country:'Germany',code:'DEHAM'},
+  {city:'Tokyo',country:'Japón',code:'JPTYO'},
+  {city:'Yokohama',country:'Japón',code:'JPYOK'},
+  {city:'Los Angeles',country:'Estados Unidos',code:'USLAX'},
+  {city:'Long Beach',country:'Estados Unidos',code:'USLGB'},
+  {city:'New York',country:'Estados Unidos',code:'USNYC'},
+  {city:'Houston',country:'Estados Unidos',code:'USHOU'},
+  {city:'Rotterdam',country:'Países Bajos',code:'NLRTM'},
+  {city:'Hamburg',country:'Alemania',code:'DEHAM'},
 ];
 
 // Autocomplete
@@ -610,7 +610,7 @@ document.querySelectorAll('[data-autocomplete]').forEach(input=>{
       ).slice(0,8);
     }
     if(matches.length===0){
-      list.innerHTML='<div class="autocomplete-empty">No matching city or port found</div>';
+      list.innerHTML='<div class="autocomplete-empty">No se encontró ninguna ciudad o puerto</div>';
     }else{
       list.innerHTML=matches.map(c=>
         `<div class="autocomplete-item" data-city="${c.city}" data-country="${c.country}" data-code="${c.code}">
@@ -698,17 +698,17 @@ document.querySelectorAll('[data-back]').forEach(btn=>{
 
 function renderSummary(){
   const rows=[
-    ['Mode',quoteData.mode],
-    ['Origin',quoteData.origin],
-    ['Destination',quoteData.destination],
+    ['Modalidad',quoteData.mode],
+    ['Origen',quoteData.origin],
+    ['Destino',quoteData.destination],
     ['Incoterms',quoteData.incoterms],
-    ['Commodity',quoteData.item],
-    ['Weight / Volume',[quoteData.weight,quoteData.cbm].filter(Boolean).join(' / ')],
-    ['Quantity',quoteData.quantity],
-    ['Name',quoteData.name],
-    ['Company',quoteData.company],
-    ['Phone',quoteData.phone],
-    ['Email',quoteData.email],
+    ['Mercancía',quoteData.item],
+    ['Peso / Volumen',[quoteData.weight,quoteData.cbm].filter(Boolean).join(' / ')],
+    ['Cantidad',quoteData.quantity],
+    ['Nombre',quoteData.name],
+    ['Empresa',quoteData.company],
+    ['Teléfono',quoteData.phone],
+    ['Correo',quoteData.email],
   ];
   document.getElementById('summaryCard').innerHTML=rows
     .filter(r=>r[1])
@@ -719,22 +719,22 @@ function renderSummary(){
 const sendEmailBtn=document.getElementById('sendEmailBtn');
 sendEmailBtn.addEventListener('click',async()=>{
   sendEmailBtn.disabled=true;
-  sendEmailBtn.innerHTML='Sending…<span class="material-symbols-outlined">progress_activity</span>';
+  sendEmailBtn.innerHTML='Enviando…<span class="material-symbols-outlined">progress_activity</span>';
 
   const payload={
-    _subject:'[Quote Request] '+(quoteData.company||quoteData.name||'New Inquiry'),
-    'Mode of Transport':quoteData.mode||'-',
-    'Origin':quoteData.origin||'-',
-    'Destination':quoteData.destination||'-',
+    _subject:'[Solicitud de Cotización] '+(quoteData.company||quoteData.name||'Nueva Consulta'),
+    'Modalidad de Transporte':quoteData.mode||'-',
+    'Origen':quoteData.origin||'-',
+    'Destino':quoteData.destination||'-',
     'Incoterms':quoteData.incoterms||'-',
-    'Commodity':quoteData.item||'-',
-    'Weight (kg)':quoteData.weight||'-',
-    'Volume (CBM)':quoteData.cbm||'-',
-    'Quantity':quoteData.quantity||'-',
-    'Name':quoteData.name||'-',
-    'Company':quoteData.company||'-',
-    'Phone':quoteData.phone||'-',
-    'Email':quoteData.email||'-',
+    'Mercancía':quoteData.item||'-',
+    'Peso (kg)':quoteData.weight||'-',
+    'Volumen (CBM)':quoteData.cbm||'-',
+    'Cantidad':quoteData.quantity||'-',
+    'Nombre':quoteData.name||'-',
+    'Empresa':quoteData.company||'-',
+    'Teléfono':quoteData.phone||'-',
+    'Correo':quoteData.email||'-',
   };
 
   try{
@@ -745,13 +745,13 @@ sendEmailBtn.addEventListener('click',async()=>{
     });
     if(!res.ok) throw new Error('Request failed');
 
-    document.getElementById('completeTitle').textContent='Your Quote Request Has Been Sent';
-    document.getElementById('completeSub').innerHTML='Your request was delivered directly to our team.<br>We\'ll respond within 24 hours.';
-    sendEmailBtn.innerHTML='Sent<span class="material-symbols-outlined">check_circle</span>';
+    document.getElementById('completeTitle').textContent='Su Solicitud Ha Sido Enviada';
+    document.getElementById('completeSub').innerHTML='Su solicitud fue entregada directamente a nuestro equipo.<br>Responderemos dentro de 24 horas.';
+    sendEmailBtn.innerHTML='Enviado<span class="material-symbols-outlined">check_circle</span>';
   }catch(err){
     sendEmailBtn.disabled=false;
-    sendEmailBtn.innerHTML='Send Quote Request<span class="material-symbols-outlined">send</span>';
-    document.getElementById('completeSub').innerHTML='Something went wrong sending your request.<br>Please try again, or email us directly at <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a>.';
+    sendEmailBtn.innerHTML='Enviar Solicitud<span class="material-symbols-outlined">send</span>';
+    document.getElementById('completeSub').innerHTML='Ocurrió un error al enviar su solicitud.<br>Por favor intente de nuevo, o escríbanos directamente a <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a>.';
   }
 });
 </script>
