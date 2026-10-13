@@ -321,6 +321,26 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
 }
 </style>
 <style id="ko-typo">body{word-break:keep-all;overflow-wrap:break-word;}h1,h2,h3,h4,h5{text-wrap:balance;}p,li,label,summary,td,th{text-wrap:pretty;text-wrap:balance;}@media(max-width:768px){.br-pc{display:none;}}</style>
+<!-- Google tag (gtag.js) - GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B38WF4MDHT"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-B38WF4MDHT');
+// Track email links and "Get a Quote" CTAs across the site
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]');
+  if(!a) return;
+  var h=a.getAttribute('href')||'';
+  var loc=a.closest('footer')?'footer':(a.closest('header,.nav-drawer')?'nav':'content');
+  if(h.indexOf('mailto:')===0){
+    gtag('event','email_click',{link_location:loc});
+  }else if(/^contact(-es|-ko)?\.html/.test(h)&&!/contact(-es|-ko)?\.html$/.test(location.pathname)){
+    gtag('event','quote_cta_click',{link_location:loc,link_text:a.textContent.trim().slice(0,50)});
+  }
+},true);
+</script>
 </head>
 <body>
 
