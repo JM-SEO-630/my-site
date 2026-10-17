@@ -28,11 +28,11 @@
     "@type": "Organization",
     "name": "Nosea Global",
     "url": "https://noseaglobal.com/",
-    "email": "operation.nosea@gmail.com",
+    "email": "nosea.op@noseaglobal.com",
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "operation.nosea@gmail.com",
+      "email": "nosea.op@noseaglobal.com",
       "availableLanguage": ["Korean", "English", "Spanish"]
     }
   }
@@ -549,7 +549,7 @@ document.addEventListener('click',function(e){
   </div>
   <div class="contact-person">
     <span class="material-symbols-outlined">support_agent</span>
-    <span>견적 담당: <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a></span>
+    <span>견적 담당: <a href="mailto:nosea.op@noseaglobal.com">nosea.op@noseaglobal.com</a></span>
   </div>
 </section>
 
@@ -580,7 +580,7 @@ document.addEventListener('click',function(e){
     <div class="footer-col">
       <h5>문의하기</h5>
       <div class="footer-contact-item"><span class="material-symbols-outlined">location_on</span><span>멕시코시티 본사 · 아시아 운영 지사</span></div>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">mail</span><a href="mailto:operation.nosea@gmail.com" style="color:rgba(255,255,255,.6);">operation.nosea@gmail.com</a></div>
+      <div class="footer-contact-item"><span class="material-symbols-outlined">mail</span><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -796,7 +796,7 @@ sendEmailBtn.addEventListener('click',async()=>{
   };
 
   try{
-    const res=await fetch('https://formsubmit.co/ajax/operation.nosea@gmail.com',{
+    const res=await fetch('https://formsubmit.co/ajax/nosea.op@noseaglobal.com',{
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify(payload),
@@ -811,7 +811,7 @@ sendEmailBtn.addEventListener('click',async()=>{
     gtag('event','quote_submit_error',{form_name:'quote_request'});
     sendEmailBtn.disabled=false;
     sendEmailBtn.innerHTML='견적 요청 보내기<span class="material-symbols-outlined">send</span>';
-    document.getElementById('completeSub').innerHTML='요청 전송 중 오류가 발생했습니다.<br>다시 시도해 주시거나 <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a>으로 직접 문의해 주십시오.';
+    document.getElementById('completeSub').innerHTML='요청 전송 중 오류가 발생했습니다.<br>다시 시도해 주시거나 <a href="mailto:nosea.op@noseaglobal.com">nosea.op@noseaglobal.com</a>으로 직접 문의해 주십시오.';
   }
 });
 </script>
