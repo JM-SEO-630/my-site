@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/profile", "destination": "/NOSEA-Company-Profile-EN.pdf", "permanent": false },
+    { "source": "/profile-es", "destination": "/NOSEA-Company-Profile-ES.pdf", "permanent": false }
+  ]
+}
