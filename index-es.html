@@ -51,8 +51,6 @@ img{display:block;max-width:100%;}
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out;}
 .fade-up.visible{opacity:1;transform:translateY(0);}
 
-/* Upload Overlay hidden */
-.upload-overlay{display:none !important;}
 .slide-badge{display:none !important;}
 
 /* Header */
@@ -87,11 +85,10 @@ nav{display:flex;align-items:center;justify-content:space-between;width:100%;max
 .nav-drawer .drawer-lang a.active{color:var(--cyan);}
 
 /* Logo */
-#logo-upload-zone{display:inline-flex;align-items:center;}
+#site-logo{display:inline-flex;align-items:center;}
 #default-logo{display:flex;align-items:center;gap:.75rem;}
 #logo-icon{position:relative;width:24px;height:24px;flex-shrink:0;}
 .logo-text{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;text-transform:uppercase;color:#fff;}
-#logo-upload-zone .upload-overlay{border-radius:4px;}
 
 /* Hero */
 #home{position:relative;height:100vh;display:flex;align-items:center;background:var(--navy);overflow:hidden;}
@@ -406,15 +403,9 @@ document.addEventListener('click',function(e){
 
 <header>
   <nav>
-    <div id="logo-upload-zone">
+    <div id="site-logo">
       <div id="default-logo">
         <svg viewBox="0 0 210 48" style="height:42px;width:auto;display:block;" aria-label="Nosea Global" xmlns="http://www.w3.org/2000/svg"><path d="M21 4 L4 38 L21 30 Z" fill="#ffffff"/><path d="M21 4 L21 30 L33 24 Z" fill="#00BFFF"/><path d="M13 32 L21 30 L21 40 Z" fill="#ffffff" fill-opacity="0.45"/><text x="42" y="32" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#ffffff">Nosea Global</text></svg>
-      </div>
-      <div class="upload-overlay">
-        <div class="upload-label">
-          <span class="material-symbols-outlined">upload</span>
-          <span>로고 교체</span>
-        </div>
       </div>
     </div>
     <div class="nav-links">
