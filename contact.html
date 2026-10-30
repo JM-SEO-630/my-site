@@ -368,10 +368,10 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
 
 /* ── QUOTE STEP FORM (Toss-style one-question-per-screen) ── */
 .quote-section{background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.25rem 1.25rem 4rem;}
-.quote-container{width:100%;max-width:560px;background:#fff;border-radius:20px;box-shadow:0 12px 40px rgba(10,22,40,.08);overflow:hidden;}
-.quote-progress{height:4px;background:rgba(0,191,255,.12);}
+.quote-container{width:100%;max-width:560px;background:#fff;border-radius:20px;box-shadow:0 12px 40px rgba(10,22,40,.08);}
+.quote-progress{height:4px;background:rgba(0,191,255,.12);border-radius:20px 20px 0 0;overflow:hidden;}
 .quote-progress-bar{height:100%;width:20%;background:var(--cyan);transition:width .4s ease;}
-.quote-steps{position:relative;padding:2.25rem 2.25rem 2rem;}
+.quote-steps{position:relative;padding:2.25rem 2.25rem 2rem;overflow-x:clip;}
 .quote-step{display:none;animation:quoteIn .35s ease;}
 .quote-step.active{display:block;}
 @keyframes quoteIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:translateX(0);}}
@@ -409,25 +409,153 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
 .summary-row:last-child{border-bottom:none;}
 .summary-row span:first-child{color:#9aa3af;font-weight:700;flex-shrink:0;}
 .summary-row span:last-child{color:var(--navy);text-align:right;}
+.send-error{display:none;background:var(--surface);border-left:3px solid var(--navy);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.5rem;text-align:left;font-size:.85rem;color:var(--navy);line-height:1.6;}
+.send-error.show{display:block;}
+.send-error b{display:block;margin-bottom:.25rem;}
+.send-error a{color:var(--navy);font-weight:700;text-decoration:underline;}
+.btn-next.is-sending .material-symbols-outlined{animation:qspin 1s linear infinite;}
+@keyframes qspin{to{transform:rotate(360deg);}}
+.step-back.is-hidden{visibility:hidden;}
 .contact-person{width:100%;max-width:560px;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.5rem;font-size:.82rem;color:#9aa3af;}
 .contact-person a{color:var(--cyan);font-weight:700;}
 .contact-person .material-symbols-outlined{font-size:1rem;}
 .autocomplete-wrap{position:relative;}
-.autocomplete-list{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #e9ecef;border-radius:10px;box-shadow:0 8px 24px rgba(10,22,40,.1);max-height:220px;overflow-y:auto;z-index:10;}
+.autocomplete-list{display:none;position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1px solid #e9ecef;border-radius:10px;box-shadow:0 8px 24px rgba(10,22,40,.1);max-height:300px;overflow-y:auto;z-index:10;}
 .autocomplete-list.open{display:block;}
-.autocomplete-item{display:flex;align-items:center;gap:.5rem;padding:.65rem 1rem;cursor:pointer;font-size:.88rem;color:var(--navy);}
-.autocomplete-item:hover,.autocomplete-item.highlighted{background:var(--surface);}
-.ac-tags{display:flex;align-items:center;gap:.4rem;flex:1;min-width:0;}
-.ac-tag{display:inline-flex;align-items:center;font-size:.78rem;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
-.ac-tag-country{background:rgba(10,22,40,.06);color:var(--navy);}
-.ac-tag-city{background:rgba(0,191,255,.1);color:#0089b3;}
-.ac-code{margin-left:auto;flex-shrink:0;font-size:.66rem;color:#c7ccd3;font-weight:500;letter-spacing:.02em;}
-.autocomplete-empty{padding:.85rem 1rem;font-size:.82rem;color:#9aa3af;}
+.ac-group{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem 1rem .4rem;background:var(--surface);font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid #e9ecef;}
+.ac-group small{font-size:.66rem;font-weight:700;letter-spacing:.02em;text-transform:none;color:#9aa3af;}
+.autocomplete-item{display:flex;align-items:center;gap:.6rem;padding:.6rem 1rem;cursor:pointer;font-size:.88rem;color:var(--navy);}
+.autocomplete-item:hover,.autocomplete-item.highlighted{background:rgba(0,191,255,.08);}
+.autocomplete-item .material-symbols-outlined{font-size:1.05rem;color:#9aa3af;flex-shrink:0;}
+.ac-name{flex:1;min-width:0;display:flex;flex-direction:column;}
+.ac-name b{font-weight:700;}
+.ac-name small{font-size:.72rem;color:#9aa3af;}
+.ac-code{margin-left:auto;flex-shrink:0;font-size:.74rem;font-weight:700;color:#0089b3;background:rgba(0,191,255,.1);padding:2px 8px;border-radius:20px;letter-spacing:.02em;}
+.autocomplete-empty{padding:.85rem 1rem;font-size:.82rem;color:#6b7280;line-height:1.5;}
 select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239aa3af'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:20px;padding-right:2.75rem;}
+textarea.field-input{resize:vertical;min-height:84px;line-height:1.5;}
+.field-group label .req,.field-label .req{color:var(--cyan);}
+.field-group label .opt,.field-label .opt{font-weight:500;color:#9aa3af;font-size:.74rem;}
+.field-label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);}
+.field-hint{font-size:.76rem;color:#6b7280;line-height:1.5;margin-top:.45rem;}
+.field-hint-block{margin:-.6rem 0 1.4rem;}
+.field-error{display:none;align-items:flex-start;gap:.35rem;margin-top:.45rem;font-size:.78rem;font-weight:700;color:var(--navy);line-height:1.45;}
+.field-error.show{display:flex;}
+.field-error::before{content:'error';font-family:'Material Symbols Outlined';font-size:1rem;line-height:1.15;font-weight:400;color:var(--navy);}
+.field-input.invalid{border-color:var(--navy);}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.hp-field{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+.mode-block{display:none;}
+.mode-block.show{display:block;}
+.label-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:.1rem;}
+.unit-toggle{display:inline-flex;border:2px solid #e9ecef;border-radius:10px;overflow:hidden;flex-shrink:0;}
+.unit-toggle button{background:#fff;border:none;padding:.35rem .8rem;font-family:inherit;font-size:.78rem;font-weight:700;color:#9aa3af;cursor:pointer;}
+.unit-toggle button.active{background:var(--navy);color:#fff;}
+.row-list{display:flex;flex-direction:column;gap:.6rem;margin-top:.6rem;}
+.cnt-row{display:grid;grid-template-columns:1fr 92px 40px;gap:.5rem;align-items:center;}
+.dim-row{border:2px solid #e9ecef;border-radius:12px;padding:.7rem .75rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;}
+.dim-row .dim-cell{display:flex;flex-direction:column;gap:.25rem;min-width:0;}
+.dim-row .dim-cell .dim-lab{font-size:.74rem;font-weight:700;color:var(--navy);line-height:1.3;}
+.unit-wrap{position:relative;display:block;}
+.unit-wrap .field-input{padding-right:2.4rem;}
+.unit-suf{position:absolute;right:.65rem;top:50%;transform:translateY(-50%);font-size:.76rem;font-weight:700;color:#6b7280;pointer-events:none;}
+.dim-row .field-input,.cnt-row .field-input{padding:.65rem .7rem;font-size:.95rem;}
+.dim-row .dim-foot{grid-column:1 / -1;display:grid;grid-template-columns:110px 1fr 40px;gap:.6rem;align-items:end;}
+.dim-formula{font-size:.8rem;color:var(--navy);line-height:1.4;padding-bottom:.55rem;min-width:0;overflow-wrap:anywhere;}
+.dim-formula b{white-space:nowrap;font-weight:800;}
+.dim-formula.is-empty{color:#9aa3af;}
+.dim-formula.is-empty b{font-weight:600;}
+.btn-row-del{width:40px;height:40px;border:none;background:none;border-radius:50%;color:#9aa3af;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;}
+.btn-row-del:hover{background:var(--surface);color:var(--navy);}
+.btn-row-del[disabled]{visibility:hidden;}
+.btn-add{margin-top:.6rem;background:none;border:2px dashed #e9ecef;border-radius:10px;width:100%;padding:.6rem;font-family:inherit;font-size:.82rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.35rem;}
+.btn-add:hover{border-color:rgba(0,191,255,.5);}
+.btn-add .material-symbols-outlined{font-size:1.1rem;color:var(--cyan);}
+.check-line{display:flex !important;align-items:center;gap:.5rem;margin:.85rem 0 0 !important;font-weight:500 !important;font-size:.84rem !important;color:#4b5563 !important;cursor:pointer;}
+.check-line input{width:18px;height:18px;accent-color:var(--navy);}
+#cbmDirectWrap{margin-top:.6rem;}
+#dimArea.is-off{opacity:.45;pointer-events:none;}
+.calc-box{background:var(--surface);border-radius:12px;padding:.85rem 1rem;margin:-.4rem 0 1.4rem;font-size:.84rem;color:var(--navy);}
+.calc-box:empty{display:none;}
+.calc-row{display:flex;justify-content:space-between;gap:1rem;padding:.25rem 0;}
+.calc-row span:first-child{color:#6b7280;}
+.calc-row b{text-align:right;}
+.calc-row.is-main b{color:var(--navy);font-size:.95rem;}
+.calc-note{font-size:.72rem;color:#9aa3af;margin-top:.35rem;line-height:1.45;}
+.calc-total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem 1rem;padding:.15rem 0 .55rem;margin-bottom:.3rem;border-bottom:1px solid rgba(0,0,0,.05);}
+.calc-total span{font-weight:700;color:var(--navy);font-size:.9rem;}
+.calc-total b{font-size:1.4rem;font-weight:800;color:var(--navy);}
+.calc-total b small{font-size:.8rem;font-weight:700;color:#6b7280;}
+.ac-country{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;cursor:pointer;font-size:.88rem;color:var(--navy);border-bottom:1px solid #e9ecef;}
+.ac-country:hover,.ac-country.highlighted{background:rgba(0,191,255,.08);}
+.ac-country .material-symbols-outlined{font-size:1.15rem;color:#9aa3af;flex-shrink:0;}
+.ac-country.is-open .material-symbols-outlined{color:var(--cyan);}
+.ac-count{margin-left:auto;flex-shrink:0;font-size:.72rem;color:#9aa3af;text-align:right;}
+.autocomplete-item.is-nested{padding-left:2.2rem;background:rgba(0,191,255,.06);}
+.autocomplete-item.is-nested:hover,.autocomplete-item.is-nested.highlighted{background:rgba(0,191,255,.12);}
+.ac-tag{display:inline-block;margin-left:.4rem;padding:0 6px;border-radius:20px;border:1px solid var(--navy);font-size:.64rem;font-weight:700;color:var(--navy);vertical-align:1px;}
+.field-note{background:var(--surface);border-left:3px solid var(--cyan);border-radius:8px;padding:.5rem .75rem;color:var(--navy);}
+.field-note[hidden]{display:none;}
+.calc-total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem 1rem;padding:.15rem 0 .55rem;margin-bottom:.3rem;border-bottom:1px solid rgba(0,0,0,.05);}
+.calc-total span{font-weight:700;color:var(--navy);font-size:.9rem;}
+.calc-total b{font-size:1.4rem;font-weight:800;color:var(--navy);}
+.calc-total b small{font-size:.8rem;font-weight:700;color:#6b7280;}
+.ac-country{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;cursor:pointer;font-size:.88rem;color:var(--navy);border-bottom:1px solid #e9ecef;}
+.ac-country:hover,.ac-country.highlighted{background:rgba(0,191,255,.08);}
+.ac-country .material-symbols-outlined{font-size:1.15rem;color:#9aa3af;flex-shrink:0;}
+.ac-country.is-open .material-symbols-outlined{color:var(--cyan);}
+.ac-count{margin-left:auto;flex-shrink:0;font-size:.72rem;color:#9aa3af;text-align:right;}
+.autocomplete-item.is-nested{padding-left:2.2rem;background:rgba(0,191,255,.06);}
+.autocomplete-item.is-nested:hover,.autocomplete-item.is-nested.highlighted{background:rgba(0,191,255,.12);}
+.ac-tag{display:inline-block;margin-left:.4rem;padding:0 6px;border-radius:20px;border:1px solid var(--navy);font-size:.64rem;font-weight:700;color:var(--navy);vertical-align:1px;}
+.field-note{background:var(--surface);border-left:3px solid var(--cyan);border-radius:8px;padding:.5rem .75rem;color:var(--navy);}
+.field-note[hidden]{display:none;}
+.calc-total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem 1rem;padding:.15rem 0 .55rem;margin-bottom:.3rem;border-bottom:1px solid rgba(0,0,0,.05);}
+.calc-total span{font-weight:700;color:var(--navy);font-size:.9rem;}
+.calc-total b{font-size:1.4rem;font-weight:800;color:var(--navy);}
+.calc-total b small{font-size:.8rem;font-weight:700;color:#6b7280;}
+.ac-country{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;cursor:pointer;font-size:.88rem;color:var(--navy);border-bottom:1px solid #e9ecef;}
+.ac-country:hover,.ac-country.highlighted{background:rgba(0,191,255,.08);}
+.ac-country .material-symbols-outlined{font-size:1.15rem;color:#9aa3af;flex-shrink:0;}
+.ac-country.is-open .material-symbols-outlined{color:var(--cyan);}
+.ac-count{margin-left:auto;flex-shrink:0;font-size:.72rem;color:#9aa3af;text-align:right;}
+.autocomplete-item.is-nested{padding-left:2.2rem;background:rgba(0,191,255,.06);}
+.autocomplete-item.is-nested:hover,.autocomplete-item.is-nested.highlighted{background:rgba(0,191,255,.12);}
+.ac-tag{display:inline-block;margin-left:.4rem;padding:0 6px;border-radius:20px;border:1px solid var(--navy);font-size:.64rem;font-weight:700;color:var(--navy);vertical-align:1px;}
+.field-note{background:var(--surface);border-left:3px solid var(--cyan);border-radius:8px;padding:.5rem .75rem;color:var(--navy);}
+.field-note[hidden]{display:none;}
+.calc-total{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.25rem 1rem;padding:.15rem 0 .55rem;margin-bottom:.3rem;border-bottom:1px solid rgba(0,0,0,.05);}
+.calc-total span{font-weight:700;color:var(--navy);font-size:.9rem;}
+.calc-total b{font-size:1.4rem;font-weight:800;color:var(--navy);}
+.calc-total b small{font-size:.8rem;font-weight:700;color:#6b7280;}
+.ac-country{display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem;cursor:pointer;font-size:.88rem;color:var(--navy);border-bottom:1px solid #e9ecef;}
+.ac-country:hover,.ac-country.highlighted{background:rgba(0,191,255,.08);}
+.ac-country .material-symbols-outlined{font-size:1.15rem;color:#9aa3af;flex-shrink:0;}
+.ac-country.is-open .material-symbols-outlined{color:var(--cyan);}
+.ac-count{margin-left:auto;flex-shrink:0;font-size:.72rem;color:#9aa3af;text-align:right;}
+.autocomplete-item.is-nested{padding-left:2.2rem;background:rgba(0,191,255,.06);}
+.autocomplete-item.is-nested:hover,.autocomplete-item.is-nested.highlighted{background:rgba(0,191,255,.12);}
+.ac-tag{display:inline-block;margin-left:.4rem;padding:0 6px;border-radius:20px;border:1px solid var(--navy);font-size:.64rem;font-weight:700;color:var(--navy);vertical-align:1px;}
+.field-note{background:var(--surface);border-left:3px solid var(--cyan);border-radius:8px;padding:.5rem .75rem;color:var(--navy);}
+.field-note[hidden]{display:none;}
+.summary-row span:last-child{white-space:pre-line;word-break:break-word;}
+.quote-steps h2[tabindex="-1"]:focus{outline:none;}
 @media(max-width:480px){
   .quote-steps{padding:2.25rem 1.5rem 2rem;min-height:0;}
   .quote-q{font-size:1.3rem;}
   .field-row{grid-template-columns:1fr;}
+  .quote-section{padding:1.5rem .75rem 3rem;}
+  .quote-steps{padding:1.75rem 1.1rem 1.75rem;}
+  .cnt-row{grid-template-columns:1fr 76px 36px;}
+  .dim-row{padding:.6rem;}
+  .dim-row .dim-foot{grid-template-columns:84px 1fr 36px;}
+  .dim-row{gap:.45rem;}
+  .unit-wrap .field-input{padding-right:2.1rem;padding-left:.55rem;}
+  .unit-suf{right:.5rem;}
+  .btn-row-del{width:36px;height:36px;}
+  .summary-row{flex-direction:column;gap:.15rem;}
+  .summary-row span:last-child{text-align:left;}
+  .field-input{font-size:16px;}
 }
 </style>
 <!-- Google tag (gtag.js) - GA4 -->
@@ -452,7 +580,7 @@ document.addEventListener('click',function(e){
 </script>
 </head>
 <body>
-<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-alt_route" viewBox="0 -960 960 960"><path d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-arrow_forward" viewBox="0 -960 960 960"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></symbol><symbol id="i-check_circle" viewBox="0 -960 960 960"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol><symbol id="i-directions_boat" viewBox="0 -960 960 960"><path d="M152-80h-32v-80h32q48 0 91.5-10.5T341-204q38 19 66.5 31.5T480-160q44 0 72.5-12.5T619-204q53 23 97.5 33.5T809-160h31v80h-31q-49 0-95.5-9T622-116q-40 19-73 27t-69 8q-36 0-68.5-8T339-116q-45 18-91.5 27T152-80Zm223-200-45-40q-27 27-60.5 46T198-247l-85-273q-5-17 3-31t25-19l59-16v-134q0-33 23.5-56.5T280-800h100v-80h200v80h100q33 0 56.5 23.5T760-720v134l59 16q17 5 25 19t3 31l-85 273q-38-8-71.5-27T630-320l-45 40q-45 40-105 40t-105-40Zm107-40q31 0 55-20.5t44-43.5l46-53 41 42q11 11 22.5 20.5T713-355l46-149-279-73-278 73 46 149q11-10 22.5-19.5T293-395l41-42 46 53q20 24 45 44t57 20ZM280-607l200-53 200 53v-113H280v113Zm201 158Z"/></symbol><symbol id="i-flight" viewBox="0 -960 960 960"><path d="M280-80v-100l120-84v-144L80-280v-120l320-224v-176q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800v176l320 224v120L560-408v144l120 84v100l-200-60-200 60Z"/></symbol><symbol id="i-location_on" viewBox="0 -960 960 960"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></symbol><symbol id="i-mail" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></symbol><symbol id="i-progress_activity" viewBox="0 -960 960 960"><path d="M325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480.5-80Q398-80 325-111.5Z"/></symbol><symbol id="i-send" viewBox="0 -960 960 960"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></symbol><symbol id="i-support_agent" viewBox="0 -960 960 960"><path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440ZM331.5-411.5Q320-423 320-440t11.5-28.5Q343-480 360-480t28.5 11.5Q400-457 400-440t-11.5 28.5Q377-400 360-400t-28.5-11.5Zm240 0Q560-423 560-440t11.5-28.5Q583-480 600-480t28.5 11.5Q640-457 640-440t-11.5 28.5Q617-400 600-400t-28.5-11.5ZM241-462q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/></symbol></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-add" viewBox="0 -960 960 960"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></symbol><symbol id="i-alt_route" viewBox="0 -960 960 960"><path d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-arrow_forward" viewBox="0 -960 960 960"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></symbol><symbol id="i-check_circle" viewBox="0 -960 960 960"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol><symbol id="i-chevron_right" viewBox="0 -960 960 960"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></symbol><symbol id="i-close" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></symbol><symbol id="i-directions_boat" viewBox="0 -960 960 960"><path d="M152-80h-32v-80h32q48 0 91.5-10.5T341-204q38 19 66.5 31.5T480-160q44 0 72.5-12.5T619-204q53 23 97.5 33.5T809-160h31v80h-31q-49 0-95.5-9T622-116q-40 19-73 27t-69 8q-36 0-68.5-8T339-116q-45 18-91.5 27T152-80Zm223-200-45-40q-27 27-60.5 46T198-247l-85-273q-5-17 3-31t25-19l59-16v-134q0-33 23.5-56.5T280-800h100v-80h200v80h100q33 0 56.5 23.5T760-720v134l59 16q17 5 25 19t3 31l-85 273q-38-8-71.5-27T630-320l-45 40q-45 40-105 40t-105-40Zm107-40q31 0 55-20.5t44-43.5l46-53 41 42q11 11 22.5 20.5T713-355l46-149-279-73-278 73 46 149q11-10 22.5-19.5T293-395l41-42 46 53q20 24 45 44t57 20ZM280-607l200-53 200 53v-113H280v113Zm201 158Z"/></symbol><symbol id="i-expand_more" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></symbol><symbol id="i-flight" viewBox="0 -960 960 960"><path d="M280-80v-100l120-84v-144L80-280v-120l320-224v-176q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800v176l320 224v120L560-408v144l120 84v100l-200-60-200 60Z"/></symbol><symbol id="i-handshake" viewBox="0 -960 960 960"><path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/></symbol><symbol id="i-help" viewBox="0 -960 960 960"><path d="M513.5-254.5Q528-269 528-290t-14.5-35.5Q499-340 478-340t-35.5 14.5Q428-311 428-290t14.5 35.5Q457-240 478-240t35.5-14.5ZM442-394h74q0-33 7.5-52t42.5-52q26-26 41-49.5t15-56.5q0-56-41-86t-97-30q-57 0-92.5 30T342-618l66 26q5-18 22.5-39t53.5-21q32 0 48 17.5t16 38.5q0 20-12 37.5T506-526q-44 39-54 59t-10 73Zm38 314q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol><symbol id="i-inventory_2" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-451q-18-11-29-28.5T80-680v-120q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v120q0 23-11 40.5T840-611v451q0 33-23.5 56.5T760-80H200Zm0-520v440h560v-440H200Zm-40-80h640v-120H160v120Zm200 280h240v-80H360v80Zm120 20Z"/></symbol><symbol id="i-local_shipping" viewBox="0 -960 960 960"><path d="M155-195q-35-35-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35q-50 0-85-35Zm113.5-56.5Q280-263 280-280t-11.5-28.5Q257-320 240-320t-28.5 11.5Q200-297 200-280t11.5 28.5Q223-240 240-240t28.5-11.5ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm628.5 108.5Q760-263 760-280t-11.5-28.5Q737-320 720-320t-28.5 11.5Q680-297 680-280t11.5 28.5Q703-240 720-240t28.5-11.5ZM680-440h170l-90-120h-80v120ZM360-540Z"/></symbol><symbol id="i-location_city" viewBox="0 -960 960 960"><path d="M120-120v-560h240v-80l120-120 120 120v240h240v400H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm240 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm240 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></symbol><symbol id="i-location_on" viewBox="0 -960 960 960"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></symbol><symbol id="i-mail" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></symbol><symbol id="i-progress_activity" viewBox="0 -960 960 960"><path d="M325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480.5-80Q398-80 325-111.5Z"/></symbol><symbol id="i-public" viewBox="0 -960 960 960"><path d="M324-111.5Q251-143 197-197t-85.5-127Q80-397 80-480t31.5-156Q143-709 197-763t127-85.5Q397-880 480-880t156 31.5Q709-817 763-763t85.5 127Q880-563 880-480t-31.5 156Q817-251 763-197t-127 85.5Q563-80 480-80t-156-31.5ZM440-162v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm276-102q41-45 62.5-100.5T800-480q0-98-54.5-179T600-776v16q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q26 0 47 15.5t29 40.5Z"/></symbol><symbol id="i-rate_review" viewBox="0 -960 960 960"><path d="M240-400h122l200-200q9-9 13.5-20.5T580-643q0-11-5-21.5T562-684l-36-38q-9-9-20-13.5t-23-4.5q-11 0-22.5 4.5T440-722L240-522v122Zm280-243-37-37 37 37ZM300-460v-38l101-101 20 18 18 20-101 101h-38Zm121-121 18 20-38-38 20 18Zm26 181h273v-80H527l-80 80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></symbol><symbol id="i-refresh" viewBox="0 -960 960 960"><path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"/></symbol><symbol id="i-send" viewBox="0 -960 960 960"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></symbol><symbol id="i-support_agent" viewBox="0 -960 960 960"><path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440ZM331.5-411.5Q320-423 320-440t11.5-28.5Q343-480 360-480t28.5 11.5Q400-457 400-440t-11.5 28.5Q377-400 360-400t-28.5-11.5Zm240 0Q560-423 560-440t11.5-28.5Q583-480 600-480t28.5 11.5Q640-457 640-440t-11.5 28.5Q617-400 600-400t-28.5-11.5ZM241-462q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/></symbol></svg>
 
 <!-- HEADER -->
 <header>
@@ -500,128 +628,200 @@ document.addEventListener('click',function(e){
     <div class="quote-progress"><div class="quote-progress-bar" id="progressBar"></div></div>
     <div class="quote-steps" id="quoteSteps">
 
-      <!-- Step 1: Mode of Transport -->
+      <!-- Step 1: Mode of Transport (auto-advances to step 2) -->
       <div class="quote-step active" data-step="1">
         <span class="quote-step-tag">Step 1 of 5</span>
         <h2 class="quote-q">How would you like to ship?</h2>
-        <p class="quote-sub">Choose the transport mode that fits your cargo.</p>
-        <div class="option-grid">
-          <button class="option-card" data-field="mode" data-value="Ocean Freight (FCL/LCL)">
+        <p class="quote-sub">Choose the option that fits your cargo. Not sure? Pick the closest one — we will advise.</p>
+        <div class="option-grid" role="group" aria-label="How would you like to ship?">
+          <button type="button" class="option-card" data-field="mode" data-value="fcl">
             <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-directions_boat"/></svg>
-            <span class="opt-text"><b>Ocean Freight</b><small>FCL / LCL · Cost-efficient</small></span>
+            <span class="opt-text"><b>Ocean Freight · FCL</b><small>Full container · 20' / 40' / 40' HC</small></span>
           </button>
-          <button class="option-card" data-field="mode" data-value="Air Freight">
+          <button type="button" class="option-card" data-field="mode" data-value="lcl">
+            <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-inventory_2"/></svg>
+            <span class="opt-text"><b>Ocean Freight · LCL</b><small>Shared container · priced by volume (CBM)</small></span>
+          </button>
+          <button type="button" class="option-card" data-field="mode" data-value="air">
             <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-flight"/></svg>
-            <span class="opt-text"><b>Air Freight</b><small>Fast transit time</small></span>
+            <span class="opt-text"><b>Air Freight</b><small>Fastest transit · priced by chargeable weight</small></span>
           </button>
-          <button class="option-card" data-field="mode" data-value="Multimodal (Sea+Air)">
+          <button type="button" class="option-card" data-field="mode" data-value="multi">
             <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-alt_route"/></svg>
-            <span class="opt-text"><b>Multimodal</b><small>Sea + Air · Balanced option</small></span>
+            <span class="opt-text"><b>Multimodal</b><small>Sea + Air · Balanced cost and speed</small></span>
+          </button>
+          <button type="button" class="option-card" data-field="mode" data-value="customs">
+            <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-local_shipping"/></svg>
+            <span class="opt-text"><b>Customs &amp; Inland Trucking Only</b><small>Customs clearance or trucking in Mexico</small></span>
           </button>
         </div>
       </div>
 
       <!-- Step 2: Route & Incoterms -->
       <div class="quote-step" data-step="2">
-        <button class="step-back" data-back aria-label="Previous step"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
+        <button type="button" class="step-back" data-back aria-label="Back"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <span class="quote-step-tag">Step 2 of 5</span>
         <h2 class="quote-q">What's the route?</h2>
-        <p class="quote-sub">Search by city or port name (e.g. Manzanillo, Shanghai).</p>
+        <p class="quote-sub" id="routeSub"></p>
         <div class="field-group autocomplete-wrap">
-          <label>Origin (City / Port)</label>
-          <input type="text" class="field-input" data-field="origin" data-autocomplete="origin" placeholder="e.g. Shenzhen, China (CNSZX)" autocomplete="off">
-          <div class="autocomplete-list" data-list="origin"></div>
+          <label for="qOrigin"><span id="qOriginLabel"></span> <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qOrigin" class="field-input" data-field="origin" data-autocomplete="origin" data-required autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="qOriginList" aria-describedby="qOriginErr">
+          <div class="autocomplete-list" id="qOriginList" data-list="origin" role="listbox"></div>
+          <p class="field-error" id="qOriginErr"></p>
         </div>
         <div class="field-group autocomplete-wrap">
-          <label>Destination (City / Port)</label>
-          <input type="text" class="field-input" data-field="destination" data-autocomplete="destination" placeholder="e.g. Manzanillo, Mexico (MXZLO)" autocomplete="off">
-          <div class="autocomplete-list" data-list="destination"></div>
+          <label for="qDestination"><span id="qDestinationLabel"></span> <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qDestination" class="field-input" data-field="destination" data-autocomplete="destination" data-required autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="qDestinationList" aria-describedby="qDestinationErr">
+          <div class="autocomplete-list" id="qDestinationList" data-list="destination" role="listbox"></div>
+          <p class="field-error" id="qDestinationErr"></p>
         </div>
+        <p class="field-hint field-hint-block">Not in the list? Just type the city, port or airport name.</p>
         <div class="field-group">
-          <label>Incoterms</label>
-          <select class="field-input" data-field="incoterms">
-            <option value="">Select Incoterms 2020</option>
-            <option value="EXW">EXW — Ex Works</option>
-            <option value="FCA">FCA — Free Carrier</option>
-            <option value="FAS">FAS — Free Alongside Ship</option>
-            <option value="FOB">FOB — Free On Board</option>
-            <option value="CFR">CFR — Cost and Freight</option>
-            <option value="CIF">CIF — Cost, Insurance and Freight</option>
-            <option value="CPT">CPT — Carriage Paid To</option>
-            <option value="CIP">CIP — Carriage and Insurance Paid To</option>
-            <option value="DAP">DAP — Delivered At Place</option>
-            <option value="DPU">DPU — Delivered At Place Unloaded</option>
-            <option value="DDP">DDP — Delivered Duty Paid</option>
-          </select>
+          <label for="qIncoterms">Incoterms 2020 <span class="opt">(optional)</span></label>
+          <div class="autocomplete-wrap">
+            <input type="text" id="qIncoterms" class="field-input" data-field="incoterms" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="qIncotermsList" aria-describedby="incoHint incoWarn" placeholder="Search or pick — e.g. FOB, EXW">
+            <div class="autocomplete-list" id="qIncotermsList" role="listbox"></div>
+          </div>
+          <p class="field-hint" id="incoHint">The trade term agreed with your supplier: who pays and carries the risk up to which point. Skip it if you don't know.</p>
+          <p class="field-hint field-note" id="incoWarn" hidden></p>
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Next<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
+          <button type="button" class="btn-next" data-next>Next<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
         </div>
       </div>
 
-      <!-- Step 3: Cargo Details -->
+      <!-- Step 3: Cargo Details (fields depend on the mode chosen in step 1) -->
       <div class="quote-step" data-step="3">
-        <button class="step-back" data-back aria-label="Previous step"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
+        <button type="button" class="step-back" data-back aria-label="Back"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <span class="quote-step-tag">Step 3 of 5</span>
         <h2 class="quote-q">Tell us about your cargo</h2>
-        <p class="quote-sub">Rough estimates are fine.</p>
+        <p class="quote-sub">Rough estimates are fine — we will confirm the details with you.</p>
         <div class="field-group">
-          <label>Commodity</label>
-          <input type="text" class="field-input" data-field="item" placeholder="e.g. Electronics">
+          <label for="qItem">Commodity <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qItem" class="field-input" data-field="item" data-required placeholder="e.g. Auto parts, electronics, furniture" aria-describedby="qItemErr">
+          <p class="field-error" id="qItemErr"></p>
         </div>
-        <div class="field-group">
-          <label>Weight / Volume</label>
-          <div class="field-row">
-            <input type="text" class="field-input" data-field="weight" placeholder="Weight (kg)">
-            <input type="text" class="field-input" data-field="cbm" placeholder="Volume (CBM)">
+
+        <!-- FCL: container type + quantity rows -->
+        <div class="mode-block" data-modes="fcl">
+          <div class="field-group">
+            <span class="field-label" id="cntLabel">Containers <span class="req" aria-hidden="true">*</span></span>
+            <div class="row-list" id="cntRows" role="group" aria-labelledby="cntLabel"></div>
+            <button type="button" class="btn-add" id="addCntBtn"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-add"/></svg>Add another container type</button>
+            <p class="field-error" id="cntErr"></p>
+          </div>
+          <div class="field-group">
+            <label for="qFclWeight">Approx. gross weight per container (kg) <span class="opt">(optional)</span></label>
+            <input type="text" id="qFclWeight" class="field-input" data-field="fclWeight" inputmode="decimal" placeholder="e.g. 18000" aria-describedby="qFclWeightErr">
+            <p class="field-error" id="qFclWeightErr"></p>
+          </div>
+        </div>
+
+        <!-- LCL / Air / Multimodal / Customs: package dimensions, CBM and weight -->
+        <div class="mode-block" data-modes="lcl air multi customs">
+          <div class="field-group">
+            <div class="label-row">
+              <span class="field-label" id="dimLabel">Package dimensions <span class="req" id="dimReq" aria-hidden="true">*</span><span class="opt" id="dimOpt">(optional)</span></span>
+              <div class="unit-toggle" role="group" aria-label="Unit">
+                <button type="button" data-unit="cm" class="active" aria-pressed="true">cm</button>
+                <button type="button" data-unit="in" aria-pressed="false">in</button>
+              </div>
+            </div>
+            <p class="field-hint">Enter the size of one box or pallet, then how many boxes or pallets have that size. Each line shows its volume (CBM = m³).</p>
+            <div id="dimArea">
+              <div class="row-list" id="dimRows" role="group" aria-labelledby="dimLabel"></div>
+              <button type="button" class="btn-add" id="addDimBtn"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-add"/></svg>Add another size</button>
+            </div>
+            <label class="check-line"><input type="checkbox" id="qKnowCbm"> I already know the total volume (CBM)</label>
+            <div id="cbmDirectWrap" hidden>
+              <label for="qCbmDirect" class="sr-only">Total volume (CBM)</label>
+              <input type="text" id="qCbmDirect" class="field-input" data-field="cbmDirect" inputmode="decimal" placeholder="Total CBM, e.g. 4.5" aria-describedby="dimErr">
+            </div>
+            <p class="field-error" id="dimErr"></p>
+          </div>
+          <div class="field-group">
+            <label for="qWeight">Total gross weight (kg) <span class="req" id="weightReq" aria-hidden="true">*</span><span class="opt" id="weightOpt">(optional)</span></label>
+            <input type="text" id="qWeight" class="field-input" data-field="weight" inputmode="decimal" placeholder="e.g. 850" aria-describedby="qWeightErr">
+            <p class="field-error" id="qWeightErr"></p>
+          </div>
+          <div class="calc-box" id="calcBox" aria-live="polite"></div>
+        </div>
+
+        <!-- Common optional details -->
+        <div class="field-row">
+          <div class="field-group">
+            <label for="qReady">Cargo ready date <span class="opt">(optional)</span></label>
+            <input type="date" id="qReady" class="field-input" data-field="readyDate" aria-describedby="qReadyErr">
+            <p class="field-error" id="qReadyErr"></p>
+          </div>
+          <div class="field-group">
+            <label for="qFreq">How often do you ship? <span class="opt">(optional)</span></label>
+            <select id="qFreq" class="field-input" data-field="frequency">
+              <option value="">Select</option>
+              <option value="One-time shipment">One-time shipment</option>
+              <option value="Monthly">Monthly</option>
+              <option value="Several times a month">Several times a month</option>
+              <option value="Weekly or more">Weekly or more</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
           </div>
         </div>
         <div class="field-group">
-          <label>Boxes / Pallets</label>
-          <input type="text" class="field-input" data-field="quantity" placeholder="e.g. 20 boxes">
+          <label for="qNotes">Anything else we should know? <span class="opt">(optional)</span></label>
+          <textarea id="qNotes" class="field-input" data-field="notes" rows="3" placeholder="e.g. HS code, dangerous goods, pickup or delivery address (city), special handling"></textarea>
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Next<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
+          <button type="button" class="btn-next" data-next>Next<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
         </div>
       </div>
 
       <!-- Step 4: Contact Info -->
       <div class="quote-step" data-step="4">
-        <button class="step-back" data-back aria-label="Previous step"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
+        <button type="button" class="step-back" data-back aria-label="Back"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <span class="quote-step-tag">Step 4 of 5</span>
         <h2 class="quote-q">How can we reach you?</h2>
-        <p class="quote-sub">Our team will review and respond shortly.</p>
+        <p class="quote-sub">We only use these details to answer your quote request.</p>
         <div class="field-group">
-          <label>Full Name</label>
-          <input type="text" class="field-input" data-field="name" placeholder="John Doe">
+          <label for="qName">Full Name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="qName" class="field-input" data-field="name" data-required autocomplete="name" placeholder="John Doe" aria-describedby="qNameErr">
+          <p class="field-error" id="qNameErr"></p>
         </div>
         <div class="field-group">
-          <label>Company</label>
-          <input type="text" class="field-input" data-field="company" placeholder="Nosea Global Co., Ltd.">
+          <label for="qCompany">Company <span class="opt">(optional)</span></label>
+          <input type="text" id="qCompany" class="field-input" data-field="company" autocomplete="organization" placeholder="e.g. Importadora Ejemplo S.A. de C.V.">
         </div>
         <div class="field-group">
-          <label>Phone Number</label>
-          <input type="tel" class="field-input" data-field="phone" placeholder="+1 000-000-0000">
+          <label for="qEmail">Email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="qEmail" class="field-input" data-field="email" data-required autocomplete="email" inputmode="email" placeholder="name@company.com" aria-describedby="qEmailErr">
+          <p class="field-error" id="qEmailErr"></p>
         </div>
         <div class="field-group">
-          <label>Email</label>
-          <input type="email" class="field-input" data-field="email" placeholder="example@email.com">
+          <label for="qPhone">Phone / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+          <input type="tel" id="qPhone" class="field-input" data-field="phone" data-required autocomplete="tel" placeholder="+52 55 0000 0000" aria-describedby="qPhoneErr">
+          <p class="field-error" id="qPhoneErr"></p>
+        </div>
+        <!-- Spam trap (formsubmit _honey): hidden from people, bots tend to fill it. Must stay empty. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="qHoney">Leave this field empty</label>
+          <input type="text" id="qHoney" name="_honey" tabindex="-1" autocomplete="off">
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
+          <button type="button" class="btn-next" data-next>Review Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
         </div>
       </div>
 
-      <!-- Step 5: Complete -->
+      <!-- Step 5: Review & Send (nothing is sent until the button below is clicked) -->
       <div class="quote-step" data-step="5">
-        <button class="step-back" data-back aria-label="Previous step"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
+        <button type="button" class="step-back" data-back id="reviewBackBtn" aria-label="Back"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <div class="quote-complete">
-          <div class="quote-complete-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg></div>
-          <h2 id="completeTitle">Your Quote Request is Ready</h2>
-          <p id="completeSub">Review the details below, then click the button to send it directly to our team.<br>We'll respond within 24 hours.</p>
+          <span class="quote-step-tag" id="completeTag">Step 5 of 5 · Final Step</span>
+          <div class="quote-complete-icon"><svg class="material-symbols-outlined" id="completeIcon" aria-hidden="true" focusable="false"><use href="#i-rate_review"/></svg></div>
+          <h2 id="completeTitle">Review and Send Your Request</h2>
+          <p id="completeSub" aria-live="polite">Your request has <b>not been sent yet</b>. Check the details below, then click "Send Quote Request" to deliver it to our team.<br>We'll respond within 24 hours.</p>
           <div class="summary-card" id="summaryCard"></div>
+          <div class="send-error" id="sendError" role="alert"></div>
           <div class="quote-actions">
-            <button class="btn-next" id="sendEmailBtn">Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
+            <button type="button" class="btn-next" id="sendEmailBtn">Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
           </div>
         </div>
       </div>
@@ -687,214 +887,1639 @@ document.querySelectorAll('.faq-item').forEach(item=>{
   });
 });
 
-// City / Port dataset for origin-destination autocomplete (UN/LOCODE style codes)
-const CITY_DATA=[
-  {city:'Manzanillo',country:'Mexico',code:'MXZLO'},
-  {city:'Lazaro Cardenas',country:'Mexico',code:'MXLZC'},
-  {city:'Veracruz',country:'Mexico',code:'MXVER'},
-  {city:'Altamira',country:'Mexico',code:'MXATM'},
-  {city:'Ensenada',country:'Mexico',code:'MXENS'},
-  {city:'Mexico City',country:'Mexico',code:'MXMEX'},
-  {city:'Guadalajara',country:'Mexico',code:'MXGDL'},
-  {city:'Monterrey',country:'Mexico',code:'MXMTY'},
-  {city:'Tijuana',country:'Mexico',code:'MXTIJ'},
-  {city:'Nuevo Laredo',country:'Mexico',code:'MXNLD'},
-  {city:'Shanghai',country:'China',code:'CNSHA'},
-  {city:'Shenzhen',country:'China',code:'CNSZX'},
-  {city:'Ningbo',country:'China',code:'CNNGB'},
-  {city:'Qingdao',country:'China',code:'CNTAO'},
-  {city:'Guangzhou',country:'China',code:'CNCAN'},
-  {city:'Tianjin',country:'China',code:'CNTSN'},
-  {city:'Xiamen',country:'China',code:'CNXMN'},
-  {city:'Hong Kong',country:'Hong Kong',code:'HKHKG'},
-  {city:'Busan',country:'South Korea',code:'KRPUS'},
-  {city:'Incheon',country:'South Korea',code:'KRICN'},
-  {city:'Ho Chi Minh City',country:'Vietnam',code:'VNSGN'},
-  {city:'Hai Phong',country:'Vietnam',code:'VNHPH'},
-  {city:'Singapore',country:'Singapore',code:'SGSIN'},
-  {city:'Port Klang',country:'Malaysia',code:'MYPKG'},
-  {city:'Laem Chabang',country:'Thailand',code:'THLCH'},
-  {city:'Jakarta',country:'Indonesia',code:'IDJKT'},
-  {city:'Tokyo',country:'Japan',code:'JPTYO'},
-  {city:'Yokohama',country:'Japan',code:'JPYOK'},
-  {city:'Los Angeles',country:'United States',code:'USLAX'},
-  {city:'Long Beach',country:'United States',code:'USLGB'},
-  {city:'New York',country:'United States',code:'USNYC'},
-  {city:'Houston',country:'United States',code:'USHOU'},
-  {city:'Rotterdam',country:'Netherlands',code:'NLRTM'},
-  {city:'Hamburg',country:'Germany',code:'DEHAM'},
-];
+// ===== Quote form =====
+// contact.html and contact-es.html run the same code; only the text object L differs.
+const L={"lang":"en","langName":"English (contact.html)","acEmpty":"No matching port or city. You can keep what you typed — we will confirm the exact location.","acKeep":"Not in the list? Keep what you typed and continue.","seaport":"Seaport","airport":"Airport","inlandCity":"Inland city · door / customs","originLabel":{"sea":"Origin port","air":"Origin airport","any":"Origin (city / port / airport)"},"destLabel":{"sea":"Destination port","air":"Destination airport","any":"Destination (city / port / airport)"},"originPh":{"sea":"Country, city or code — e.g. Korea, Shanghai","air":"Country, city or code — e.g. Korea, ICN, PVG","any":"Country, city or code"},"destPh":{"sea":"e.g. Manzanillo (MXZLO)","air":"e.g. Mexico City (MEX), GDL","any":"e.g. Manzanillo, Guadalajara"},"routeSub":{"sea":"Search by country, city or port code (e.g. Korea, Shanghai, MXZLO). Use ↑ ↓ and Enter to pick.","air":"Search by country, city or airport code (e.g. Korea, ICN, MEX). Use ↑ ↓ and Enter to pick.","any":"Search by country, city, port or airport code. Use ↑ ↓ and Enter to pick."},"cnt":{"20GP":"20' Standard (20GP)","40GP":"40' Standard (40GP)","40HC":"40' High Cube (40HC)","20RF":"20' Reefer (20RF)","40RH":"40' Reefer High Cube (40RH)","20OT":"20' Open Top (20OT)","40OT":"40' Open Top (40OT)","20FR":"20' Flat Rack (20FR)","40FR":"40' Flat Rack (40FR)","NA":"Not sure yet"},"cntType":"Container type","cntQty":"Number of containers","qtyShort":"Qty","removeRow":"Remove this row","dimL":"Length","dimW":"Width","dimH":"Height","dimQty":"Boxes / pallets","calcVolume":"Total volume","calcPieces":"Total boxes / pallets","calcActual":"Actual weight","calcVolKg":"Volumetric weight (L×W×H cm ÷ 6000)","calcChargeable":"Chargeable weight (reference)","calcAirNote":"Airlines charge the higher of actual and volumetric weight. Final figures are confirmed in our quote.","calcWm":"Freight tons W/M (reference)","wmVol":"(by volume)","wmWeight":"(by weight)","calcLclNote":"LCL is charged per CBM or per 1,000 kg, whichever is higher. Final figures are confirmed in our quote.","cbmGiven":"(entered by customer)","errRequired":"Please fill in this field.","errEmail":"Please enter a valid email address (e.g. name@company.com).","errPhone":"Please enter a phone number with country code (at least 7 digits).","errNumber":"Please enter a number greater than 0.","errCnt":"Enter how many containers you need (a whole number, 1 or more).","errDimRow":"Fill in length, width, height and quantity for each size, or remove the row.","errDims":"Enter the package dimensions, or tick \"I already know the total volume (CBM)\".","errCbm":"Enter the total volume in CBM.","errWeight":"Please enter the total weight in kg (an estimate is fine).","errDate":"Please choose today or a later date.","sending":"Sending…","sent":"Sent","retry":"Try Again","tagDone":"Step 5 of 5 · Complete","sentTitle":"Your Quote Request Has Been Sent","sentSub1":"Your request was delivered directly to our team.","sentSub2":"We'll respond within 24 hours.","errSendTitle":"Your request was not sent.","errSendBody":"Please check your connection and click \"Try Again\", or email your request directly to","subjectPrefix":"[Quote Request]","newInquiry":"New Inquiry","modeNames":{"fcl":"Ocean Freight (FCL)","lcl":"Ocean Freight (LCL)","air":"Air Freight","multi":"Multimodal (Sea+Air)","customs":"Customs & Inland Trucking Only"},"modeShort":{"fcl":"FCL","lcl":"LCL","air":"Air","multi":"Multimodal","customs":"Customs/Inland"},"f":{"mode":"Mode of Transport","origin":"Origin","destination":"Destination","incoterms":"Incoterms","item":"Commodity","containers":"Containers","fclWeight":"Gross Weight per Container (kg)","packages":"Packages (length × width × height × boxes)","cbm":"Total Volume (CBM)","weight":"Total Gross Weight (kg)","volKg":"Volumetric Weight (kg, ÷6000)","chargeable":"Chargeable Weight (kg, reference)","wm":"Freight Tons W/M (reference)","ready":"Cargo Ready Date","freq":"Shipping Frequency","notes":"Notes","name":"Name","company":"Company","email":"Email","phone":"Phone / WhatsApp","lang":"Form Language"},"acFreq":"Frequently used","acAll":"All countries (A–Z)","nPorts":["1 port","{n} ports"],"nAirports":["1 airport","{n} airports"],"nPlaces":["1 location","{n} locations"],"inlandOnly":"Inland / river port only","noSeaport":"No seaport","noAirportListed":"No airport listed","cityTbc":"city to be confirmed","anyDetail":{"sea":"No seaport listed — we will advise the best port","air":"No airport listed — we will advise the best airport","any":"We will advise the best route"},"incoNotSure":"Not sure — please advise","incoNotSureDesc":"We will suggest the right term for your purchase.","incoNotSureAlias":"not sure|dont know|unknown|help|no se|no estoy seguro|모름|모르겠음","incoGroupAny":"Any mode of transport","incoGroupSea":"Sea freight only","seaOnly":"Sea only","incoAirNote":"FAS, FOB, CFR and CIF are for sea freight only. For air freight use FCA, CPT or CIP.","incoAirWarn":"{code} is a sea-only term. For air freight the usual equivalent is {alt} — we will confirm it with you.","incoEmpty":"No matching Incoterm. You can keep what you typed.","inco":{"EXW":["Ex Works","Buyer collects at the seller’s premises and pays all costs and risks from there."],"FCA":["Free Carrier","Seller hands export-cleared goods to the buyer’s carrier at the named place; risk passes there."],"CPT":["Carriage Paid To","Seller pays transport to the destination; risk passes when goods are handed to the first carrier."],"CIP":["Carriage and Insurance Paid To","Like CPT, plus the seller insures the cargo (all-risks cover)."],"DAP":["Delivered at Place","Seller delivers to the named destination, ready to unload; buyer pays import duties and taxes."],"DPU":["Delivered at Place Unloaded","Seller delivers and unloads at the named destination; buyer pays import duties and taxes."],"DDP":["Delivered Duty Paid","Seller delivers to the destination and also pays import duties and taxes."],"FAS":["Free Alongside Ship","Seller places goods alongside the vessel at the origin port; risk passes there."],"FOB":["Free On Board","Seller loads goods on board at the origin port; buyer pays ocean freight and risk from there."],"CFR":["Cost and Freight","Seller pays ocean freight to the destination port; risk passes once loaded at origin."],"CIF":["Cost, Insurance and Freight","Like CFR, plus the seller insures the cargo (minimum cover)."]},"units":{"cm":"cm","in":"in"},"calcExample":"e.g."};
+const LANG=L.lang;
 
-// Autocomplete
+// ---- Location data -------------------------------------------------------
+// Countries: [English, Spanish, search aliases (EN/ES/KO and common variants, "|" separated)]
+// Every country listed here can be picked from the list. Countries without a seaport show only airports / inland points.
+// Not listed on purpose (comprehensive sanctions, AU-0002 v4): Cuba, Iran, North Korea, Syria, Russia, Belarus, and the Crimea / Donetsk / Luhansk regions.
+const COUNTRIES={
+  // Asia
+  KR:['South Korea','Corea del Sur','korea|south korea|republic of korea|rok|corea|corea del sur|republica de corea|대한민국|한국|남한|韩国'],
+  CN:['China','China','china|prc|peoples republic of china|republica popular china|중국|中国'],
+  HK:['Hong Kong','Hong Kong','hong kong|hongkong|홍콩|香港'],
+  MO:['Macao','Macao','macao|macau|마카오'],
+  TW:['Taiwan','Taiwán','taiwan|taiwan roc|대만|타이완|台湾'],
+  JP:['Japan','Japón','japan|japon|일본|日本'],
+  MN:['Mongolia','Mongolia','mongolia|몽골'],
+  VN:['Vietnam','Vietnam','vietnam|viet nam|베트남'],
+  TH:['Thailand','Tailandia','thailand|tailandia|태국'],
+  SG:['Singapore','Singapur','singapore|singapur|싱가포르|싱가폴'],
+  MY:['Malaysia','Malasia','malaysia|malasia|말레이시아'],
+  ID:['Indonesia','Indonesia','indonesia|인도네시아'],
+  PH:['Philippines','Filipinas','philippines|filipinas|필리핀'],
+  KH:['Cambodia','Camboya','cambodia|camboya|캄보디아'],
+  LA:['Laos','Laos','laos|lao|라오스'],
+  MM:['Myanmar','Myanmar','myanmar|burma|birmania|미얀마|버마'],
+  BN:['Brunei','Brunéi','brunei|브루나이'],
+  TL:['Timor-Leste','Timor Oriental','timor leste|east timor|timor oriental|동티모르'],
+  IN:['India','India','india|인도'],
+  PK:['Pakistan','Pakistán','pakistan|파키스탄'],
+  BD:['Bangladesh','Bangladés','bangladesh|banglades|방글라데시'],
+  LK:['Sri Lanka','Sri Lanka','sri lanka|스리랑카'],
+  MV:['Maldives','Maldivas','maldives|maldivas|몰디브'],
+  NP:['Nepal','Nepal','nepal|네팔'],
+  BT:['Bhutan','Bután','bhutan|butan|부탄'],
+  AF:['Afghanistan','Afganistán','afghanistan|afganistan|아프가니스탄'],
+  KZ:['Kazakhstan','Kazajistán','kazakhstan|kazajistan|kazajstan|카자흐스탄'],
+  UZ:['Uzbekistan','Uzbekistán','uzbekistan|uzbekistan|우즈베키스탄'],
+  TM:['Turkmenistan','Turkmenistán','turkmenistan|투르크메니스탄'],
+  KG:['Kyrgyzstan','Kirguistán','kyrgyzstan|kirguistan|kirguizistan|키르기스스탄'],
+  TJ:['Tajikistan','Tayikistán','tajikistan|tayikistan|타지키스탄'],
+  // Middle East
+  AE:['United Arab Emirates','Emiratos Árabes Unidos','united arab emirates|uae|emirates|emiratos arabes unidos|eau|dubai|아랍에미리트|두바이'],
+  SA:['Saudi Arabia','Arabia Saudita','saudi arabia|saudi|ksa|arabia saudita|arabia saudi|사우디아라비아|사우디'],
+  OM:['Oman','Omán','oman|오만'],
+  QA:['Qatar','Catar','qatar|catar|카타르'],
+  BH:['Bahrain','Baréin','bahrain|barein|bahrein|바레인'],
+  KW:['Kuwait','Kuwait','kuwait|쿠웨이트'],
+  IQ:['Iraq','Irak','iraq|irak|이라크'],
+  JO:['Jordan','Jordania','jordan|jordania|요르단'],
+  IL:['Israel','Israel','israel|이스라엘'],
+  LB:['Lebanon','Líbano','lebanon|libano|레바논'],
+  YE:['Yemen','Yemen','yemen|예멘'],
+  TR:['Türkiye','Turquía','turkey|turkiye|turquia|튀르키예|터키'],
+  CY:['Cyprus','Chipre','cyprus|chipre|키프로스'],
+  GE:['Georgia','Georgia','georgia|조지아'],
+  AM:['Armenia','Armenia','armenia|아르메니아'],
+  AZ:['Azerbaijan','Azerbaiyán','azerbaijan|azerbaiyan|아제르바이잔'],
+  // Europe
+  NL:['Netherlands','Países Bajos','netherlands|holland|paises bajos|holanda|네덜란드'],
+  BE:['Belgium','Bélgica','belgium|belgica|벨기에'],
+  DE:['Germany','Alemania','germany|alemania|deutschland|독일'],
+  FR:['France','Francia','france|francia|프랑스'],
+  ES:['Spain','España','spain|espana|스페인'],
+  PT:['Portugal','Portugal','portugal|포르투갈'],
+  IT:['Italy','Italia','italy|italia|이탈리아'],
+  GB:['United Kingdom','Reino Unido','united kingdom|uk|great britain|britain|england|reino unido|inglaterra|영국'],
+  IE:['Ireland','Irlanda','ireland|irlanda|아일랜드'],
+  DK:['Denmark','Dinamarca','denmark|dinamarca|덴마크'],
+  SE:['Sweden','Suecia','sweden|suecia|스웨덴'],
+  NO:['Norway','Noruega','norway|noruega|노르웨이'],
+  FI:['Finland','Finlandia','finland|finlandia|핀란드'],
+  IS:['Iceland','Islandia','iceland|islandia|아이슬란드'],
+  PL:['Poland','Polonia','poland|polonia|폴란드'],
+  LT:['Lithuania','Lituania','lithuania|lituania|리투아니아'],
+  LV:['Latvia','Letonia','latvia|letonia|라트비아'],
+  EE:['Estonia','Estonia','estonia|에스토니아'],
+  UA:['Ukraine','Ucrania','ukraine|ucrania|우크라이나'],
+  MD:['Moldova','Moldavia','moldova|moldavia|몰도바'],
+  RO:['Romania','Rumania','romania|rumania|rumanía|루마니아'],
+  BG:['Bulgaria','Bulgaria','bulgaria|불가리아'],
+  GR:['Greece','Grecia','greece|grecia|그리스'],
+  HR:['Croatia','Croacia','croatia|croacia|크로아티아'],
+  SI:['Slovenia','Eslovenia','slovenia|eslovenia|슬로베니아'],
+  AL:['Albania','Albania','albania|알바니아'],
+  ME:['Montenegro','Montenegro','montenegro|몬테네그로'],
+  BA:['Bosnia and Herzegovina','Bosnia y Herzegovina','bosnia|herzegovina|bosnia y herzegovina|보스니아 헤르체고비나|보스니아'],
+  RS:['Serbia','Serbia','serbia|세르비아'],
+  MK:['North Macedonia','Macedonia del Norte','north macedonia|macedonia|macedonia del norte|북마케도니아|마케도니아'],
+  XK:['Kosovo','Kosovo','kosovo|코소보'],
+  MT:['Malta','Malta','malta|몰타'],
+  AT:['Austria','Austria','austria|오스트리아'],
+  CH:['Switzerland','Suiza','switzerland|suiza|swiss|스위스'],
+  CZ:['Czechia','Chequia','czechia|czech republic|chequia|republica checa|체코'],
+  SK:['Slovakia','Eslovaquia','slovakia|eslovaquia|슬로바키아'],
+  HU:['Hungary','Hungría','hungary|hungria|헝가리'],
+  LU:['Luxembourg','Luxemburgo','luxembourg|luxemburgo|룩셈부르크'],
+  // Africa
+  EG:['Egypt','Egipto','egypt|egipto|이집트'],
+  MA:['Morocco','Marruecos','morocco|marruecos|모로코'],
+  DZ:['Algeria','Argelia','algeria|argelia|알제리'],
+  TN:['Tunisia','Túnez','tunisia|tunez|튀니지'],
+  LY:['Libya','Libia','libya|libia|리비아'],
+  SD:['Sudan','Sudán','sudan|수단'],
+  SS:['South Sudan','Sudán del Sur','south sudan|sudan del sur|남수단'],
+  ET:['Ethiopia','Etiopía','ethiopia|etiopia|에티오피아'],
+  ER:['Eritrea','Eritrea','eritrea|에리트레아'],
+  DJ:['Djibouti','Yibuti','djibouti|yibuti|지부티'],
+  SO:['Somalia','Somalia','somalia|소말리아'],
+  KE:['Kenya','Kenia','kenya|kenia|케냐'],
+  TZ:['Tanzania','Tanzania','tanzania|탄자니아'],
+  UG:['Uganda','Uganda','uganda|우간다'],
+  RW:['Rwanda','Ruanda','rwanda|ruanda|르완다'],
+  BI:['Burundi','Burundi','burundi|부룬디'],
+  MZ:['Mozambique','Mozambique','mozambique|모잠비크'],
+  MG:['Madagascar','Madagascar','madagascar|마다가스카르'],
+  MU:['Mauritius','Mauricio','mauritius|mauricio|모리셔스'],
+  SC:['Seychelles','Seychelles','seychelles|세이셸'],
+  KM:['Comoros','Comoras','comoros|comoras|코모로'],
+  ZA:['South Africa','Sudáfrica','south africa|sudafrica|rsa|남아프리카공화국|남아공'],
+  NA:['Namibia','Namibia','namibia|나미비아'],
+  BW:['Botswana','Botsuana','botswana|botsuana|보츠와나'],
+  ZW:['Zimbabwe','Zimbabue','zimbabwe|zimbabue|짐바브웨'],
+  ZM:['Zambia','Zambia','zambia|잠비아'],
+  MW:['Malawi','Malaui','malawi|malaui|말라위'],
+  LS:['Lesotho','Lesoto','lesotho|lesoto|레소토'],
+  SZ:['Eswatini','Esuatini','eswatini|esuatini|swaziland|suazilandia|에스와티니|스와질란드'],
+  AO:['Angola','Angola','angola|앙골라'],
+  CD:['DR Congo','RD del Congo','dr congo|drc|democratic republic of the congo|congo kinshasa|republica democratica del congo|rd congo|콩고민주공화국|민주콩고'],
+  CG:['Republic of the Congo','República del Congo','congo|republic of the congo|congo brazzaville|republica del congo|콩고공화국|콩고'],
+  GA:['Gabon','Gabón','gabon|가봉'],
+  GQ:['Equatorial Guinea','Guinea Ecuatorial','equatorial guinea|guinea ecuatorial|적도기니'],
+  CM:['Cameroon','Camerún','cameroon|camerun|카메룬'],
+  CF:['Central African Republic','República Centroafricana','central african republic|republica centroafricana|중앙아프리카공화국'],
+  TD:['Chad','Chad','chad|차드'],
+  NG:['Nigeria','Nigeria','nigeria|나이지리아'],
+  BJ:['Benin','Benín','benin|베냉'],
+  TG:['Togo','Togo','togo|토고'],
+  GH:['Ghana','Ghana','ghana|가나'],
+  CI:['Côte d\'Ivoire','Costa de Marfil','cote d ivoire|ivory coast|costa de marfil|코트디부아르|아이보리코스트'],
+  LR:['Liberia','Liberia','liberia|라이베리아'],
+  SL:['Sierra Leone','Sierra Leona','sierra leone|sierra leona|시에라리온'],
+  GN:['Guinea','Guinea','guinea|기니'],
+  GW:['Guinea-Bissau','Guinea-Bisáu','guinea bissau|guinea bisau|기니비사우'],
+  SN:['Senegal','Senegal','senegal|세네갈'],
+  GM:['Gambia','Gambia','gambia|the gambia|감비아'],
+  MR:['Mauritania','Mauritania','mauritania|모리타니'],
+  CV:['Cabo Verde','Cabo Verde','cabo verde|cape verde|카보베르데'],
+  ST:['São Tomé and Príncipe','Santo Tomé y Príncipe','sao tome|principe|santo tome|상투메 프린시페'],
+  ML:['Mali','Malí','mali|말리'],
+  BF:['Burkina Faso','Burkina Faso','burkina faso|부르키나파소'],
+  NE:['Niger','Níger','niger|니제르'],
+  // North America
+  MX:['Mexico','México','mexico|mejico|mex|멕시코|墨西哥'],
+  US:['United States','Estados Unidos','united states|usa|us|america|united states of america|estados unidos|eeuu|eua|미국'],
+  CA:['Canada','Canadá','canada|캐나다'],
+  // Central America & Caribbean
+  GT:['Guatemala','Guatemala','guatemala|과테말라'],
+  BZ:['Belize','Belice','belize|belice|벨리즈'],
+  SV:['El Salvador','El Salvador','el salvador|salvador|엘살바도르'],
+  HN:['Honduras','Honduras','honduras|온두라스'],
+  NI:['Nicaragua','Nicaragua','nicaragua|니카라과'],
+  CR:['Costa Rica','Costa Rica','costa rica|코스타리카'],
+  PA:['Panama','Panamá','panama|파나마'],
+  DO:['Dominican Republic','República Dominicana','dominican republic|republica dominicana|도미니카공화국'],
+  HT:['Haiti','Haití','haiti|아이티'],
+  JM:['Jamaica','Jamaica','jamaica|자메이카'],
+  PR:['Puerto Rico','Puerto Rico','puerto rico|푸에르토리코'],
+  BS:['Bahamas','Bahamas','bahamas|바하마'],
+  BB:['Barbados','Barbados','barbados|바베이도스'],
+  TT:['Trinidad and Tobago','Trinidad y Tobago','trinidad|tobago|trinidad y tobago|트리니다드 토바고'],
+  AG:['Antigua and Barbuda','Antigua y Barbuda','antigua|barbuda|앤티가 바부다'],
+  DM:['Dominica','Dominica','dominica|도미니카연방'],
+  GD:['Grenada','Granada','grenada|granada|그레나다'],
+  KN:['Saint Kitts and Nevis','San Cristóbal y Nieves','saint kitts|st kitts|nevis|san cristobal y nieves|세인트키츠 네비스'],
+  LC:['Saint Lucia','Santa Lucía','saint lucia|st lucia|santa lucia|세인트루시아'],
+  VC:['Saint Vincent and the Grenadines','San Vicente y las Granadinas','saint vincent|st vincent|grenadines|san vicente|세인트빈센트 그레나딘'],
+  CW:['Curaçao','Curazao','curacao|curazao|퀴라소'],
+  AW:['Aruba','Aruba','aruba|아루바'],
+  // South America
+  CO:['Colombia','Colombia','colombia|콜롬비아'],
+  VE:['Venezuela','Venezuela','venezuela|베네수엘라'],
+  GY:['Guyana','Guyana','guyana|가이아나'],
+  SR:['Suriname','Surinam','suriname|surinam|수리남'],
+  EC:['Ecuador','Ecuador','ecuador|에콰도르'],
+  PE:['Peru','Perú','peru|페루'],
+  BO:['Bolivia','Bolivia','bolivia|볼리비아'],
+  PY:['Paraguay','Paraguay','paraguay|파라과이'],
+  CL:['Chile','Chile','chile|칠레'],
+  BR:['Brazil','Brasil','brazil|brasil|브라질'],
+  AR:['Argentina','Argentina','argentina|아르헨티나'],
+  UY:['Uruguay','Uruguay','uruguay|우루과이'],
+  // Oceania
+  AU:['Australia','Australia','australia|호주|오스트레일리아'],
+  NZ:['New Zealand','Nueva Zelanda','new zealand|nueva zelanda|뉴질랜드'],
+  PG:['Papua New Guinea','Papúa Nueva Guinea','papua new guinea|png|papua nueva guinea|파푸아뉴기니'],
+  FJ:['Fiji','Fiyi','fiji|fiyi|피지'],
+  SB:['Solomon Islands','Islas Salomón','solomon islands|islas salomon|솔로몬 제도'],
+  VU:['Vanuatu','Vanuatu','vanuatu|바누아투'],
+  WS:['Samoa','Samoa','samoa|사모아'],
+  TO:['Tonga','Tonga','tonga|통가'],
+  KI:['Kiribati','Kiribati','kiribati|키리바시'],
+  MH:['Marshall Islands','Islas Marshall','marshall islands|islas marshall|마셜 제도'],
+  FM:['Micronesia','Micronesia','micronesia|미크로네시아'],
+  PW:['Palau','Palaos','palau|palaos|팔라우'],
+  NR:['Nauru','Nauru','nauru|나우루'],
+  TV:['Tuvalu','Tuvalu','tuvalu|투발루'],
+  GU:['Guam','Guam','guam|괌'],
+  NC:['New Caledonia','Nueva Caledonia','new caledonia|nueva caledonia|누벨칼레도니|뉴칼레도니아'],
+  PF:['French Polynesia','Polinesia Francesa','french polynesia|tahiti|polinesia francesa|프랑스령 폴리네시아|타히티'],
+};
+// Places: [type, country, code, English name, Spanish name ('' = same), aliases, detail]
+// type: s = seaport (UN/LOCODE), a = airport (IATA), c = inland city / inland port (UN/LOCODE, door delivery / customs)
+// Only codes we are sure about are listed. Anything else can still be typed freely.
+const PLACES=[
+  // Mexico
+  ['s','MX','MXZLO','Manzanillo','','만사니요|만자니요|manzanillo colima',''],
+  ['s','MX','MXLZC','Lazaro Cardenas','Lázaro Cárdenas','라사로 카르데나스|라자로 카르데나스',''],
+  ['s','MX','MXVER','Veracruz','','베라크루스|베라크루즈',''],
+  ['s','MX','MXATM','Altamira','','알타미라',''],
+  ['s','MX','MXESE','Ensenada','','엔세나다|mxens',''],
+  ['s','MX','MXGYM','Guaymas','','과이마스',''],
+  ['s','MX','MXMZT','Mazatlan','Mazatlán','마사틀란',''],
+  ['s','MX','MXPGO','Progreso','','progreso yucatan',''],
+  ['s','MX','MXTAM','Tampico','','탐피코',''],
+  ['s','MX','MXCOA','Coatzacoalcos','','',''],
+  ['s','MX','MXSCX','Salina Cruz','','',''],
+  ['c','MX','MXMEX','Mexico City','Ciudad de México','cdmx|df|mexico df|멕시코시티|멕시코 시티',''],
+  ['c','MX','MXGDL','Guadalajara','','과달라하라',''],
+  ['c','MX','MXMTY','Monterrey','','몬테레이',''],
+  ['c','MX','MXQRO','Queretaro','Querétaro','케레타로',''],
+  ['c','MX','MXSLP','San Luis Potosi','San Luis Potosí','',''],
+  ['c','MX','MXAGU','Aguascalientes','','',''],
+  ['c','MX','MXPBC','Puebla','','푸에블라',''],
+  ['c','MX','MXTIJ','Tijuana','','티후아나',''],
+  ['c','MX','MXNLD','Nuevo Laredo','','',''],
+  ['c','MX','MXCJS','Ciudad Juarez','Ciudad Juárez','juarez',''],
+  ['a','MX','MEX','Mexico City (AICM)','Ciudad de México (AICM)','cdmx|aicm|benito juarez|멕시코시티',''],
+  ['a','MX','NLU','Mexico City – Felipe Ángeles (AIFA)','Ciudad de México – Felipe Ángeles (AIFA)','aifa|santa lucia|felipe angeles|cdmx',''],
+  ['a','MX','GDL','Guadalajara','','과달라하라',''],
+  ['a','MX','MTY','Monterrey','','몬테레이',''],
+  ['a','MX','QRO','Queretaro','Querétaro','',''],
+  ['a','MX','BJX','Leon / Bajio','León / Bajío','leon|bajio|guanajuato',''],
+  ['a','MX','TIJ','Tijuana','','',''],
+  ['a','MX','CUN','Cancun','Cancún','칸쿤',''],
+  // South Korea
+  ['s','KR','KRPUS','Busan','','pusan|부산|부산신항|busan new port',''],
+  ['s','KR','KRINC','Incheon','','인천|inchon',''],
+  ['s','KR','KRKAN','Gwangyang','','광양|kwangyang',''],
+  ['s','KR','KRPTK','Pyeongtaek','','평택|pyongtaek|dangjin|당진',''],
+  ['s','KR','KRUSN','Ulsan','','울산',''],
+  ['a','KR','ICN','Incheon (Seoul)','Incheon (Seúl)','인천|seoul|seul|서울',''],
+  ['a','KR','PUS','Busan Gimhae','','부산|김해|gimhae|pusan',''],
+  // China
+  ['s','CN','CNSHA','Shanghai','','상하이|상해|上海',''],
+  ['s','CN','CNNGB','Ningbo','','닝보|ningbo zhoushan|宁波',''],
+  ['s','CN','CNSZX','Shenzhen','','선전|심천|深圳|yantian|shekou|chiwan|옌톈|염전','Yantian · Shekou · Chiwan'],
+  ['s','CN','CNTAO','Qingdao','','칭다오|청도|青岛|tsingtao',''],
+  ['s','CN','CNXMN','Xiamen','','샤먼|하문|厦门|amoy',''],
+  ['s','CN','CNTSN','Tianjin','','톈진|천진|天津|xingang|신강','Xingang'],
+  ['s','CN','CNDLC','Dalian','','다롄|대련|大连',''],
+  ['s','CN','CNCAN','Guangzhou','','광저우|광주|广州|nansha|huangpu|canton','Nansha · Huangpu'],
+  ['s','CN','CNFOC','Fuzhou','','푸저우|福州',''],
+  ['s','CN','CNLYG','Lianyungang','','롄윈강|连云港',''],
+  ['a','CN','PVG','Shanghai Pudong','','상하이|상해|pudong|푸동',''],
+  ['a','CN','PEK','Beijing Capital','Pekín Capital','beijing|pekin|peking|베이징|북경',''],
+  ['a','CN','PKX','Beijing Daxing','Pekín Daxing','beijing|pekin|daxing|베이징|북경',''],
+  ['a','CN','CAN','Guangzhou Baiyun','','광저우|광주|baiyun',''],
+  ['a','CN','SZX','Shenzhen Bao\'an','','선전|심천|baoan',''],
+  ['a','CN','HGH','Hangzhou','','항저우|항주',''],
+  ['a','CN','NGB','Ningbo','','닝보',''],
+  ['a','CN','TAO','Qingdao','','칭다오|청도',''],
+  ['a','CN','XMN','Xiamen','','샤먼|하문',''],
+  ['a','CN','TSN','Tianjin','','톈진|천진',''],
+  ['a','CN','CTU','Chengdu','','청두|성도',''],
+  ['a','CN','CKG','Chongqing','','충칭|중경',''],
+  ['a','CN','CGO','Zhengzhou','','정저우|정주',''],
+  ['a','CN','XIY','Xi\'an','','시안|서안|xian',''],
+  ['a','CN','KMG','Kunming','','쿤밍|곤명',''],
+  ['a','CN','SHE','Shenyang','','선양|심양',''],
+  // Hong Kong / Macao / Taiwan / Mongolia
+  ['s','HK','HKHKG','Hong Kong','','홍콩|香港',''],
+  ['a','HK','HKG','Hong Kong','','홍콩',''],
+  ['a','MO','MFM','Macao','','macau|마카오',''],
+  ['s','TW','TWKHH','Kaohsiung','','가오슝|高雄',''],
+  ['s','TW','TWKEL','Keelung','','지룽|기륭|基隆',''],
+  ['s','TW','TWTXG','Taichung','','타이중|台中',''],
+  ['a','TW','TPE','Taipei Taoyuan','','타이베이|taipei|taoyuan',''],
+  ['a','TW','KHH','Kaohsiung','','가오슝',''],
+  ['a','MN','UBN','Ulaanbaatar','Ulán Bator','ulan bator|ulaanbaatar|울란바토르|chinggis khaan',''],
+  // Japan
+  ['s','JP','JPTYO','Tokyo','Tokio','도쿄|東京',''],
+  ['s','JP','JPYOK','Yokohama','','요코하마',''],
+  ['s','JP','JPNGO','Nagoya','','나고야',''],
+  ['s','JP','JPUKB','Kobe','','고베',''],
+  ['s','JP','JPOSA','Osaka','','오사카',''],
+  ['s','JP','JPHKT','Hakata (Fukuoka)','','하카타|후쿠오카|fukuoka',''],
+  ['a','JP','NRT','Tokyo Narita','Tokio Narita','tokyo|tokio|narita|도쿄|나리타',''],
+  ['a','JP','HND','Tokyo Haneda','Tokio Haneda','tokyo|tokio|haneda|도쿄|하네다',''],
+  ['a','JP','KIX','Osaka Kansai','','osaka|kansai|오사카|간사이',''],
+  ['a','JP','NGO','Nagoya Chubu','','nagoya|chubu|나고야',''],
+  ['a','JP','FUK','Fukuoka','','후쿠오카',''],
+  // Southeast Asia
+  ['s','VN','VNSGN','Ho Chi Minh City','Ciudad Ho Chi Minh','saigon|cat lai|호치민|사이공','Cat Lai'],
+  ['s','VN','VNCMT','Cai Mep','','vung tau|까이멥|붕따우',''],
+  ['s','VN','VNHPH','Hai Phong','','haiphong|하이퐁',''],
+  ['s','VN','VNDAD','Da Nang','','danang|다낭',''],
+  ['a','VN','SGN','Ho Chi Minh City','Ciudad Ho Chi Minh','saigon|tan son nhat|호치민',''],
+  ['a','VN','HAN','Hanoi','','하노이|noi bai',''],
+  ['a','VN','DAD','Da Nang','','danang|다낭',''],
+  ['s','TH','THLCH','Laem Chabang','','램차방|렘차방',''],
+  ['s','TH','THBKK','Bangkok','','방콕',''],
+  ['a','TH','BKK','Bangkok Suvarnabhumi','','bangkok|방콕|suvarnabhumi',''],
+  ['s','SG','SGSIN','Singapore','Singapur','싱가포르|싱가폴',''],
+  ['a','SG','SIN','Singapore Changi','Singapur Changi','singapore|singapur|changi|싱가포르',''],
+  ['s','MY','MYPKG','Port Klang','Puerto Klang','klang|kelang|포트클랑|클랑',''],
+  ['s','MY','MYTPP','Tanjung Pelepas','','탄중펠레파스|pelepas',''],
+  ['s','MY','MYPEN','Penang','','페낭|pinang',''],
+  ['a','MY','KUL','Kuala Lumpur','','쿠알라룸푸르',''],
+  ['a','MY','PEN','Penang','','페낭',''],
+  ['s','ID','IDJKT','Jakarta','Yakarta','tanjung priok|자카르타','Tanjung Priok'],
+  ['s','ID','IDSUB','Surabaya','','수라바야',''],
+  ['s','ID','IDSRG','Semarang','','세마랑',''],
+  ['s','ID','IDBLW','Belawan (Medan)','','belawan|medan|벨라완|메단',''],
+  ['a','ID','CGK','Jakarta Soekarno-Hatta','Yakarta Soekarno-Hatta','jakarta|yakarta|자카르타',''],
+  ['a','ID','SUB','Surabaya','','수라바야',''],
+  ['a','ID','DPS','Bali Denpasar','','bali|denpasar|발리',''],
+  ['s','PH','PHMNL','Manila','','마닐라',''],
+  ['s','PH','PHCEB','Cebu','','세부',''],
+  ['s','PH','PHBTG','Batangas','','바탕가스',''],
+  ['a','PH','MNL','Manila','','마닐라',''],
+  ['a','PH','CEB','Cebu','','세부',''],
+  ['a','PH','CRK','Clark','','클라크|angeles',''],
+  ['s','KH','KHKOS','Sihanoukville','','kampong saom|kompong som|시아누크빌',''],
+  ['s','KH','KHPNH','Phnom Penh','Nom Pen','프놈펜','River port'],
+  ['a','LA','VTE','Vientiane','','비엔티안|wattay',''],
+  ['s','MM','MMRGN','Yangon','','rangoon|양곤',''],
+  ['a','MM','RGN','Yangon','','rangoon|양곤',''],
+  ['s','BN','BNMUA','Muara','','무아라',''],
+  ['a','BN','BWN','Bandar Seri Begawan','','반다르스리브가완',''],
+  ['s','TL','TLDIL','Dili','','딜리',''],
+  ['a','TL','DIL','Dili','','딜리',''],
+  // South Asia
+  ['s','IN','INNSA','Nhava Sheva (JNPT)','','jnpt|nhava sheva|mumbai|bombay|나바세바|뭄바이',''],
+  ['s','IN','INMUN','Mundra','','문드라',''],
+  ['s','IN','INMAA','Chennai','','madras|첸나이',''],
+  ['s','IN','INPAV','Pipavav','','피파바브',''],
+  ['s','IN','INIXY','Kandla','','deendayal|칸들라',''],
+  ['s','IN','INCOK','Kochi','','cochin|코치',''],
+  ['s','IN','INVTZ','Visakhapatnam','','vizag|비사카파트남',''],
+  ['s','IN','INCCU','Kolkata','Calcuta','calcutta|콜카타',''],
+  ['a','IN','DEL','Delhi','','new delhi|델리',''],
+  ['a','IN','BOM','Mumbai','','bombay|뭄바이',''],
+  ['a','IN','MAA','Chennai','','첸나이',''],
+  ['a','IN','BLR','Bengaluru','','bangalore|벵갈루루|방갈로르',''],
+  ['a','IN','HYD','Hyderabad','','하이데라바드',''],
+  ['a','IN','CCU','Kolkata','Calcuta','calcutta|콜카타',''],
+  ['a','IN','AMD','Ahmedabad','','아마다바드',''],
+  ['s','PK','PKKHI','Karachi','','카라치',''],
+  ['s','PK','PKBQM','Port Qasim','Puerto Qasim','qasim|bin qasim|포트카심',''],
+  ['a','PK','KHI','Karachi','','카라치',''],
+  ['a','PK','LHE','Lahore','','라호르',''],
+  ['a','PK','ISB','Islamabad','','이슬라마바드',''],
+  ['s','BD','BDCGP','Chittagong','','chattogram|치타공',''],
+  ['a','BD','DAC','Dhaka','Daca','다카',''],
+  ['s','LK','LKCMB','Colombo','','콜롬보',''],
+  ['a','LK','CMB','Colombo','','콜롬보',''],
+  ['s','MV','MVMLE','Male','Malé','말레',''],
+  ['a','MV','MLE','Male','Malé','말레',''],
+  ['a','NP','KTM','Kathmandu','Katmandú','카트만두',''],
+  ['a','BT','PBH','Paro','','파로',''],
+  ['a','AF','KBL','Kabul','','카불',''],
+  // Central Asia
+  ['a','KZ','ALA','Almaty','','알마티',''],
+  ['a','KZ','NQZ','Astana','','아스타나|nur sultan',''],
+  ['a','UZ','TAS','Tashkent','Taskent','타슈켄트',''],
+  ['a','TM','ASB','Ashgabat','Asjabad','아시가바트',''],
+  ['a','KG','FRU','Bishkek','Biskek','비슈케크|manas',''],
+  ['a','TJ','DYU','Dushanbe','Dusambé','두샨베',''],
+  // Middle East
+  ['s','AE','AEJEA','Jebel Ali (Dubai)','','jebel ali|dubai|제벨알리|두바이',''],
+  ['s','AE','AEAUH','Abu Dhabi','Abu Dabi','khalifa|아부다비',''],
+  ['a','AE','DXB','Dubai','Dubái','두바이',''],
+  ['a','AE','DWC','Dubai World Central (Al Maktoum)','Dubái World Central (Al Maktoum)','dubai|al maktoum|jebel ali|두바이',''],
+  ['a','AE','AUH','Abu Dhabi','Abu Dabi','아부다비',''],
+  ['a','AE','SHJ','Sharjah','','샤르자',''],
+  ['s','SA','SAJED','Jeddah','Yeda','jeddah|jiddah|제다',''],
+  ['s','SA','SADMM','Dammam','','담맘',''],
+  ['a','SA','RUH','Riyadh','Riad','리야드',''],
+  ['a','SA','JED','Jeddah','Yeda','제다',''],
+  ['a','SA','DMM','Dammam','','담맘',''],
+  ['s','OM','OMSLL','Salalah','','살랄라',''],
+  ['s','OM','OMSOH','Sohar','','소하르',''],
+  ['a','OM','MCT','Muscat','Mascate','무스카트',''],
+  ['s','QA','QAHMD','Hamad Port (Doha)','Puerto Hamad (Doha)','hamad|doha|도하',''],
+  ['a','QA','DOH','Doha','','도하',''],
+  ['s','BH','BHKBS','Khalifa Bin Salman','','manama|마나마',''],
+  ['a','BH','BAH','Bahrain','Baréin','manama|마나마',''],
+  ['s','KW','KWSWK','Shuwaikh','','kuwait city|슈와이크',''],
+  ['a','KW','KWI','Kuwait','','쿠웨이트',''],
+  ['s','IQ','IQUQR','Umm Qasr','','움카스르|basra',''],
+  ['a','IQ','BGW','Baghdad','Bagdad','바그다드',''],
+  ['a','IQ','EBL','Erbil','','아르빌|에르빌',''],
+  ['s','JO','JOAQJ','Aqaba','Áqaba','아카바',''],
+  ['a','JO','AMM','Amman','Amán','암만',''],
+  ['s','IL','ILHFA','Haifa','','하이파',''],
+  ['s','IL','ILASH','Ashdod','','아슈도드',''],
+  ['a','IL','TLV','Tel Aviv','','텔아비브|ben gurion',''],
+  ['s','LB','LBBEY','Beirut','Beirut','베이루트',''],
+  ['a','LB','BEY','Beirut','Beirut','베이루트',''],
+  ['s','YE','YEADE','Aden','Adén','아덴',''],
+  ['a','YE','ADE','Aden','Adén','아덴',''],
+  ['s','TR','TRMER','Mersin','','메르신',''],
+  ['s','TR','TRAMR','Ambarli (Istanbul)','Ambarli (Estambul)','ambarli|istanbul|estambul|이스탄불',''],
+  ['s','TR','TRGEM','Gemlik','','젬릭',''],
+  ['a','TR','IST','Istanbul','Estambul','이스탄불',''],
+  ['a','TR','SAW','Istanbul Sabiha Gokcen','Estambul Sabiha Gökçen','istanbul|estambul|sabiha',''],
+  ['s','CY','CYLMS','Limassol','','리마솔',''],
+  ['a','CY','LCA','Larnaca','Lárnaca','라르나카',''],
+  ['s','GE','GEPTI','Poti','','포티',''],
+  ['s','GE','GEBUS','Batumi','','바투미',''],
+  ['a','GE','TBS','Tbilisi','Tiflis','트빌리시',''],
+  ['a','AM','EVN','Yerevan','Ereván','예레반',''],
+  ['s','AZ','AZBAK','Baku','Bakú','바쿠','Caspian Sea'],
+  ['a','AZ','GYD','Baku','Bakú','바쿠',''],
+  // Europe
+  ['s','NL','NLRTM','Rotterdam','Róterdam','로테르담',''],
+  ['s','NL','NLAMS','Amsterdam','Ámsterdam','암스테르담',''],
+  ['a','NL','AMS','Amsterdam','Ámsterdam','암스테르담|schiphol',''],
+  ['s','BE','BEANR','Antwerp','Amberes','antwerpen|안트베르펜|앤트워프',''],
+  ['s','BE','BEZEE','Zeebrugge','','제브뤼헤',''],
+  ['a','BE','BRU','Brussels','Bruselas','brussel|bruxelles|브뤼셀',''],
+  ['a','BE','LGG','Liege','Lieja','liege|리에주',''],
+  ['s','DE','DEHAM','Hamburg','Hamburgo','함부르크',''],
+  ['s','DE','DEBRV','Bremerhaven','','브레머하펜|bremen',''],
+  ['a','DE','FRA','Frankfurt','Fráncfort','프랑크푸르트',''],
+  ['a','DE','MUC','Munich','Múnich','munchen|뮌헨',''],
+  ['a','DE','LEJ','Leipzig/Halle','Leipzig/Halle','leipzig|라이프치히',''],
+  ['s','FR','FRLEH','Le Havre','El Havre','르아브르',''],
+  ['s','FR','FRFOS','Fos-sur-Mer (Marseille)','Fos-sur-Mer (Marsella)','fos|marseille|marsella|마르세유',''],
+  ['a','FR','CDG','Paris Charles de Gaulle','París Charles de Gaulle','paris|파리',''],
+  ['s','ES','ESVLC','Valencia','','발렌시아',''],
+  ['s','ES','ESALG','Algeciras','','알헤시라스',''],
+  ['s','ES','ESBCN','Barcelona','','바르셀로나',''],
+  ['s','ES','ESBIO','Bilbao','','빌바오',''],
+  ['a','ES','MAD','Madrid','','마드리드',''],
+  ['a','ES','BCN','Barcelona','','바르셀로나',''],
+  ['s','PT','PTSIE','Sines','','시네스',''],
+  ['s','PT','PTLIS','Lisbon','Lisboa','lisboa|리스본',''],
+  ['s','PT','PTLEI','Leixoes (Porto)','Leixões (Oporto)','leixoes|porto|oporto|포르투',''],
+  ['a','PT','LIS','Lisbon','Lisboa','lisboa|리스본',''],
+  ['a','PT','OPO','Porto','Oporto','포르투',''],
+  ['s','IT','ITGOA','Genoa','Génova','genova|제노바',''],
+  ['s','IT','ITSPE','La Spezia','','라스페치아',''],
+  ['s','IT','ITGIT','Gioia Tauro','','조이아타우로',''],
+  ['s','IT','ITLIV','Livorno','','리보르노',''],
+  ['s','IT','ITNAP','Naples','Nápoles','napoli|나폴리',''],
+  ['s','IT','ITTRS','Trieste','','트리에스테',''],
+  ['a','IT','MXP','Milan Malpensa','Milán Malpensa','milan|milano|밀라노',''],
+  ['a','IT','FCO','Rome Fiumicino','Roma Fiumicino','rome|roma|로마',''],
+  ['s','GB','GBFXT','Felixstowe','','펠릭스토우',''],
+  ['s','GB','GBSOU','Southampton','','사우샘프턴',''],
+  ['s','GB','GBLGP','London Gateway','','london|londres|런던',''],
+  ['a','GB','LHR','London Heathrow','Londres Heathrow','london|londres|런던|히드로',''],
+  ['a','GB','MAN','Manchester','','맨체스터',''],
+  ['s','IE','IEDUB','Dublin','Dublín','더블린',''],
+  ['s','IE','IEORK','Cork','','코크',''],
+  ['a','IE','DUB','Dublin','Dublín','더블린',''],
+  ['s','DK','DKAAR','Aarhus','','오르후스',''],
+  ['s','DK','DKCPH','Copenhagen','Copenhague','kobenhavn|코펜하겐',''],
+  ['a','DK','CPH','Copenhagen','Copenhague','kobenhavn|코펜하겐',''],
+  ['s','SE','SEGOT','Gothenburg','Gotemburgo','goteborg|예테보리',''],
+  ['a','SE','ARN','Stockholm Arlanda','Estocolmo Arlanda','stockholm|estocolmo|스톡홀름',''],
+  ['s','NO','NOOSL','Oslo','','오슬로',''],
+  ['a','NO','OSL','Oslo','','오슬로',''],
+  ['s','FI','FIHEL','Helsinki','','헬싱키',''],
+  ['s','FI','FIKTK','Kotka','','코트카',''],
+  ['a','FI','HEL','Helsinki','','헬싱키',''],
+  ['s','IS','ISREY','Reykjavik','Reikiavik','레이캬비크',''],
+  ['a','IS','KEF','Reykjavik Keflavik','Reikiavik Keflavik','reykjavik|keflavik|레이캬비크',''],
+  ['s','PL','PLGDN','Gdansk','Gdansk','그단스크',''],
+  ['s','PL','PLGDY','Gdynia','','그디니아',''],
+  ['a','PL','WAW','Warsaw','Varsovia','warszawa|바르샤바',''],
+  ['s','LT','LTKLJ','Klaipeda','Klaipėda','클라이페다',''],
+  ['a','LT','VNO','Vilnius','','빌뉴스',''],
+  ['s','LV','LVRIX','Riga','','리가',''],
+  ['a','LV','RIX','Riga','','리가',''],
+  ['s','EE','EETLL','Tallinn','','탈린|muuga',''],
+  ['a','EE','TLL','Tallinn','','탈린',''],
+  ['s','UA','UAODS','Odesa','Odesa','odessa|오데사',''],
+  ['a','UA','KBP','Kyiv Boryspil','Kiev Boríspil','kyiv|kiev|키이우|키예프',''],
+  ['a','MD','KIV','Chisinau','Chisináu','키시너우|키시나우',''],
+  ['s','RO','ROCND','Constanta','Constanza','constanta|콘스탄차',''],
+  ['a','RO','OTP','Bucharest','Bucarest','bucuresti|부쿠레슈티',''],
+  ['s','BG','BGVAR','Varna','','바르나',''],
+  ['s','BG','BGBOJ','Burgas','','부르가스',''],
+  ['a','BG','SOF','Sofia','Sofía','소피아',''],
+  ['s','GR','GRPIR','Piraeus','El Pireo','pireo|athens|atenas|피레우스|아테네',''],
+  ['s','GR','GRSKG','Thessaloniki','Salónica','tesalonica|테살로니키',''],
+  ['a','GR','ATH','Athens','Atenas','아테네',''],
+  ['s','HR','HRRJK','Rijeka','','리예카',''],
+  ['a','HR','ZAG','Zagreb','Zagreb','자그레브',''],
+  ['s','SI','SIKOP','Koper','','코페르',''],
+  ['a','SI','LJU','Ljubljana','Liubliana','류블랴나',''],
+  ['s','AL','ALDRZ','Durres','Durrës','durazzo|두러스',''],
+  ['a','AL','TIA','Tirana','','티라나',''],
+  ['s','ME','MEBAR','Bar','','바르',''],
+  ['a','ME','TGD','Podgorica','','포드고리차',''],
+  ['a','BA','SJJ','Sarajevo','','사라예보',''],
+  ['a','RS','BEG','Belgrade','Belgrado','beograd|베오그라드',''],
+  ['a','MK','SKP','Skopje','','스코페',''],
+  ['a','XK','PRN','Pristina','Prístina','프리슈티나',''],
+  ['s','MT','MTMAR','Marsaxlokk','','마르사슬로크|malta freeport',''],
+  ['a','MT','MLA','Malta','','몰타',''],
+  ['a','AT','VIE','Vienna','Viena','wien|빈|비엔나',''],
+  ['c','CH','CHBSL','Basel','Basilea','basle|바젤','Rhine port'],
+  ['a','CH','ZRH','Zurich','Zúrich','취리히',''],
+  ['a','CH','GVA','Geneva','Ginebra','geneve|제네바',''],
+  ['a','CZ','PRG','Prague','Praga','praha|프라하',''],
+  ['a','SK','BTS','Bratislava','','브라티슬라바',''],
+  ['a','HU','BUD','Budapest','','부다페스트',''],
+  ['a','LU','LUX','Luxembourg','Luxemburgo','룩셈부르크',''],
+  // Africa
+  ['s','EG','EGPSD','Port Said','Puerto Said','포트사이드',''],
+  ['s','EG','EGALY','Alexandria','Alejandría','alejandria|알렉산드리아',''],
+  ['s','EG','EGSOK','Sokhna','','ain sokhna|소크나',''],
+  ['s','EG','EGDAM','Damietta','Damieta','다미에타',''],
+  ['a','EG','CAI','Cairo','El Cairo','카이로',''],
+  ['s','MA','MAPTM','Tanger Med','Tánger Med','tangier|tanger|탕헤르',''],
+  ['s','MA','MACAS','Casablanca','','카사블랑카',''],
+  ['a','MA','CMN','Casablanca','','카사블랑카',''],
+  ['s','DZ','DZALG','Algiers','Argel','alger|알제',''],
+  ['s','DZ','DZORN','Oran','Orán','오랑',''],
+  ['a','DZ','ALG','Algiers','Argel','alger|알제',''],
+  ['s','TN','TNRAD','Rades','Radés','tunis|라데스',''],
+  ['a','TN','TUN','Tunis','Túnez','튀니스',''],
+  ['s','LY','LYTIP','Tripoli','Trípoli','트리폴리',''],
+  ['s','LY','LYMRA','Misurata','','미스라타',''],
+  ['a','LY','MJI','Tripoli Mitiga','Trípoli Mitiga','tripoli|트리폴리',''],
+  ['s','SD','SDPZU','Port Sudan','Puerto Sudán','포트수단',''],
+  ['a','SD','KRT','Khartoum','Jartum','하르툼',''],
+  ['a','SS','JUB','Juba','Yuba','주바',''],
+  ['a','ET','ADD','Addis Ababa','Adís Abeba','아디스아바바',''],
+  ['s','ER','ERMSW','Massawa','Massaua','마사와',''],
+  ['a','ER','ASM','Asmara','','아스마라',''],
+  ['s','DJ','DJJIB','Djibouti','Yibuti','지부티',''],
+  ['a','DJ','JIB','Djibouti','Yibuti','지부티',''],
+  ['s','SO','SOMGQ','Mogadishu','Mogadiscio','모가디슈',''],
+  ['a','SO','MGQ','Mogadishu','Mogadiscio','모가디슈',''],
+  ['s','KE','KEMBA','Mombasa','','몸바사',''],
+  ['a','KE','NBO','Nairobi','','나이로비',''],
+  ['s','TZ','TZDAR','Dar es Salaam','','다르에스살람',''],
+  ['a','TZ','DAR','Dar es Salaam','','다르에스살람',''],
+  ['a','UG','EBB','Entebbe (Kampala)','','kampala|캄팔라|엔테베',''],
+  ['a','RW','KGL','Kigali','','키갈리',''],
+  ['a','BI','BJM','Bujumbura','','부줌부라',''],
+  ['s','MZ','MZMPM','Maputo','','마푸투',''],
+  ['s','MZ','MZBEW','Beira','','베이라',''],
+  ['a','MZ','MPM','Maputo','','마푸투',''],
+  ['s','MG','MGTMM','Toamasina','','tamatave|토아마시나',''],
+  ['a','MG','TNR','Antananarivo','','안타나나리보',''],
+  ['s','MU','MUPLU','Port Louis','','포트루이스',''],
+  ['a','MU','MRU','Mauritius','Mauricio','포트루이스',''],
+  ['s','SC','SCPOV','Port Victoria','','victoria|mahe|빅토리아',''],
+  ['a','SC','SEZ','Mahe','Mahé','mahe|seychelles|세이셸',''],
+  ['a','KM','HAH','Moroni','','모로니',''],
+  ['s','ZA','ZADUR','Durban','','더반',''],
+  ['s','ZA','ZACPT','Cape Town','Ciudad del Cabo','케이프타운',''],
+  ['s','ZA','ZAPLZ','Port Elizabeth (Gqeberha)','','gqeberha|포트엘리자베스',''],
+  ['s','ZA','ZAZBA','Ngqura (Coega)','','coega|응쿠라',''],
+  ['a','ZA','JNB','Johannesburg','Johannesburgo','요하네스버그',''],
+  ['a','ZA','CPT','Cape Town','Ciudad del Cabo','케이프타운',''],
+  ['s','NA','NAWVB','Walvis Bay','','월비스베이',''],
+  ['a','NA','WDH','Windhoek','','빈트후크',''],
+  ['a','BW','GBE','Gaborone','','가보로네',''],
+  ['a','ZW','HRE','Harare','','하라레',''],
+  ['a','ZM','LUN','Lusaka','','루사카',''],
+  ['a','MW','LLW','Lilongwe','','릴롱궤',''],
+  ['a','LS','MSU','Maseru','','마세루',''],
+  ['a','SZ','SHO','Manzini (King Mswati III)','','manzini|mbabane|만지니',''],
+  ['s','AO','AOLAD','Luanda','','루안다',''],
+  ['a','AO','LAD','Luanda','','루안다',''],
+  ['s','CD','CDMAT','Matadi','','마타디',''],
+  ['a','CD','FIH','Kinshasa','','킨샤사',''],
+  ['s','CG','CGPNR','Pointe-Noire','Pointe-Noire','pointe noire|푸앵트누아르',''],
+  ['a','CG','BZV','Brazzaville','','브라자빌',''],
+  ['s','GA','GAOWE','Owendo (Libreville)','','owendo|libreville|리브르빌',''],
+  ['a','GA','LBV','Libreville','','리브르빌',''],
+  ['s','GQ','GQSSG','Malabo','','말라보',''],
+  ['a','GQ','SSG','Malabo','','말라보',''],
+  ['s','CM','CMDLA','Douala','Duala','두알라',''],
+  ['s','CM','CMKBI','Kribi','','크리비',''],
+  ['a','CM','DLA','Douala','Duala','두알라',''],
+  ['a','CF','BGF','Bangui','','방기',''],
+  ['a','TD','NDJ','N\'Djamena','Yamena','ndjamena|은자메나',''],
+  ['s','NG','NGAPP','Apapa (Lagos)','','apapa|lagos|라고스',''],
+  ['s','NG','NGTIN','Tin Can Island (Lagos)','','tin can|lagos|라고스',''],
+  ['a','NG','LOS','Lagos','','라고스',''],
+  ['a','NG','ABV','Abuja','','아부자',''],
+  ['s','BJ','BJCOO','Cotonou','Cotonú','코토누',''],
+  ['a','BJ','COO','Cotonou','Cotonú','코토누',''],
+  ['s','TG','TGLFW','Lome','Lomé','로메',''],
+  ['a','TG','LFW','Lome','Lomé','로메',''],
+  ['s','GH','GHTEM','Tema','','테마|accra',''],
+  ['s','GH','GHTKD','Takoradi','','타코라디',''],
+  ['a','GH','ACC','Accra','Acra','아크라',''],
+  ['s','CI','CIABJ','Abidjan','Abiyán','아비장',''],
+  ['s','CI','CISPY','San Pedro','','산페드로',''],
+  ['a','CI','ABJ','Abidjan','Abiyán','아비장',''],
+  ['s','LR','LRMLW','Monrovia','','몬로비아',''],
+  ['a','LR','ROB','Monrovia Roberts','','monrovia|몬로비아',''],
+  ['s','SL','SLFNA','Freetown','','프리타운',''],
+  ['a','SL','FNA','Freetown','','프리타운',''],
+  ['s','GN','GNCKY','Conakry','Conakri','코나크리',''],
+  ['a','GN','CKY','Conakry','Conakri','코나크리',''],
+  ['s','GW','GWOXB','Bissau','Bisáu','비사우',''],
+  ['a','GW','OXB','Bissau','Bisáu','비사우',''],
+  ['s','SN','SNDKR','Dakar','','다카르',''],
+  ['a','SN','DSS','Dakar Blaise Diagne','','dakar|다카르',''],
+  ['s','GM','GMBJL','Banjul','','반줄',''],
+  ['a','GM','BJL','Banjul','','반줄',''],
+  ['s','MR','MRNKC','Nouakchott','Nuakchot','누악쇼트',''],
+  ['a','MR','NKC','Nouakchott','Nuakchot','누악쇼트',''],
+  ['s','CV','CVRAI','Praia','','프라이아',''],
+  ['a','CV','RAI','Praia','','프라이아',''],
+  ['s','ST','STTMS','Sao Tome','Santo Tomé','상투메',''],
+  ['a','ST','TMS','Sao Tome','Santo Tomé','상투메',''],
+  ['a','ML','BKO','Bamako','','바마코',''],
+  ['a','BF','OUA','Ouagadougou','Uagadugú','와가두구',''],
+  ['a','NE','NIM','Niamey','','니아메',''],
+  // United States & Canada
+  ['s','US','USLAX','Los Angeles','','la|로스앤젤레스|엘에이',''],
+  ['s','US','USLGB','Long Beach','','롱비치',''],
+  ['s','US','USOAK','Oakland','','오클랜드',''],
+  ['s','US','USSEA','Seattle','','시애틀',''],
+  ['s','US','USTIW','Tacoma','','타코마',''],
+  ['s','US','USHOU','Houston','','휴스턴',''],
+  ['s','US','USNYC','New York / New Jersey','Nueva York / Nueva Jersey','new york|nueva york|newark|nyc|뉴욕',''],
+  ['s','US','USSAV','Savannah','','서배너',''],
+  ['s','US','USCHS','Charleston','','찰스턴',''],
+  ['s','US','USORF','Norfolk','','노퍽|virginia',''],
+  ['s','US','USBAL','Baltimore','','볼티모어',''],
+  ['s','US','USJAX','Jacksonville','','잭슨빌',''],
+  ['s','US','USMOB','Mobile','','모빌',''],
+  ['s','US','USMIA','Miami','','마이애미',''],
+  ['c','US','USLRD','Laredo, TX','','laredo|라레도',''],
+  ['a','US','LAX','Los Angeles','','la|로스앤젤레스',''],
+  ['a','US','MIA','Miami','','마이애미',''],
+  ['a','US','ORD','Chicago O\'Hare','','chicago|시카고',''],
+  ['a','US','JFK','New York JFK','Nueva York JFK','new york|nueva york|뉴욕',''],
+  ['a','US','DFW','Dallas / Fort Worth','','dallas|댈러스',''],
+  ['a','US','IAH','Houston','','휴스턴',''],
+  ['a','US','ATL','Atlanta','','애틀랜타',''],
+  ['a','US','ANC','Anchorage','','앵커리지',''],
+  ['s','CA','CAVAN','Vancouver','','밴쿠버',''],
+  ['s','CA','CAPRR','Prince Rupert','','프린스루퍼트',''],
+  ['s','CA','CAMTR','Montreal','Montreal','montreal|몬트리올',''],
+  ['s','CA','CAHAL','Halifax','','핼리팩스',''],
+  ['a','CA','YYZ','Toronto Pearson','','toronto|토론토',''],
+  ['a','CA','YVR','Vancouver','','밴쿠버',''],
+  ['a','CA','YUL','Montreal','','montreal|몬트리올',''],
+  // Central America & Caribbean
+  ['s','GT','GTPRQ','Puerto Quetzal','','quetzal',''],
+  ['s','GT','GTSTC','Santo Tomas de Castilla','Santo Tomás de Castilla','santo tomas',''],
+  ['a','GT','GUA','Guatemala City','Ciudad de Guatemala','guatemala|과테말라시티',''],
+  ['s','BZ','BZBZE','Belize City','Ciudad de Belice','벨리즈시티',''],
+  ['a','BZ','BZE','Belize City','Ciudad de Belice','벨리즈시티',''],
+  ['s','SV','SVAQJ','Acajutla','','아카후틀라',''],
+  ['a','SV','SAL','San Salvador','','산살바도르',''],
+  ['s','HN','HNPCR','Puerto Cortes','Puerto Cortés','cortes|푸에르토코르테스',''],
+  ['a','HN','SAP','San Pedro Sula','','산페드로술라',''],
+  ['a','HN','XPL','Palmerola (Tegucigalpa)','','tegucigalpa|palmerola|테구시갈파',''],
+  ['s','NI','NICIO','Corinto','','코린토',''],
+  ['a','NI','MGA','Managua','','마나과',''],
+  ['s','CR','CRLIO','Puerto Limon (Moin)','Puerto Limón (Moín)','limon|moin',''],
+  ['s','CR','CRCAL','Caldera','','',''],
+  ['a','CR','SJO','San Jose','San José','san jose|산호세',''],
+  ['s','PA','PAMIT','Manzanillo (Colón)','','manzanillo|colon|콜론|만사니요','Colón'],
+  ['s','PA','PABLB','Balboa','','발보아',''],
+  ['a','PA','PTY','Panama City','Ciudad de Panamá','panama|tocumen',''],
+  ['s','DO','DOCAU','Caucedo','','카우세도|santo domingo',''],
+  ['s','DO','DOHAI','Rio Haina','Río Haina','haina|아이나',''],
+  ['a','DO','SDQ','Santo Domingo','','산토도밍고',''],
+  ['s','HT','HTPAP','Port-au-Prince','Puerto Príncipe','port au prince|puerto principe|포르토프랭스',''],
+  ['a','HT','PAP','Port-au-Prince','Puerto Príncipe','port au prince|puerto principe|포르토프랭스',''],
+  ['s','JM','JMKIN','Kingston','','킹스턴',''],
+  ['a','JM','KIN','Kingston','','킹스턴',''],
+  ['s','PR','PRSJU','San Juan','','산후안',''],
+  ['a','PR','SJU','San Juan','','산후안',''],
+  ['s','BS','BSFPO','Freeport','','프리포트',''],
+  ['s','BS','BSNAS','Nassau','','나소',''],
+  ['a','BS','NAS','Nassau','','나소',''],
+  ['s','BB','BBBGI','Bridgetown','','브리지타운',''],
+  ['a','BB','BGI','Bridgetown','','브리지타운',''],
+  ['s','TT','TTPOS','Port of Spain','Puerto España','port of spain|puerto espana|포트오브스페인',''],
+  ['s','TT','TTPTS','Point Lisas','','포인트리사스',''],
+  ['a','TT','POS','Port of Spain','Puerto España','port of spain|포트오브스페인',''],
+  ['a','AG','ANU','Antigua (St. John\'s)','','st johns|세인트존스',''],
+  ['a','DM','DOM','Dominica (Douglas-Charles)','','',''],
+  ['a','GD','GND','Grenada (St. George\'s)','Granada (St. George\'s)','st georges|세인트조지스',''],
+  ['a','KN','SKB','St. Kitts (Basseterre)','San Cristóbal (Basseterre)','basseterre|바스테르',''],
+  ['a','LC','UVF','St. Lucia Hewanorra','Santa Lucía Hewanorra','hewanorra|vieux fort',''],
+  ['a','VC','SVD','St. Vincent (Argyle)','San Vicente (Argyle)','argyle|kingstown',''],
+  ['s','CW','CWWIL','Willemstad','','빌렘스타트',''],
+  ['a','CW','CUR','Curacao','Curazao','curacao|퀴라소',''],
+  ['s','AW','AWORJ','Oranjestad','','오라녜스타트',''],
+  ['a','AW','AUA','Aruba','','아루바|oranjestad',''],
+  // South America
+  ['s','CO','COBUN','Buenaventura','','부에나벤투라',''],
+  ['s','CO','COCTG','Cartagena','','카르타헤나',''],
+  ['s','CO','COBAQ','Barranquilla','','바랑키야',''],
+  ['s','CO','COSMR','Santa Marta','','산타마르타',''],
+  ['a','CO','BOG','Bogota','Bogotá','보고타',''],
+  ['a','CO','MDE','Medellin','Medellín','메데인',''],
+  ['a','CO','CLO','Cali','','칼리',''],
+  ['s','VE','VEPBL','Puerto Cabello','','푸에르토카베요',''],
+  ['s','VE','VELAG','La Guaira','','라과이라',''],
+  ['a','VE','CCS','Caracas','','카라카스|maiquetia',''],
+  ['s','GY','GYGEO','Georgetown','','조지타운',''],
+  ['a','GY','GEO','Georgetown','','조지타운',''],
+  ['s','SR','SRPBM','Paramaribo','','파라마리보',''],
+  ['a','SR','PBM','Paramaribo','','파라마리보',''],
+  ['s','EC','ECGYE','Guayaquil','','과야킬',''],
+  ['a','EC','GYE','Guayaquil','','과야킬',''],
+  ['a','EC','UIO','Quito','','키토',''],
+  ['s','PE','PECLL','Callao (Lima)','','callao|lima|카야오|리마',''],
+  ['s','PE','PEPAI','Paita','','파이타',''],
+  ['a','PE','LIM','Lima','','리마',''],
+  ['a','BO','VVI','Santa Cruz (Viru Viru)','Santa Cruz (Viru Viru)','santa cruz|산타크루스',''],
+  ['a','BO','LPB','La Paz (El Alto)','','la paz|el alto|라파스',''],
+  ['c','PY','PYASU','Asuncion','Asunción','asuncion|아순시온','River port'],
+  ['a','PY','ASU','Asuncion','Asunción','asuncion|아순시온',''],
+  ['s','CL','CLSAI','San Antonio','','산안토니오',''],
+  ['s','CL','CLVAP','Valparaiso','Valparaíso','발파라이소',''],
+  ['s','CL','CLIQQ','Iquique','','이키케',''],
+  ['s','CL','CLARI','Arica','','아리카',''],
+  ['a','CL','SCL','Santiago','','산티아고',''],
+  ['s','BR','BRSSZ','Santos','','산투스|sao paulo',''],
+  ['s','BR','BRPNG','Paranagua','Paranaguá','파라나구아',''],
+  ['s','BR','BRITJ','Itajai','Itajaí','이타자이',''],
+  ['s','BR','BRNVT','Navegantes','','나베간치스',''],
+  ['s','BR','BRRIG','Rio Grande','','리우그란지',''],
+  ['s','BR','BRRIO','Rio de Janeiro','Río de Janeiro','rio|리우데자네이루',''],
+  ['s','BR','BRSSA','Salvador','','살바도르|bahia',''],
+  ['s','BR','BRSUA','Suape','','수아피|recife',''],
+  ['s','BR','BRPEC','Pecem','Pecém','fortaleza|페셍',''],
+  ['s','BR','BRMAO','Manaus','Manaos','마나우스','River port'],
+  ['a','BR','GRU','Sao Paulo Guarulhos','São Paulo Guarulhos','sao paulo|guarulhos|상파울루',''],
+  ['a','BR','VCP','Campinas Viracopos','','campinas|viracopos',''],
+  ['a','BR','GIG','Rio de Janeiro Galeao','Río de Janeiro Galeão','rio|galeao|리우데자네이루',''],
+  ['s','AR','ARBUE','Buenos Aires','','부에노스아이레스',''],
+  ['a','AR','EZE','Buenos Aires Ezeiza','','buenos aires|ezeiza',''],
+  ['s','UY','UYMVD','Montevideo','','몬테비데오',''],
+  ['a','UY','MVD','Montevideo','','몬테비데오|carrasco',''],
+  // Oceania
+  ['s','AU','AUSYD','Sydney','Sídney','sydney|botany|시드니',''],
+  ['s','AU','AUMEL','Melbourne','','멜버른',''],
+  ['s','AU','AUBNE','Brisbane','','브리즈번',''],
+  ['s','AU','AUFRE','Fremantle (Perth)','','fremantle|perth|프리맨틀|퍼스',''],
+  ['s','AU','AUADL','Adelaide','Adelaida','애들레이드',''],
+  ['a','AU','SYD','Sydney','Sídney','시드니',''],
+  ['a','AU','MEL','Melbourne','','멜버른',''],
+  ['a','AU','BNE','Brisbane','','브리즈번',''],
+  ['a','AU','PER','Perth','','퍼스',''],
+  ['s','NZ','NZAKL','Auckland','','오클랜드',''],
+  ['s','NZ','NZTRG','Tauranga','','타우랑가',''],
+  ['s','NZ','NZLYT','Lyttelton (Christchurch)','','lyttelton|christchurch|크라이스트처치',''],
+  ['a','NZ','AKL','Auckland','','오클랜드',''],
+  ['a','NZ','CHC','Christchurch','','크라이스트처치',''],
+  ['s','PG','PGLAE','Lae','','라에',''],
+  ['s','PG','PGPOM','Port Moresby','','포트모르즈비',''],
+  ['a','PG','POM','Port Moresby','','포트모르즈비',''],
+  ['s','FJ','FJSUV','Suva','','수바',''],
+  ['s','FJ','FJLTK','Lautoka','','라우토카',''],
+  ['a','FJ','NAN','Nadi','','난디',''],
+  ['s','SB','SBHIR','Honiara','','호니아라',''],
+  ['a','SB','HIR','Honiara','','호니아라',''],
+  ['s','VU','VUVLI','Port Vila','','포트빌라',''],
+  ['a','VU','VLI','Port Vila','','포트빌라',''],
+  ['s','WS','WSAPW','Apia','','아피아',''],
+  ['a','WS','APW','Apia','','아피아',''],
+  ['s','TO','TOTBU','Nuku\'alofa','','nukualofa|누쿠알로파',''],
+  ['a','TO','TBU','Nuku\'alofa','','nukualofa|누쿠알로파',''],
+  ['a','KI','TRW','Tarawa','','타라와',''],
+  ['a','MH','MAJ','Majuro','','마주로',''],
+  ['a','FM','PNI','Pohnpei','','폰페이',''],
+  ['a','PW','ROR','Koror','','코로르',''],
+  ['a','NR','INU','Nauru','','나우루',''],
+  ['a','TV','FUN','Funafuti','','푸나푸티',''],
+  ['a','GU','GUM','Guam','','괌',''],
+  ['s','NC','NCNOU','Noumea','Numea','누메아',''],
+  ['a','NC','NOU','Noumea','Numea','누메아',''],
+  ['s','PF','PFPPT','Papeete (Tahiti)','','papeete|tahiti|타히티',''],
+  ['a','PF','PPT','Papeete (Tahiti)','','papeete|tahiti|타히티',''],
+];
+const MODE_TYPES={fcl:['s','c'],lcl:['s','c'],air:['a'],multi:['s','a','c'],customs:['s','a','c']};
+const MODE_KIND={fcl:'sea',lcl:'sea',air:'air',multi:'any',customs:'any'};
+const TYPE_ORDER={s:0,a:1,c:2,k:3};
+const TYPE_ICON={s:'directions_boat',a:'flight',c:'location_city',k:'public'};
+// Shown at the top of the country list when the search box is empty ("Frequently used").
+const FREQUENT={origin:['CN','KR','VN','JP','TW','IN','TH','US'],destination:['MX','CO','PE','CL','EC','GT']};
+const AUTO_OPEN={destination:'MX'}; // country expanded the first time the list opens
+const MAX_RESULTS=60;
+
+// Lowercase, strip accents and punctuation. Hangul is decomposed the same way on both sides, so partial typing still matches.
+function norm(s){
+  return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+}
+const COLLATOR=new Intl.Collator(LANG==='es'?'es':'en',{sensitivity:'base'});
+const COUNTRY_INFO={};
+for(const cc of Object.keys(COUNTRIES)){
+  const c=COUNTRIES[cc];
+  COUNTRY_INFO[cc]={cc,name:LANG==='es'?c[1]:c[0],terms:[c[0],c[1]].concat(c[2].split('|')).map(norm)};
+}
+const COUNTRY_ALPHA=Object.keys(COUNTRIES).sort((a,b)=>COLLATOR.compare(COUNTRY_INFO[a].name,COUNTRY_INFO[b].name));
+const ALPHA_RANK={};COUNTRY_ALPHA.forEach((cc,i)=>{ALPHA_RANK[cc]=i;});
+const PLACE_INDEX=PLACES.map(([t,cc,code,en,es,alias,sub],i)=>({
+  i,t,cc,code,sub,
+  name:(LANG==='es'&&es)?es:en,
+  country:COUNTRY_INFO[cc].name,
+  codeN:code.toLowerCase(),
+  terms:[en,es,sub].concat(alias?alias.split('|'):[]).filter(Boolean).map(norm),
+}));
+const PLACES_BY_CC={};
+for(const p of PLACE_INDEX)(PLACES_BY_CC[p.cc]=PLACES_BY_CC[p.cc]||[]).push(p);
+function placesFor(cc,mode){
+  const types=MODE_TYPES[mode]||MODE_TYPES.multi;
+  return (PLACES_BY_CC[cc]||[]).filter(p=>types.includes(p.t)).sort((a,b)=>TYPE_ORDER[a.t]-TYPE_ORDER[b.t]||a.i-b.i);
+}
+// "Any city in this country": offered when a country has no listed port/airport for the chosen mode.
+function anyPlace(cc){const n=COUNTRY_INFO[cc].name;return {t:'k',cc,code:cc,name:n,country:n,i:-1,sub:''};}
+function placeLabel(p){return p.t==='k'?`${p.country} (${L.cityTbc})`:`${p.name}, ${p.country} (${p.code})`;}
+function countryRank(cc,key){const f=(FREQUENT[key]||[]).indexOf(cc);return f>=0?f:100+ALPHA_RANK[cc];}
+
+function scoreCountry(cc,q,qc){
+  let s=0;
+  if(qc.length===2&&cc.toLowerCase()===qc) s=45;                             // ISO country code: KR, MX
+  for(const t of COUNTRY_INFO[cc].terms){
+    if(t===q||(q.length>=2&&t.startsWith(q))) s=Math.max(s,40);
+    else if(q.length>=3&&t.split(' ').some(w=>w.startsWith(q))) s=Math.max(s,35);
+  }
+  return s;
+}
+function scorePlace(p,q,qc,cs){
+  let s=cs;                                                                  // country score (searching "Germany" lists its ports)
+  if(qc.length>=2){
+    if(p.codeN===qc) s=100;                                                  // full code: KRPUS, ICN
+    else if(qc.length>=3&&p.codeN.startsWith(qc)) s=Math.max(s,90);          // code start: KRP…
+    else if(p.codeN.length===5&&qc.length>=3&&p.codeN.slice(2).startsWith(qc)) s=Math.max(s,85); // location part: PUS → KRPUS
+  }
+  for(const t of p.terms){
+    if(t===q) s=Math.max(s,80);
+    else if(t.startsWith(q)) s=Math.max(s,70);
+    else if(t.split(' ').some(w=>w.startsWith(q))) s=Math.max(s,60);
+    else if(q.length>=3&&t.includes(q)) s=Math.max(s,50);
+  }
+  return s;
+}
+
+// Returns [{cc,country,items:[place]}] grouped by country, best match first.
+function searchPlaces(query,key,mode){
+  const q=norm(query), qc=q.replace(/ /g,'');
+  if(!q) return [];
+  const groups=[];
+  for(const cc of Object.keys(COUNTRIES)){
+    const cs=scoreCountry(cc,q,qc);
+    const pool=placesFor(cc,mode);
+    let items=pool.map(p=>({p,s:scorePlace(p,q,qc,cs)})).filter(x=>x.s>0);
+    if(!pool.length&&cs>0) items=[{p:anyPlace(cc),s:cs}];
+    if(!items.length) continue;
+    items.sort((a,b)=>b.s-a.s||TYPE_ORDER[a.p.t]-TYPE_ORDER[b.p.t]||a.p.i-b.p.i);
+    groups.push({cc,country:COUNTRY_INFO[cc].name,best:items[0].s,items});
+  }
+  groups.sort((a,b)=>b.best-a.best||countryRank(a.cc,key)-countryRank(b.cc,key));
+  let left=MAX_RESULTS;
+  const res=[];
+  for(const g of groups){
+    if(left<=0) break;
+    const items=g.items.slice(0,left).map(x=>x.p);
+    left-=items.length;
+    res.push({cc:g.cc,country:g.country,items});
+  }
+  return res;
+}
+
+// ---- Helpers -------------------------------------------------------------
+const $=id=>document.getElementById(id);
+const NF3=new Intl.NumberFormat(LANG==='es'?'es-MX':'en-US',{minimumFractionDigits:3,maximumFractionDigits:3});
+const NF1=new Intl.NumberFormat(LANG==='es'?'es-MX':'en-US',{maximumFractionDigits:1});
+const fmtCbm=n=>NF3.format(n);
+const fmtKg=n=>NF1.format(n);
+// Accepts "1200", "1,200", "1.5", "1,5" (decimal comma), "1.200,5".
+function parseNum(v){
+  let s=String(v||'').trim().replace(/\s/g,'');
+  if(!s) return NaN;
+  const lastDot=s.lastIndexOf('.'), lastComma=s.lastIndexOf(',');
+  if(lastDot>-1&&lastComma>-1){
+    const dec=lastDot>lastComma?'.':',';
+    s=s.split(dec==='.'?',':'.').join('');
+    if(dec===',') s=s.replace(',','.');
+  }else if(lastComma>-1){
+    s=/^\d{1,3}(,\d{3})+$/.test(s)?s.replace(/,/g,''):s.replace(/,/g,'.');
+  }
+  if(!/^\d*\.?\d+$/.test(s)&&!/^\d+\.$/.test(s)) return NaN;
+  return parseFloat(s);
+}
+const isPos=v=>{const n=parseNum(v);return isFinite(n)&&n>0;};
+const isPosInt=v=>/^\d+$/.test(String(v).trim())&&parseInt(v,10)>0;
+function todayISO(){const d=new Date();return new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);}
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+const SVGNS='http://www.w3.org/2000/svg';
+function icon(name){const s=document.createElementNS(SVGNS,'svg');s.setAttribute('class','material-symbols-outlined');s.setAttribute('aria-hidden','true');s.setAttribute('focusable','false');const u=document.createElementNS(SVGNS,'use');u.setAttribute('href','#i-'+name);s.appendChild(u);return s;}
+function setIcon(svg,name){svg.querySelector('use').setAttribute('href','#i-'+name);}
+const plural=(pair,n)=>(n===1?pair[0]:pair[1]).replace('{n}',n);
+
+// ---- State ---------------------------------------------------------------
+const quoteData={mode:''};
+const steps=[...document.querySelectorAll('.quote-step')];
+const progressBar=$('progressBar');
+const totalSteps=steps.length;
+let currentStep=1;
+let quoteSending=false; // true while the request is in flight
+let quoteSent=false;    // true only after formsubmit confirms success
+let dimUnit='cm';
+
+// ---- Combo box (shared by origin, destination and Incoterms) ------------------
+// A provider fills the list for the current text; options are registered with ctx.option(el, pick).
+// pick() returns true when the list should close (a value was chosen).
+function makeCombo(input,list,provider){
+  const ac={input,list,options:[],hi:-1,selected:null};
+  function setHi(i){
+    ac.options.forEach((o,j)=>{o.el.classList.toggle('highlighted',j===i);o.el.setAttribute('aria-selected',j===i?'true':'false');});
+    ac.hi=i;
+    if(i>=0){
+      input.setAttribute('aria-activedescendant',ac.options[i].el.id);
+      ac.options[i].el.scrollIntoView({block:'nearest'});
+    }else input.removeAttribute('aria-activedescendant');
+  }
+  function close(){
+    list.classList.remove('open');
+    input.setAttribute('aria-expanded','false');
+    input.removeAttribute('aria-activedescendant');
+    ac.hi=-1;
+  }
+  function render(opts){
+    opts=opts||{};
+    const keepTop=list.scrollTop;
+    // When the box shows a value picked from the list, browse the full list instead of searching for the long label.
+    const query=(ac.selected&&input.value===provider.label(ac.selected))?'':input.value;
+    list.textContent='';
+    ac.options=[];
+    const ctx={
+      list,
+      option(node,pick){
+        node.id=`${list.id}-opt-${ac.options.length}`;
+        node.setAttribute('role','option');
+        const idx=ac.options.length;
+        node.addEventListener('click',()=>activate(idx));
+        node.addEventListener('mousemove',()=>{if(ac.hi!==idx)setHi(idx);});
+        list.appendChild(node);
+        ac.options.push({el:node,pick});
+        return idx;
+      },
+    };
+    provider.build(query,ctx,ac);
+    list.classList.add('open');
+    input.setAttribute('aria-expanded','true');
+    setHi(-1);
+    if(opts.keepScroll) list.scrollTop=keepTop;
+    else list.scrollTop=0;
+    if(opts.hi!=null&&opts.hi<ac.options.length){
+      ac.options.forEach((o,j)=>{o.el.classList.toggle('highlighted',j===opts.hi);});
+      ac.hi=opts.hi;input.setAttribute('aria-activedescendant',ac.options[opts.hi].el.id);
+    }
+  }
+  function activate(i){
+    const o=ac.options[i];
+    if(!o) return;
+    if(o.pick(i)) close();
+  }
+  function choose(value){
+    ac.selected=value;
+    input.value=provider.label(value);
+    ac.choosing=true; // let other listeners (quoteData, validation) see the new value without re-opening the list
+    input.dispatchEvent(new Event('input',{bubbles:true}));
+    ac.choosing=false;
+    if(provider.onChoose) provider.onChoose(value);
+  }
+  ac.render=render;ac.close=close;ac.choose=choose;
+  input.addEventListener('input',()=>{if(ac.choosing)return;ac.selected=null;render();});
+  input.addEventListener('focus',()=>{render();reveal();});
+  // Keep the opened list on screen (the form card is near the bottom on phones): scroll just enough, never past the input.
+  function reveal(){
+    const r=list.getBoundingClientRect(), it=input.getBoundingClientRect();
+    const over=r.bottom-window.innerHeight+12;
+    if(over>0) window.scrollTo({top:window.scrollY+Math.min(over,it.top-80),behavior:'auto'});
+  }
+  input.addEventListener('click',()=>{if(!list.classList.contains('open'))render();});
+  input.addEventListener('blur',()=>setTimeout(close,150));
+  list.addEventListener('mousedown',e=>e.preventDefault()); // keep focus in the input while clicking an item
+  input.addEventListener('keydown',e=>{
+    const open=list.classList.contains('open');
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+      e.preventDefault();
+      if(!open){render();}
+      if(!ac.options.length) return;
+      const n=ac.options.length;
+      setHi(e.key==='ArrowDown'?(ac.hi+1)%n:(ac.hi<=0?n-1:ac.hi-1));
+    }else if(e.key==='Enter'){
+      if(open){
+        e.preventDefault();
+        if(ac.hi>=0) activate(ac.hi); else close(); // no highlight: keep what was typed
+      }
+    }else if(e.key==='Escape'){
+      if(open){e.preventDefault();close();}
+    }else if(e.key==='Tab'){
+      close();
+    }
+  });
+  return ac;
+}
+
+// ---- Origin / destination --------------------------------------------------------
+function placeItem(p,nested){
+  const item=el('div','autocomplete-item'+(nested?' is-nested':''));
+  item.appendChild(icon(TYPE_ICON[p.t]));
+  const nm=el('span','ac-name');
+  if(p.t==='k'){
+    nm.appendChild(el('b',null,`${p.country} — ${L.cityTbc}`));
+    nm.appendChild(el('small',null,L.anyDetail[MODE_KIND[quoteData.mode||'fcl']]));
+  }else{
+    nm.appendChild(el('b',null,p.name));
+    const detail=p.t==='c'?L.inlandCity+(p.sub?' · '+p.sub:''):(p.t==='a'?L.airport:L.seaport)+(p.sub?' · '+p.sub:'');
+    nm.appendChild(el('small',null,detail));
+  }
+  item.appendChild(nm);
+  item.appendChild(el('span','ac-code',p.code));
+  return item;
+}
+function countText(places,kind){
+  if(kind==='sea'){
+    const n=places.filter(p=>p.t==='s').length;
+    return n?plural(L.nPorts,n):(places.length?L.inlandOnly:L.noSeaport);
+  }
+  if(kind==='air'){
+    const n=places.length;
+    return n?plural(L.nAirports,n):L.noAirportListed;
+  }
+  return plural(L.nPlaces,places.length);
+}
+const acs={};
 document.querySelectorAll('[data-autocomplete]').forEach(input=>{
   const key=input.dataset.autocomplete;
   const list=document.querySelector(`.autocomplete-list[data-list="${key}"]`);
-
-  function renderList(query){
-    const q=query.trim().toLowerCase();
-    let matches;
-    if(q===''){
-      const seen=new Set();
-      matches=[];
-      for(const c of CITY_DATA){
-        if(seen.has(c.country)) continue;
-        seen.add(c.country);
-        matches.push(c);
-        if(matches.length>=8) break;
+  const expanded=new Set(AUTO_OPEN[key]?['f:'+AUTO_OPEN[key]]:[]);
+  let ac;
+  const pickPlace=p=>()=>{ac.choose(p);return true;};
+  function browse(ctx){
+    const mode=quoteData.mode||'fcl', kind=MODE_KIND[mode];
+    const freq=FREQUENT[key]||[];
+    const section=(title,sec,ccs)=>{
+      const h=el('div','ac-group',title);h.setAttribute('role','presentation');ctx.list.appendChild(h);
+      for(const cc of ccs){
+        const places=placesFor(cc,mode);
+        const id=sec+':'+cc, open=expanded.has(id);
+        const row=el('div','ac-country'+(open?' is-open':''));
+        row.appendChild(icon(open?'expand_more':'chevron_right'));
+        const nm=el('span','ac-name');
+        nm.appendChild(el('b',null,COUNTRY_INFO[cc].name));
+        row.appendChild(nm);
+        row.appendChild(el('small','ac-count',countText(places,kind)));
+        row.setAttribute('aria-expanded',open?'true':'false');
+        ctx.option(row,i=>{
+          if(expanded.has(id)) expanded.delete(id); else expanded.add(id);
+          ac.render({keepScroll:true,hi:i});
+          return false;
+        });
+        if(open){
+          const items=places.length?places:[anyPlace(cc)];
+          for(const p of items) ctx.option(placeItem(p,true),pickPlace(p));
+        }
       }
-    }else{
-      matches=CITY_DATA.filter(c=>
-        c.city.toLowerCase().includes(q)||c.country.toLowerCase().includes(q)||c.code.toLowerCase().includes(q)
-      ).slice(0,8);
-    }
-    if(matches.length===0){
-      list.innerHTML='<div class="autocomplete-empty">No matching city or port found</div>';
-    }else{
-      list.innerHTML=matches.map(c=>
-        `<div class="autocomplete-item" data-city="${c.city}" data-country="${c.country}" data-code="${c.code}">
-          <span class="ac-tags">
-            <span class="ac-tag ac-tag-country">${c.country}</span>
-            <span class="ac-tag ac-tag-city">${c.city}</span>
-          </span>
-          <span class="ac-code">${c.code}</span>
-        </div>`
-      ).join('');
-    }
-    list.classList.add('open');
+    };
+    if(freq.length) section(L.acFreq,'f',freq);
+    section(L.acAll,'a',COUNTRY_ALPHA);
   }
-
-  input.addEventListener('input',()=>renderList(input.value));
-  input.addEventListener('focus',()=>renderList(input.value));
-  list.addEventListener('click',e=>{
-    const item=e.target.closest('.autocomplete-item');
-    if(!item) return;
-    const value=`${item.dataset.city}, ${item.dataset.country} (${item.dataset.code})`;
-    input.value=value;
-    quoteData[key]=value;
-    list.classList.remove('open');
-    checkStepValid(input.closest('.quote-step'));
+  ac=makeCombo(input,list,{
+    label:placeLabel,
+    build(query,ctx){
+      if(!query.trim()){
+        // Re-opening after a choice: unfold the chosen country so the customer sees where they are.
+        if(ac.selected){const cc=ac.selected.cc;expanded.add(((FREQUENT[key]||[]).includes(cc)?'f:':'a:')+cc);}
+        browse(ctx);
+        return;
+      }
+      const groups=searchPlaces(query,key,quoteData.mode||'fcl');
+      if(!groups.length){
+        ctx.list.appendChild(el('div','autocomplete-empty',L.acEmpty));
+        return;
+      }
+      for(const g of groups){
+        const h=el('div','ac-group',g.country);h.setAttribute('role','presentation');ctx.list.appendChild(h);
+        for(const p of g.items) ctx.option(placeItem(p,false),pickPlace(p));
+      }
+      if(!ac.selected) ctx.list.appendChild(el('div','autocomplete-empty',L.acKeep));
+    },
+    onChoose(){quoteData[key]=input.value;revalidate(input);},
   });
-  document.addEventListener('click',e=>{
-    if(!input.contains(e.target)&&!list.contains(e.target)) list.classList.remove('open');
-  });
+  ac.key=key;
+  acs[key]=ac;
 });
 
-// Quote Step Form
-const quoteData={};
-const steps=document.querySelectorAll('.quote-step');
-const progressBar=document.getElementById('progressBar');
-let currentStep=1;
-const totalSteps=steps.length;
-
-function goToStep(n){
-  currentStep=n;
-  gtag('event','quote_step',{step_number:n,transport_mode:quoteData.mode||''});
-  steps.forEach(s=>s.classList.toggle('active',parseInt(s.dataset.step)===n));
-  progressBar.style.width=(n/totalSteps*100)+'%';
-  if(n===totalSteps) renderSummary();
+// ---- Incoterms 2020 ------------------------------------------------------------
+const INCO_ANY=['EXW','FCA','CPT','CIP','DAP','DPU','DDP'];
+const INCO_SEA=['FAS','FOB','CFR','CIF'];
+const INCO_AIR_ALT={FAS:'FCA',FOB:'FCA',CFR:'CPT',CIF:'CIP'};
+const INCO_TERMS=[{code:'NS'}].concat(INCO_ANY.map(c=>({code:c})),INCO_SEA.map(c=>({code:c,sea:true})));
+INCO_TERMS.forEach(t=>{
+  const d=t.code==='NS'?[L.incoNotSure,L.incoNotSureDesc]:L.inco[t.code];
+  t.name=d[0];t.desc=d[1];
+  t.terms=[t.code,d[0],d[1]].concat(t.code==='NS'?L.incoNotSureAlias.split('|'):[]).map(norm);
+  t.codeN=t.code.toLowerCase();
+});
+function incoLabel(t){return t.code==='NS'?t.name:`${t.code} — ${t.name}`;}
+function incoItem(t){
+  const item=el('div','autocomplete-item');
+  item.appendChild(icon(t.code==='NS'?'help':(t.sea?'directions_boat':'handshake')));
+  const nm=el('span','ac-name');
+  const b=el('b',null,t.name);
+  if(t.sea) b.appendChild(el('span','ac-tag',L.seaOnly));
+  nm.appendChild(b);
+  nm.appendChild(el('small',null,t.desc));
+  item.appendChild(nm);
+  if(t.code!=='NS') item.appendChild(el('span','ac-code',t.code));
+  return item;
+}
+const incoInput=$('qIncoterms');
+const incoAc=makeCombo(incoInput,$('qIncotermsList'),{
+  label:incoLabel,
+  build(query,ctx){
+    const air=MODE_KIND[quoteData.mode||'fcl']==='air';
+    const q=norm(query), qc=q.replace(/ /g,'');
+    const match=t=>!q||t.codeN.startsWith(qc)||t.terms.some(x=>x.startsWith(q)||x.split(' ').some(w=>w.startsWith(q))||(q.length>=3&&x.includes(q)));
+    const add=t=>ctx.option(incoItem(t),()=>{incoAc.choose(t);return true;});
+    const ns=INCO_TERMS[0];
+    const any=INCO_TERMS.filter(t=>t.code!=='NS'&&!t.sea&&match(t));
+    const sea=INCO_TERMS.filter(t=>t.sea&&match(t));
+    let shown=0;
+    if(match(ns)){add(ns);shown++;}
+    if(any.length){
+      const h=el('div','ac-group',L.incoGroupAny);h.setAttribute('role','presentation');ctx.list.appendChild(h);
+      any.forEach(add);shown+=any.length;
+    }
+    if(sea.length){
+      const h=el('div','ac-group',L.incoGroupSea);h.setAttribute('role','presentation');ctx.list.appendChild(h);
+      if(air) ctx.list.appendChild(el('div','autocomplete-empty',L.incoAirNote));
+      else{sea.forEach(add);shown+=sea.length;}
+    }
+    if(!shown&&!(air&&sea.length)) ctx.list.appendChild(el('div','autocomplete-empty',L.incoEmpty));
+  },
+  onChoose(){quoteData.incoterms=incoInput.value;incoWarn();},
+});
+incoInput.addEventListener('input',incoWarn);
+// A sea-only term already chosen stays (customers often say "FOB" for air too), with a short explanation.
+function incoWarn(){
+  const w=$('incoWarn');
+  const t=incoAc.selected;
+  const air=MODE_KIND[quoteData.mode||'fcl']==='air';
+  if(air&&t&&t.sea&&incoInput.value===incoLabel(t)){
+    w.textContent=L.incoAirWarn.replace('{code}',t.code).replace('{alt}',INCO_AIR_ALT[t.code]);
+    w.hidden=false;
+  }else{w.textContent='';w.hidden=true;}
 }
 
-function checkStepValid(stepEl){
-  const btn=stepEl.querySelector('[data-next]');
-  if(!btn) return;
-  const required=stepEl.querySelectorAll('.field-input[data-field="origin"],.field-input[data-field="destination"],.field-input[data-field="item"],.field-input[data-field="weight"],.field-input[data-field="name"],.field-input[data-field="phone"],.field-input[data-field="email"]');
-  const filled=[...required].every(i=>i.value.trim()!=='');
-  btn.disabled=!filled;
+// ---- Mode-dependent UI ----------------------------------------------------
+function applyMode(){
+  const m=quoteData.mode||'fcl';
+  const kind=MODE_KIND[m];
+  $('qOriginLabel').textContent=L.originLabel[kind];
+  $('qDestinationLabel').textContent=L.destLabel[kind];
+  $('qOrigin').placeholder=L.originPh[kind];
+  $('qDestination').placeholder=L.destPh[kind];
+  $('routeSub').textContent=L.routeSub[kind];
+  // A place picked for another mode (e.g. a seaport, then switching to Air) is cleared so the request stays consistent.
+  for(const key of ['origin','destination']){
+    const ac=acs[key];
+    const s=ac.selected;
+    if(s&&s.t!=='k'&&!MODE_TYPES[m].includes(s.t)){
+      ac.selected=null;ac.input.value='';quoteData[key]='';
+    }
+  }
+  incoWarn();
+  document.querySelectorAll('.mode-block').forEach(b=>b.classList.toggle('show',b.dataset.modes.split(' ').includes(m)));
+  const volReq=(m==='lcl'||m==='air');
+  const wReq=(m==='lcl'||m==='air'||m==='multi');
+  $('dimReq').hidden=!volReq;$('dimOpt').hidden=volReq;
+  $('weightReq').hidden=!wReq;$('weightOpt').hidden=wReq;
+  recalc();
+}
+
+// ---- FCL container rows ---------------------------------------------------
+const CNT_TYPES=['20GP','40GP','40HC','20RF','40RH','20OT','40OT','20FR','40FR','NA'];
+const MAX_ROWS=8;
+function refreshRowButtons(box,addBtn){
+  const rows=box.children;
+  [...rows].forEach(r=>{r.querySelector('.btn-row-del').disabled=rows.length<=1;});
+  addBtn.hidden=rows.length>=MAX_ROWS;
+}
+function addCntRow(type,qty){
+  const box=$('cntRows');
+  const row=el('div','cnt-row');
+  const sel=el('select','field-input');
+  sel.setAttribute('aria-label',L.cntType);
+  CNT_TYPES.forEach(t=>{const o=el('option',null,L.cnt[t]);o.value=t;sel.appendChild(o);});
+  sel.value=type||'40HC';
+  const q=el('input','field-input');
+  q.type='text';q.inputMode='numeric';q.setAttribute('pattern','[0-9]*');q.maxLength=4;
+  q.placeholder=L.qtyShort;q.setAttribute('aria-label',L.cntQty);q.value=qty==null?'1':qty;
+  const del=el('button','btn-row-del');del.type='button';del.setAttribute('aria-label',L.removeRow);del.appendChild(icon('close'));
+  del.addEventListener('click',()=>{row.remove();refreshRowButtons(box,$('addCntBtn'));revalidate(box);});
+  [sel,q].forEach(i=>i.addEventListener(i.tagName==='SELECT'?'change':'input',()=>revalidate(box)));
+  row.append(sel,q,del);
+  box.appendChild(row);
+  refreshRowButtons(box,$('addCntBtn'));
+  return row;
+}
+$('addCntBtn').addEventListener('click',()=>{const r=addCntRow('40HC','');r.querySelector('input').focus();});
+function readContainers(){
+  return [...$('cntRows').children].map(r=>{
+    const [sel,q]=r.querySelectorAll('.field-input');
+    return {row:r,sel,q,type:sel.value,qty:q.value.trim()};
+  });
+}
+
+// ---- Package dimension rows + CBM ------------------------------------------
+// Example values shown as placeholders, per unit: length, width, height, boxes.
+const DIM_EXAMPLE={cm:['120','100','80','3'],in:['48','40','32','3']};
+const unitText=()=>L.units[dimUnit];
+function addDimRow(){
+  const box=$('dimRows');
+  const row=el('div','dim-row');
+  const mk=(lab,cls,mode,withUnit)=>{
+    const c=el('label','dim-cell '+cls);
+    c.appendChild(el('span','dim-lab',lab));
+    const i=el('input','field-input');i.type='text';i.inputMode=mode;i.maxLength=8;i.autocomplete='off';
+    if(withUnit){
+      const w=el('span','unit-wrap');
+      w.append(i,el('span','unit-suf',unitText()));
+      c.appendChild(w);
+    }else c.appendChild(i);
+    i.addEventListener('input',()=>{recalc();revalidate(box);});
+    return c;
+  };
+  row.append(mk(L.dimL,'d-l','decimal',true),mk(L.dimW,'d-w','decimal',true),mk(L.dimH,'d-h','decimal',true));
+  const foot=el('div','dim-foot');
+  const qc=mk(L.dimQty,'d-q','numeric',false);
+  qc.querySelector('input').setAttribute('pattern','[0-9]*');
+  const f=el('div','dim-formula is-empty');
+  f.setAttribute('aria-live','polite');
+  const del=el('button','btn-row-del');del.type='button';del.setAttribute('aria-label',L.removeRow);del.appendChild(icon('close'));
+  del.addEventListener('click',()=>{row.remove();refreshRowButtons(box,$('addDimBtn'));recalc();revalidate(box);});
+  foot.append(qc,f,del);
+  row.appendChild(foot);
+  box.appendChild(row);
+  refreshRowButtons(box,$('addDimBtn'));
+  recalc();
+  return row;
+}
+$('addDimBtn').addEventListener('click',()=>{const r=addDimRow();r.querySelector('input').focus();});
+document.querySelectorAll('.unit-toggle button').forEach(b=>b.addEventListener('click',()=>{
+  dimUnit=b.dataset.unit;
+  document.querySelectorAll('.unit-toggle button').forEach(x=>{const on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-pressed',on?'true':'false');});
+  recalc();
+}));
+$('qKnowCbm').addEventListener('change',()=>{
+  const on=$('qKnowCbm').checked;
+  $('cbmDirectWrap').hidden=!on;
+  $('dimArea').classList.toggle('is-off',on);
+  $('dimArea').querySelectorAll('input,button').forEach(x=>{x.tabIndex=on?-1:0;});
+  if(on) $('qCbmDirect').focus();
+  recalc();revalidate($('dimRows'));
+});
+
+// CBM per row = L x W x H (cm) / 1,000,000 x quantity. Inches are converted with 1 in = 2.54 cm.
+function cbmOf(l,w,h,q,unit){const f=unit==='in'?2.54:1;return (l*f)*(w*f)*(h*f)*q/1e6;}
+function formulaText(parts,unit,cbm){
+  // e.g. "120 × 100 × 80 cm × 3" and "= 2.880 m³"
+  return [`${parts[0]} × ${parts[1]} × ${parts[2]} ${L.units[unit]} × ${parts[3]}`,`= ${cbm==null?'—':fmtCbm(cbm)} m³`];
+}
+function readDims(){
+  return [...$('dimRows').children].map(r=>{
+    const inputs=[...r.querySelectorAll('input')];
+    const v=inputs.map(i=>i.value.trim());
+    const [l,w,h]=v.slice(0,3).map(parseNum);
+    const q=v[3];
+    const filled=v.some(x=>x!=='');
+    const complete=[l,w,h].every(n=>isFinite(n)&&n>0)&&isPosInt(q);
+    const qty=complete?parseInt(q,10):0;
+    const cbm=complete?cbmOf(l,w,h,qty,dimUnit):0;
+    return {row:r,inputs,raw:v,l,w,h,qty,filled,complete,cbm,unit:dimUnit};
+  });
+}
+function paintDimRow(d){
+  const ex=DIM_EXAMPLE[dimUnit];
+  d.inputs.forEach((i,k)=>{i.placeholder=ex[k];});
+  d.row.querySelectorAll('.unit-suf').forEach(s=>{s.textContent=unitText();});
+  const f=d.row.querySelector('.dim-formula');
+  f.textContent='';
+  let txt,empty;
+  if(!d.filled){
+    txt=formulaText(ex,dimUnit,cbmOf(+ex[0],+ex[1],+ex[2],+ex[3],dimUnit));
+    txt[0]=L.calcExample+' '+txt[0];
+    empty=true;
+  }else{
+    txt=formulaText(d.raw.map(x=>x||'?'),dimUnit,d.complete?d.cbm:null);
+    empty=!d.complete;
+  }
+  f.append(el('span',null,txt[0]+' '),el('b',null,txt[1]));
+  f.classList.toggle('is-empty',empty);
+}
+let calc={};
+function recalc(){
+  const m=quoteData.mode||'fcl';
+  const direct=$('qKnowCbm').checked;
+  const dims=readDims();
+  dims.forEach(paintDimRow);
+  const complete=dims.filter(d=>d.complete);
+  const cbm=direct?(isPos($('qCbmDirect').value)?parseNum($('qCbmDirect').value):0):complete.reduce((a,d)=>a+d.cbm,0);
+  const pieces=direct?0:complete.reduce((a,d)=>a+d.qty,0);
+  const kg=isPos($('qWeight').value)?parseNum($('qWeight').value):0;
+  const volKg=cbm*1e6/6000;             // air volumetric weight: L x W x H (cm) / 6000
+  calc={cbm,pieces,kg,volKg,chargeable:Math.max(kg,volKg),wm:Math.max(cbm,kg/1000),dims:direct?[]:complete,direct};
+  const box=$('calcBox');
+  box.textContent='';
+  if(m==='fcl'||(!cbm&&!kg)) return;
+  const row=(label,val,main)=>{const r=el('div','calc-row'+(main?' is-main':''));r.append(el('span',null,label),el('b',null,val));box.appendChild(r);};
+  if(cbm){
+    const t=el('div','calc-total');
+    const v=el('b',null,fmtCbm(cbm)+' CBM');v.appendChild(el('small',null,' (m³)'));
+    t.append(el('span',null,L.calcVolume),v);
+    box.appendChild(t);
+  }
+  if(pieces) row(L.calcPieces,String(pieces));
+  if(m==='air'){
+    if(kg) row(L.calcActual,fmtKg(kg)+' kg');
+    if(cbm) row(L.calcVolKg,fmtKg(volKg)+' kg');
+    if(kg&&cbm) row(L.calcChargeable,fmtKg(calc.chargeable)+' kg',true);
+    box.appendChild(el('p','calc-note',L.calcAirNote));
+  }else if(m==='lcl'&&cbm&&kg){
+    row(L.calcWm,fmtCbm(calc.wm)+' '+(cbm>=kg/1000?L.wmVol:L.wmWeight));
+    box.appendChild(el('p','calc-note',L.calcLclNote));
+  }
+}
+$('qWeight').addEventListener('input',recalc);
+$('qCbmDirect').addEventListener('input',()=>{recalc();revalidate($('dimRows'));});
+
+// ---- Validation -------------------------------------------------------------
+const EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function stepOf(node){return node.closest('.quote-step');}
+function clearErrors(stepEl){
+  stepEl.querySelectorAll('.field-error').forEach(e=>{e.textContent='';e.classList.remove('show');});
+  stepEl.querySelectorAll('.invalid').forEach(i=>{i.classList.remove('invalid');i.removeAttribute('aria-invalid');});
+}
+function validateStep(n){
+  const stepEl=steps[n-1];
+  const errs=[];
+  const add=(errId,msg,inputs)=>errs.push({errId,msg,inputs:inputs.filter(Boolean)});
+  const req=(id,errId)=>{const i=$(id);if(!i.value.trim()){add(errId,L.errRequired,[i]);return false;}return true;};
+  const m=quoteData.mode||'fcl';
+  if(n===2){
+    req('qOrigin','qOriginErr');
+    req('qDestination','qDestinationErr');
+  }else if(n===3){
+    req('qItem','qItemErr');
+    if(m==='fcl'){
+      const rows=readContainers();
+      const bad=rows.filter(r=>!isPosInt(r.qty));
+      if(bad.length) add('cntErr',L.errCnt,bad.map(r=>r.q));
+      const fw=$('qFclWeight');
+      if(fw.value.trim()&&!isPos(fw.value)) add('qFclWeightErr',L.errNumber,[fw]);
+    }else{
+      const direct=$('qKnowCbm').checked;
+      const volReq=(m==='lcl'||m==='air');
+      if(direct){
+        const c=$('qCbmDirect');
+        if(!c.value.trim()){ if(volReq) add('dimErr',L.errCbm,[c]); }
+        else if(!isPos(c.value)) add('dimErr',L.errNumber,[c]);
+      }else{
+        const dims=readDims();
+        const partial=dims.filter(d=>d.filled&&!d.complete);
+        if(partial.length){
+          add('dimErr',L.errDimRow,partial.flatMap(d=>d.inputs.filter((inp,k)=>k<3?!(parseNum(inp.value)>0):!isPosInt(inp.value))));
+        }else if(volReq&&!dims.some(d=>d.complete)){
+          add('dimErr',L.errDims,[dims[0]&&dims[0].inputs[0]]);
+        }
+      }
+      const w=$('qWeight');
+      if(!w.value.trim()){ if(m==='lcl'||m==='air'||m==='multi') add('qWeightErr',L.errWeight,[w]); }
+      else if(!isPos(w.value)) add('qWeightErr',L.errNumber,[w]);
+    }
+    const r=$('qReady');
+    if(r.value&&r.value<todayISO()) add('qReadyErr',L.errDate,[r]);
+  }else if(n===4){
+    req('qName','qNameErr');
+    const e=$('qEmail');
+    if(req('qEmail','qEmailErr')&&!EMAIL_RE.test(e.value.trim())) add('qEmailErr',L.errEmail,[e]);
+    const p=$('qPhone');
+    if(req('qPhone','qPhoneErr')&&p.value.replace(/\D/g,'').length<7) add('qPhoneErr',L.errPhone,[p]);
+  }
+  clearErrors(stepEl);
+  for(const x of errs){
+    const e=$(x.errId);
+    if(!e.classList.contains('show')){e.textContent=x.msg;e.classList.add('show');}
+    x.inputs.forEach(i=>{i.classList.add('invalid');i.setAttribute('aria-invalid','true');});
+  }
+  return errs;
+}
+// After the first "Next" attempt on a step, errors update while the customer types.
+function revalidate(node){
+  const s=stepOf(node);
+  if(s&&s.dataset.tried) validateStep(parseInt(s.dataset.step,10));
+}
+
+// ---- Step navigation (browser Back also moves one step back) -----------------
+function goToStep(n,opts){
+  opts=opts||{};
+  if(n<1||n>totalSteps) return;
+  if(quoteSending||quoteSent) return; // lock the form while sending / after it was sent
+  const forward=n>currentStep;
+  currentStep=n;
+  if(typeof gtag==='function') gtag('event','quote_step',{step_number:n,transport_mode:quoteData.mode||''});
+  steps.forEach(s=>s.classList.toggle('active',parseInt(s.dataset.step,10)===n));
+  // Final step is "review before sending": the bar only reaches 100% once the request is delivered
+  progressBar.style.width=(n===totalSteps?90:n/totalSteps*100)+'%';
+  if(n===totalSteps){
+    renderSummary();
+    $('sendError').classList.remove('show');
+  }
+  if(forward&&opts.push!==false&&history.pushState){
+    try{history.pushState({qstep:n},'');}catch(e){}
+  }
+  const box=document.querySelector('.quote-container');
+  const top=box.getBoundingClientRect().top;
+  if(top<0||top>window.innerHeight*0.6) window.scrollTo({top:window.scrollY+top-84,behavior:'smooth'});
+  const h=steps[n-1].querySelector('.quote-q,h2');
+  if(h&&opts.focus!==false){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}
+}
+try{history.replaceState({qstep:1},'');}catch(e){}
+window.addEventListener('popstate',e=>{
+  const n=(e.state&&e.state.qstep)||1;
+  if(quoteSending||quoteSent) return;
+  if(n<currentStep) goToStep(n,{push:false});
+});
+function goBack(){
+  if(history.state&&history.state.qstep===currentStep&&currentStep>1) history.back();
+  else goToStep(currentStep-1,{push:false});
 }
 
 // Option cards (auto-advance)
 document.querySelectorAll('.option-card').forEach(card=>{
   card.addEventListener('click',()=>{
-    const group=card.closest('.quote-step').querySelectorAll('.option-card');
-    group.forEach(c=>c.classList.remove('selected'));
-    card.classList.add('selected');
-    quoteData[card.dataset.field]=card.dataset.value;
-    setTimeout(()=>goToStep(currentStep+1),250);
+    const group=stepOf(card).querySelectorAll('.option-card');
+    group.forEach(c=>{c.classList.remove('selected');c.setAttribute('aria-pressed','false');});
+    card.classList.add('selected');card.setAttribute('aria-pressed','true');
+    quoteData.mode=card.dataset.value;
+    applyMode();
+    setTimeout(()=>goToStep(2),250);
   });
 });
 
 // Text fields & selects
-document.querySelectorAll('.field-input').forEach(input=>{
+document.querySelectorAll('.field-input[data-field]').forEach(input=>{
   const evt=input.tagName==='SELECT'?'change':'input';
   input.addEventListener(evt,()=>{
     quoteData[input.dataset.field]=input.value;
-    checkStepValid(input.closest('.quote-step'));
+    revalidate(input);
   });
 });
 
-// Next buttons
+// Next buttons: show what is missing instead of silently disabling the button
 document.querySelectorAll('[data-next]').forEach(btn=>{
   btn.addEventListener('click',()=>{
-    if(btn.disabled) return;
-    goToStep(currentStep+1);
+    const stepEl=stepOf(btn);
+    const n=parseInt(stepEl.dataset.step,10);
+    stepEl.dataset.tried='1';
+    const errs=validateStep(n);
+    if(errs.length){
+      const first=errs.find(x=>x.inputs.length);
+      if(first){first.inputs[0].focus();first.inputs[0].scrollIntoView({block:'center',behavior:'smooth'});}
+      return;
+    }
+    goToStep(n+1);
   });
 });
+document.querySelectorAll('[data-back]').forEach(btn=>btn.addEventListener('click',goBack));
+// Enter in a one-line field acts like "Next" (the combo boxes handle Enter themselves while their list is open)
+steps.forEach(s=>s.addEventListener('keydown',e=>{
+  const t=e.target;
+  if(e.key!=='Enter'||e.defaultPrevented||t.tagName!=='INPUT'||t.type==='checkbox'||e.isComposing) return;
+  const btn=s.querySelector('[data-next]');
+  if(btn){e.preventDefault();btn.click();}
+}));
 
-// Back buttons
-document.querySelectorAll('[data-back]').forEach(btn=>{
-  btn.addEventListener('click',()=>goToStep(currentStep-1));
-});
-
-function renderSummary(){
+// ---- Summary & payload (same rows, plain text only) ---------------------------
+function collectRows(){
+  const m=quoteData.mode||'fcl';
+  const v=id=>$(id).value.trim();
   const rows=[
-    ['Mode',quoteData.mode],
-    ['Origin',quoteData.origin],
-    ['Destination',quoteData.destination],
-    ['Incoterms',quoteData.incoterms],
-    ['Commodity',quoteData.item],
-    ['Weight / Volume',[quoteData.weight,quoteData.cbm].filter(Boolean).join(' / ')],
-    ['Quantity',quoteData.quantity],
-    ['Name',quoteData.name],
-    ['Company',quoteData.company],
-    ['Phone',quoteData.phone],
-    ['Email',quoteData.email],
+    [L.f.mode,L.modeNames[m]],
+    [L.f.origin,v('qOrigin')],
+    [L.f.destination,v('qDestination')],
+    [L.f.incoterms,v('qIncoterms')],
+    [L.f.item,v('qItem')],
   ];
-  document.getElementById('summaryCard').innerHTML=rows
-    .filter(r=>r[1])
-    .map(r=>`<div class="summary-row"><span>${r[0]}</span><span>${r[1]}</span></div>`)
-    .join('');
+  if(m==='fcl'){
+    rows.push([L.f.containers,readContainers().filter(r=>isPosInt(r.qty)).map(r=>`${parseInt(r.qty,10)} × ${L.cnt[r.type]}`).join('\n')]);
+    rows.push([L.f.fclWeight,isPos(v('qFclWeight'))?fmtKg(parseNum(v('qFclWeight'))):'']);
+  }else{
+    recalc();
+    rows.push([L.f.packages,calc.dims.map(d=>formulaText(d.raw,d.unit,d.cbm).join(' ')).join('\n')]);
+    rows.push([L.f.cbm,calc.cbm?fmtCbm(calc.cbm)+(calc.direct?' '+L.cbmGiven:''):'']);
+    rows.push([L.f.weight,calc.kg?fmtKg(calc.kg):'']);
+    if(m==='air'&&calc.cbm){
+      rows.push([L.f.volKg,fmtKg(calc.volKg)]);
+      if(calc.kg) rows.push([L.f.chargeable,fmtKg(calc.chargeable)]);
+    }
+    if(m==='lcl'&&calc.cbm&&calc.kg) rows.push([L.f.wm,fmtCbm(calc.wm)]);
+  }
+  rows.push([L.f.ready,v('qReady')],[L.f.freq,v('qFreq')],[L.f.notes,v('qNotes')],
+    [L.f.name,v('qName')],[L.f.company,v('qCompany')],[L.f.email,v('qEmail')],[L.f.phone,v('qPhone')]);
+  return rows;
+}
+function renderSummary(){
+  const card=$('summaryCard');
+  card.textContent='';
+  for(const [k,val] of collectRows()){
+    if(!val) continue;
+    const r=el('div','summary-row');
+    r.append(el('span',null,k),el('span',null,val)); // textContent only: customer input is never parsed as HTML
+    card.appendChild(r);
+  }
 }
 
-const sendEmailBtn=document.getElementById('sendEmailBtn');
-sendEmailBtn.addEventListener('click',async()=>{
+const sendEmailBtn=$('sendEmailBtn');
+const sendError=$('sendError');
+const reviewBackBtn=$('reviewBackBtn');
+const SEND_TIMEOUT_MS=20000;
+function setBtn(btn,text,iconName){btn.textContent=text;btn.appendChild(icon(iconName));}
+
+// formsubmit.co ajax answers {"success":"true",...} (string); accept boolean true as well.
+// HTTP 200 alone is not enough: an inactive form or a blocked request can still return 200 with success "false".
+function isFormSubmitSuccess(body){
+  if(!body||typeof body!=='object') return false;
+  return body.success===true||String(body.success).toLowerCase()==='true';
+}
+function showSent(){
+  quoteSent=true;
+  progressBar.style.width='100%';
+  $('completeTag').textContent=L.tagDone;
+  setIcon($('completeIcon'),'check_circle');
+  $('completeTitle').textContent=L.sentTitle;
+  const sub=$('completeSub');sub.textContent=L.sentSub1;sub.appendChild(document.createElement('br'));sub.appendChild(document.createTextNode(L.sentSub2));
   sendEmailBtn.disabled=true;
-  sendEmailBtn.innerHTML='Sending…<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-progress_activity"/></svg>';
+  setBtn(sendEmailBtn,L.sent,'check_circle');
+  reviewBackBtn.classList.add('is-hidden');
+}
 
+sendEmailBtn.addEventListener('click',async()=>{
+  if(quoteSending||quoteSent) return; // prevent duplicate submissions
+  const honey=$('qHoney').value;
+  if(honey){ showSent(); return; }    // spam trap filled: a person never sees this field, so do not send
+  quoteSending=true;
+  sendEmailBtn.disabled=true;
+  sendEmailBtn.classList.add('is-sending');
+  sendEmailBtn.setAttribute('aria-busy','true');
+  setBtn(sendEmailBtn,L.sending,'progress_activity');
+  reviewBackBtn.disabled=true;
+  sendError.classList.remove('show');
+
+  const m=quoteData.mode||'fcl';
   const payload={
-    _subject:'[Quote Request] '+(quoteData.company||quoteData.name||'New Inquiry'),
-    'Mode of Transport':quoteData.mode||'-',
-    'Origin':quoteData.origin||'-',
-    'Destination':quoteData.destination||'-',
-    'Incoterms':quoteData.incoterms||'-',
-    'Commodity':quoteData.item||'-',
-    'Weight (kg)':quoteData.weight||'-',
-    'Volume (CBM)':quoteData.cbm||'-',
-    'Quantity':quoteData.quantity||'-',
-    'Name':quoteData.name||'-',
-    'Company':quoteData.company||'-',
-    'Phone':quoteData.phone||'-',
-    'Email':quoteData.email||'-',
+    _subject:`${L.subjectPrefix} ${L.modeShort[m]} · ${$('qCompany').value.trim()||$('qName').value.trim()||L.newInquiry}`,
+    _honey:honey,
   };
+  for(const [k,val] of collectRows()) payload[k]=val||'-';
+  payload[L.f.lang]=L.langName;
 
+  let ok=false;
+  const ctrl=(typeof AbortController!=='undefined')?new AbortController():null;
+  const timer=ctrl?setTimeout(()=>ctrl.abort(),SEND_TIMEOUT_MS):null;
   try{
     const res=await fetch('https://formsubmit.co/ajax/nosea.op@noseaglobal.com',{
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify(payload),
+      signal:ctrl?ctrl.signal:undefined,
     });
-    if(!res.ok) throw new Error('Request failed');
-    gtag('event','generate_lead',{form_name:'quote_request',transport_mode:quoteData.mode||'',origin:quoteData.origin||'',destination:quoteData.destination||'',incoterms:quoteData.incoterms||''});
-
-    document.getElementById('completeTitle').textContent='Your Quote Request Has Been Sent';
-    document.getElementById('completeSub').innerHTML='Your request was delivered directly to our team.<br>We\'ll respond within 24 hours.';
-    sendEmailBtn.innerHTML='Sent<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg>';
+    let body=null;
+    try{ body=await res.json(); }catch(parseErr){ body=null; }
+    ok=res.ok&&isFormSubmitSuccess(body);
   }catch(err){
-    gtag('event','quote_submit_error',{form_name:'quote_request'});
+    ok=false;
+  }finally{
+    if(timer) clearTimeout(timer);
+    quoteSending=false;
+    sendEmailBtn.classList.remove('is-sending');
+    sendEmailBtn.removeAttribute('aria-busy');
+  }
+
+  if(ok){
+    if(typeof gtag==='function') gtag('event','generate_lead',{form_name:'quote_request',transport_mode:quoteData.mode||'',origin:quoteData.origin||'',destination:quoteData.destination||'',incoterms:quoteData.incoterms||''});
+    showSent();
+  }else{
+    if(typeof gtag==='function') gtag('event','quote_submit_error',{form_name:'quote_request'});
+    reviewBackBtn.disabled=false;
     sendEmailBtn.disabled=false;
-    sendEmailBtn.innerHTML='Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg>';
-    document.getElementById('completeSub').innerHTML='Something went wrong sending your request.<br>Please try again, or email us directly at <a href="mailto:nosea.op@noseaglobal.com">nosea.op@noseaglobal.com</a>.';
+    setBtn(sendEmailBtn,L.retry,'refresh');
+    sendError.textContent='';
+    sendError.appendChild(el('b',null,L.errSendTitle));
+    sendError.appendChild(document.createTextNode(L.errSendBody+' '));
+    const a=el('a',null,'nosea.op@noseaglobal.com');a.href='mailto:nosea.op@noseaglobal.com';
+    sendError.appendChild(a);
+    sendError.appendChild(document.createTextNode('.'));
+    sendError.classList.add('show');
   }
 });
+
+// ---- Init ----------------------------------------------------------------------
+addCntRow('40HC','1');
+addDimRow();
+$('qReady').min=todayISO();
+applyMode();
 </script>
 </body>
 </html>
