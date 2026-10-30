@@ -888,7 +888,7 @@ document.querySelectorAll('.faq-item').forEach(item=>{
 });
 
 // ===== Quote form =====
-// contact.html and contact-es.html run the same code; only the text object L differs.
+// contact.html, contact-es.html and contact-ko.html run the same code; only the text object L differs.
 const L={"lang":"en","langName":"English (contact.html)","acEmpty":"No matching port or city. You can keep what you typed — we will confirm the exact location.","acKeep":"Not in the list? Keep what you typed and continue.","seaport":"Seaport","airport":"Airport","inlandCity":"Inland city · door / customs","originLabel":{"sea":"Origin port","air":"Origin airport","any":"Origin (city / port / airport)"},"destLabel":{"sea":"Destination port","air":"Destination airport","any":"Destination (city / port / airport)"},"originPh":{"sea":"Country, city or code — e.g. Korea, Shanghai","air":"Country, city or code — e.g. Korea, ICN, PVG","any":"Country, city or code"},"destPh":{"sea":"e.g. Manzanillo (MXZLO)","air":"e.g. Mexico City (MEX), GDL","any":"e.g. Manzanillo, Guadalajara"},"routeSub":{"sea":"Search by country, city or port code (e.g. Korea, Shanghai, MXZLO). Use ↑ ↓ and Enter to pick.","air":"Search by country, city or airport code (e.g. Korea, ICN, MEX). Use ↑ ↓ and Enter to pick.","any":"Search by country, city, port or airport code. Use ↑ ↓ and Enter to pick."},"cnt":{"20GP":"20' Standard (20GP)","40GP":"40' Standard (40GP)","40HC":"40' High Cube (40HC)","20RF":"20' Reefer (20RF)","40RH":"40' Reefer High Cube (40RH)","20OT":"20' Open Top (20OT)","40OT":"40' Open Top (40OT)","20FR":"20' Flat Rack (20FR)","40FR":"40' Flat Rack (40FR)","NA":"Not sure yet"},"cntType":"Container type","cntQty":"Number of containers","qtyShort":"Qty","removeRow":"Remove this row","dimL":"Length","dimW":"Width","dimH":"Height","dimQty":"Boxes / pallets","calcVolume":"Total volume","calcPieces":"Total boxes / pallets","calcActual":"Actual weight","calcVolKg":"Volumetric weight (L×W×H cm ÷ 6000)","calcChargeable":"Chargeable weight (reference)","calcAirNote":"Airlines charge the higher of actual and volumetric weight. Final figures are confirmed in our quote.","calcWm":"Freight tons W/M (reference)","wmVol":"(by volume)","wmWeight":"(by weight)","calcLclNote":"LCL is charged per CBM or per 1,000 kg, whichever is higher. Final figures are confirmed in our quote.","cbmGiven":"(entered by customer)","errRequired":"Please fill in this field.","errEmail":"Please enter a valid email address (e.g. name@company.com).","errPhone":"Please enter a phone number with country code (at least 7 digits).","errNumber":"Please enter a number greater than 0.","errCnt":"Enter how many containers you need (a whole number, 1 or more).","errDimRow":"Fill in length, width, height and quantity for each size, or remove the row.","errDims":"Enter the package dimensions, or tick \"I already know the total volume (CBM)\".","errCbm":"Enter the total volume in CBM.","errWeight":"Please enter the total weight in kg (an estimate is fine).","errDate":"Please choose today or a later date.","sending":"Sending…","sent":"Sent","retry":"Try Again","tagDone":"Step 5 of 5 · Complete","sentTitle":"Your Quote Request Has Been Sent","sentSub1":"Your request was delivered directly to our team.","sentSub2":"We'll respond within 24 hours.","errSendTitle":"Your request was not sent.","errSendBody":"Please check your connection and click \"Try Again\", or email your request directly to","subjectPrefix":"[Quote Request]","newInquiry":"New Inquiry","modeNames":{"fcl":"Ocean Freight (FCL)","lcl":"Ocean Freight (LCL)","air":"Air Freight","multi":"Multimodal (Sea+Air)","customs":"Customs & Inland Trucking Only"},"modeShort":{"fcl":"FCL","lcl":"LCL","air":"Air","multi":"Multimodal","customs":"Customs/Inland"},"f":{"mode":"Mode of Transport","origin":"Origin","destination":"Destination","incoterms":"Incoterms","item":"Commodity","containers":"Containers","fclWeight":"Gross Weight per Container (kg)","packages":"Packages (length × width × height × boxes)","cbm":"Total Volume (CBM)","weight":"Total Gross Weight (kg)","volKg":"Volumetric Weight (kg, ÷6000)","chargeable":"Chargeable Weight (kg, reference)","wm":"Freight Tons W/M (reference)","ready":"Cargo Ready Date","freq":"Shipping Frequency","notes":"Notes","name":"Name","company":"Company","email":"Email","phone":"Phone / WhatsApp","lang":"Form Language"},"acFreq":"Frequently used","acAll":"All countries (A–Z)","nPorts":["1 port","{n} ports"],"nAirports":["1 airport","{n} airports"],"nPlaces":["1 location","{n} locations"],"inlandOnly":"Inland / river port only","noSeaport":"No seaport","noAirportListed":"No airport listed","cityTbc":"city to be confirmed","anyDetail":{"sea":"No seaport listed — we will advise the best port","air":"No airport listed — we will advise the best airport","any":"We will advise the best route"},"incoNotSure":"Not sure — please advise","incoNotSureDesc":"We will suggest the right term for your purchase.","incoNotSureAlias":"not sure|dont know|unknown|help|no se|no estoy seguro|모름|모르겠음","incoGroupAny":"Any mode of transport","incoGroupSea":"Sea freight only","seaOnly":"Sea only","incoAirNote":"FAS, FOB, CFR and CIF are for sea freight only. For air freight use FCA, CPT or CIP.","incoAirWarn":"{code} is a sea-only term. For air freight the usual equivalent is {alt} — we will confirm it with you.","incoEmpty":"No matching Incoterm. You can keep what you typed.","inco":{"EXW":["Ex Works","Buyer collects at the seller’s premises and pays all costs and risks from there."],"FCA":["Free Carrier","Seller hands export-cleared goods to the buyer’s carrier at the named place; risk passes there."],"CPT":["Carriage Paid To","Seller pays transport to the destination; risk passes when goods are handed to the first carrier."],"CIP":["Carriage and Insurance Paid To","Like CPT, plus the seller insures the cargo (all-risks cover)."],"DAP":["Delivered at Place","Seller delivers to the named destination, ready to unload; buyer pays import duties and taxes."],"DPU":["Delivered at Place Unloaded","Seller delivers and unloads at the named destination; buyer pays import duties and taxes."],"DDP":["Delivered Duty Paid","Seller delivers to the destination and also pays import duties and taxes."],"FAS":["Free Alongside Ship","Seller places goods alongside the vessel at the origin port; risk passes there."],"FOB":["Free On Board","Seller loads goods on board at the origin port; buyer pays ocean freight and risk from there."],"CFR":["Cost and Freight","Seller pays ocean freight to the destination port; risk passes once loaded at origin."],"CIF":["Cost, Insurance and Freight","Like CFR, plus the seller insures the cargo (minimum cover)."]},"units":{"cm":"cm","in":"in"},"calcExample":"e.g."};
 const LANG=L.lang;
 
@@ -1696,17 +1696,22 @@ const MAX_RESULTS=60;
 function norm(s){
   return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 }
-const COLLATOR=new Intl.Collator(LANG==='es'?'es':'en',{sensitivity:'base'});
+const LOCALE={es:'es-MX',ko:'ko-KR'}[LANG]||'en-US';
+const COLLATOR=new Intl.Collator(LOCALE,{sensitivity:'base'});
+// Korean page: Korean names come from the first Hangul alias (country list sorted 가나다).
+const HANGUL=/[\uac00-\ud7a3]/;
+const koName=alias=>(String(alias||'').split('|').find(x=>HANGUL.test(x))||'');
 const COUNTRY_INFO={};
 for(const cc of Object.keys(COUNTRIES)){
   const c=COUNTRIES[cc];
-  COUNTRY_INFO[cc]={cc,name:LANG==='es'?c[1]:c[0],terms:[c[0],c[1]].concat(c[2].split('|')).map(norm)};
+  COUNTRY_INFO[cc]={cc,name:LANG==='es'?c[1]:((LANG==='ko'&&koName(c[2]))||c[0]),terms:[c[0],c[1]].concat(c[2].split('|')).map(norm)};
 }
 const COUNTRY_ALPHA=Object.keys(COUNTRIES).sort((a,b)=>COLLATOR.compare(COUNTRY_INFO[a].name,COUNTRY_INFO[b].name));
 const ALPHA_RANK={};COUNTRY_ALPHA.forEach((cc,i)=>{ALPHA_RANK[cc]=i;});
 const PLACE_INDEX=PLACES.map(([t,cc,code,en,es,alias,sub],i)=>({
   i,t,cc,code,sub,
   name:(LANG==='es'&&es)?es:en,
+  ko:LANG==='ko'?koName(alias):'',
   country:COUNTRY_INFO[cc].name,
   codeN:code.toLowerCase(),
   terms:[en,es,sub].concat(alias?alias.split('|'):[]).filter(Boolean).map(norm),
@@ -1775,8 +1780,8 @@ function searchPlaces(query,key,mode){
 
 // ---- Helpers -------------------------------------------------------------
 const $=id=>document.getElementById(id);
-const NF3=new Intl.NumberFormat(LANG==='es'?'es-MX':'en-US',{minimumFractionDigits:3,maximumFractionDigits:3});
-const NF1=new Intl.NumberFormat(LANG==='es'?'es-MX':'en-US',{maximumFractionDigits:1});
+const NF3=new Intl.NumberFormat(LOCALE,{minimumFractionDigits:3,maximumFractionDigits:3});
+const NF1=new Intl.NumberFormat(LOCALE,{maximumFractionDigits:1});
 const fmtCbm=n=>NF3.format(n);
 const fmtKg=n=>NF1.format(n);
 // Accepts "1200", "1,200", "1.5", "1,5" (decimal comma), "1.200,5".
@@ -1921,7 +1926,7 @@ function placeItem(p,nested){
   }else{
     nm.appendChild(el('b',null,p.name));
     const detail=p.t==='c'?L.inlandCity+(p.sub?' · '+p.sub:''):(p.t==='a'?L.airport:L.seaport)+(p.sub?' · '+p.sub:'');
-    nm.appendChild(el('small',null,detail));
+    nm.appendChild(el('small',null,(p.ko?p.ko+' · ':'')+detail));
   }
   item.appendChild(nm);
   item.appendChild(el('span','ac-code',p.code));
@@ -2510,7 +2515,7 @@ sendEmailBtn.addEventListener('click',async()=>{
     sendError.appendChild(document.createTextNode(L.errSendBody+' '));
     const a=el('a',null,'nosea.op@noseaglobal.com');a.href='mailto:nosea.op@noseaglobal.com';
     sendError.appendChild(a);
-    sendError.appendChild(document.createTextNode('.'));
+    sendError.appendChild(document.createTextNode(L.errSendTail||'.'));
     sendError.classList.add('show');
   }
 });
