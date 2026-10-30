@@ -24,23 +24,158 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "멕시코 포워딩 · 멕시코 국제운송",
-  "name": "멕시코 포워딩 서비스",
-  "provider": {
-    "@type": "Organization",
-    "name": "Nosea Global",
-    "url": "https://noseaglobal.com/",
-    "email": "nosea.op@noseaglobal.com"
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://noseaglobal.com/#organization",
+   "name": "Nosea Global",
+   "alternateName": [
+    "Nosea Global Logistics",
+    "노세아글로벌"
+   ],
+   "url": "https://noseaglobal.com/",
+   "email": "nosea.op@noseaglobal.com",
+   "description": "멕시코 수출입 물류 전문 포워더. 한국·아시아와 멕시코 간 해상운송, 항공운송, 멕시코 통관, 내륙운송을 원스톱으로 제공합니다.",
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Mexico"
+    },
+    {
+     "@type": "Country",
+     "name": "South Korea"
+    }
+   ],
+   "knowsAbout": [
+    "Freight forwarding",
+    "Sea freight",
+    "Air freight",
+    "Customs brokerage",
+    "IMMEX logistics",
+    "Inland transportation"
+   ],
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "nosea.op@noseaglobal.com",
+    "availableLanguage": [
+     "Korean",
+     "English",
+     "Spanish"
+    ]
+   }
   },
-  "areaServed": [
-    {"@type": "Country", "name": "Mexico"},
-    {"@type": "Country", "name": "South Korea"}
-  ],
-  "inLanguage": "ko",
-  "url": "https://noseaglobal.com/services-ko.html",
-  "description": "멕시코 수출입 전문 포워더 Nosea Global이 제공하는 해상운송(FCL/LCL), 항공운송, 멕시코 통관, 멕시코 내륙운송, 창고 보관 및 무역 컨설팅 서비스입니다."
+  {
+   "@type": "WebSite",
+   "@id": "https://noseaglobal.com/#website",
+   "url": "https://noseaglobal.com/",
+   "name": "Nosea Global",
+   "inLanguage": [
+    "en",
+    "es",
+    "ko"
+   ],
+   "publisher": {
+    "@id": "https://noseaglobal.com/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://noseaglobal.com/services-ko.html#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "홈",
+     "item": "https://noseaglobal.com/index-ko.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "서비스",
+     "item": "https://noseaglobal.com/services-ko.html"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://noseaglobal.com/services-ko.html#webpage",
+   "url": "https://noseaglobal.com/services-ko.html",
+   "name": "멕시코 포워딩 서비스 | 멕시코 국제운송·통관·IMMEX 물류 - 노세아글로벌 Nosea Global",
+   "description": "멕시코 포워딩 전문 노세아글로벌(Nosea Global)의 멕시코 국제운송 서비스. 해상운송(FCL/LCL)과 멕시코 해상운임 견적, 항공운송, 멕시코 통관, 멕시코 IMMEX 물류, 몬테레이 물류, 내륙운송까지 원스톱으로 제공합니다.",
+   "inLanguage": "ko",
+   "isPartOf": {
+    "@id": "https://noseaglobal.com/#website"
+   },
+   "breadcrumb": {
+    "@id": "https://noseaglobal.com/services-ko.html#breadcrumb"
+   }
+  },
+  {
+   "@type": "Service",
+   "@id": "https://noseaglobal.com/services-ko.html#service",
+   "name": "멕시코 포워딩 전문 서비스, 수출입 물류 원스톱 솔루션",
+   "serviceType": "Freight forwarding",
+   "description": "멕시코 포워딩 전문 노세아글로벌(Nosea Global)의 멕시코 국제운송 서비스. 해상운송(FCL/LCL)과 멕시코 해상운임 견적, 항공운송, 멕시코 통관, 멕시코 IMMEX 물류, 몬테레이 물류, 내륙운송까지 원스톱으로 제공합니다.",
+   "provider": {
+    "@id": "https://noseaglobal.com/#organization"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "Mexico"
+   },
+   "url": "https://noseaglobal.com/services-ko.html",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Nosea Global 서비스",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "해상운송"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "항공운송"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "통관"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "내륙운송"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "창고 보관"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "무역 컨설팅"
+      }
+     }
+    ]
+   }
+  }
+ ]
 }
 </script>
 <link rel="preconnect" href="https://images.unsplash.com"/>

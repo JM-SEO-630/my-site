@@ -25,16 +25,77 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Nosea Global",
-  "alternateName": "Nosea Global Logistics",
-  "url": "https://noseaglobal.com/",
-  "email": "nosea.op@noseaglobal.com",
-  "description": "Mexico freight forwarder providing freight forwarding, international shipping, sea freight, air freight, Mexico customs clearance and inland logistics between Asia and Mexico.",
-  "areaServed": [{"@type": "Country", "name": "Mexico"}, {"@type": "Country", "name": "South Korea"}],
-  "knowsAbout": ["freight forwarding Mexico", "Mexico logistics", "international shipping Mexico", "sea freight to Mexico", "Mexico customs clearance", "IMMEX logistics", "Monterrey logistics"],
-  "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "nosea.op@noseaglobal.com", "availableLanguage": ["Korean", "English", "Spanish"]}
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://noseaglobal.com/#organization",
+   "name": "Nosea Global",
+   "alternateName": [
+    "Nosea Global Logistics",
+    "노세아글로벌"
+   ],
+   "url": "https://noseaglobal.com/",
+   "email": "nosea.op@noseaglobal.com",
+   "description": "Mexico freight forwarder providing sea freight, air freight, Mexico customs clearance and inland logistics between Asia and Mexico.",
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Mexico"
+    },
+    {
+     "@type": "Country",
+     "name": "South Korea"
+    }
+   ],
+   "knowsAbout": [
+    "Freight forwarding",
+    "Sea freight",
+    "Air freight",
+    "Customs brokerage",
+    "IMMEX logistics",
+    "Inland transportation"
+   ],
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "nosea.op@noseaglobal.com",
+    "availableLanguage": [
+     "Korean",
+     "English",
+     "Spanish"
+    ]
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://noseaglobal.com/#website",
+   "url": "https://noseaglobal.com/",
+   "name": "Nosea Global",
+   "inLanguage": [
+    "en",
+    "es",
+    "ko"
+   ],
+   "publisher": {
+    "@id": "https://noseaglobal.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://noseaglobal.com/#webpage",
+   "url": "https://noseaglobal.com/",
+   "name": "Freight Forwarder Mexico | Mexico Logistics - Nosea Global",
+   "description": "Nosea Global is a Mexico freight forwarder for international shipping between Asia and Mexico: freight forwarding, sea freight, air freight and Mexico customs clearance. Get a fast quote.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://noseaglobal.com/#website"
+   },
+   "about": {
+    "@id": "https://noseaglobal.com/#organization"
+   }
+  }
+ ]
 }
 </script>
 <link rel="preconnect" href="https://images.unsplash.com"/>

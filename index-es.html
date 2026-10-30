@@ -23,16 +23,77 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Nosea Global",
-  "alternateName": "Nosea Global Logistics",
-  "url": "https://noseaglobal.com/",
-  "email": "nosea.op@noseaglobal.com",
-  "description": "Agente de carga internacional especializado en logística México: transporte internacional, flete marítimo, transporte aéreo, despacho aduanal y distribución terrestre entre Asia y México.",
-  "areaServed": [{"@type": "Country", "name": "Mexico"}, {"@type": "Country", "name": "South Korea"}],
-  "knowsAbout": ["agente de carga México", "logística México", "transporte internacional México", "flete marítimo México", "despacho aduanal México", "logística IMMEX", "logística Monterrey"],
-  "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "email": "nosea.op@noseaglobal.com", "availableLanguage": ["Korean", "English", "Spanish"]}
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://noseaglobal.com/#organization",
+   "name": "Nosea Global",
+   "alternateName": [
+    "Nosea Global Logistics",
+    "노세아글로벌"
+   ],
+   "url": "https://noseaglobal.com/",
+   "email": "nosea.op@noseaglobal.com",
+   "description": "Agente de carga internacional especializado en logística México: flete marítimo, transporte aéreo, despacho aduanal y distribución terrestre entre Asia y México.",
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Mexico"
+    },
+    {
+     "@type": "Country",
+     "name": "South Korea"
+    }
+   ],
+   "knowsAbout": [
+    "Freight forwarding",
+    "Sea freight",
+    "Air freight",
+    "Customs brokerage",
+    "IMMEX logistics",
+    "Inland transportation"
+   ],
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "nosea.op@noseaglobal.com",
+    "availableLanguage": [
+     "Korean",
+     "English",
+     "Spanish"
+    ]
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://noseaglobal.com/#website",
+   "url": "https://noseaglobal.com/",
+   "name": "Nosea Global",
+   "inLanguage": [
+    "en",
+    "es",
+    "ko"
+   ],
+   "publisher": {
+    "@id": "https://noseaglobal.com/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://noseaglobal.com/index-es.html#webpage",
+   "url": "https://noseaglobal.com/index-es.html",
+   "name": "Agente de Carga México | Logística México - Nosea Global",
+   "description": "Nosea Global es un agente de carga internacional especializado en logística México: flete marítimo, transporte aéreo, despacho aduanal y transporte internacional entre Asia y México.",
+   "inLanguage": "es",
+   "isPartOf": {
+    "@id": "https://noseaglobal.com/#website"
+   },
+   "about": {
+    "@id": "https://noseaglobal.com/#organization"
+   }
+  }
+ ]
 }
 </script>
 <link rel="alternate" hreflang="en" href="https://noseaglobal.com/"/>
