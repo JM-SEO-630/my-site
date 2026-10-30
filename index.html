@@ -129,7 +129,7 @@ nav{display:flex;align-items:center;justify-content:space-between;width:100%;max
 .section-title{font-family:'Pretendard',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--navy);}
 .section-header{text-align:center;margin-bottom:4rem;}
 .cards-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.card{background:#fff;padding:3rem;border-bottom:4px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s,border-color .3s;cursor:pointer;}
+.card{display:block;background:#fff;padding:3rem;border-bottom:4px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s,border-color .3s;cursor:pointer;}
 .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,.12);border-color:var(--cyan);}
 .card-icon{width:80px;height:80px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:2.5rem;transition:background .3s;}
 .card:hover .card-icon{background:var(--cyan);}
@@ -466,9 +466,9 @@ document.addEventListener('click',function(e){
     </div>
   </div>
   <div class="slider-dots">
-    <button class="slider-dot active" data-index="0"></button>
-    <button class="slider-dot" data-index="1"></button>
-    <button class="slider-dot" data-index="2"></button>
+    <button class="slider-dot active" data-index="0" aria-label="Slide 1"></button>
+    <button class="slider-dot" data-index="1" aria-label="Slide 2"></button>
+    <button class="slider-dot" data-index="2" aria-label="Slide 3"></button>
   </div>
 </section>
 
@@ -486,21 +486,21 @@ document.addEventListener('click',function(e){
       <h2 class="section-title">Comprehensive Mexico Logistics</h2>
     </div>
     <div class="cards-grid">
-      <div class="card fade-up" onclick="location.href='services.html#sea-freight'">
+      <a class="card fade-up" href="services.html#sea-freight">
         <div class="card-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-directions_boat"/></svg></div>
         <h3>Sea Freight</h3>
         <p>Cost-effective and secure sea transportation solutions connecting major global ports directly to Mexico's coastal hubs.</p>
-      </div>
-      <div class="card fade-up" style="transition-delay:100ms" onclick="location.href='services.html#air-freight'">
+      </a>
+      <a class="card fade-up" style="transition-delay:100ms" href="services.html#air-freight">
         <div class="card-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-flight"/></svg></div>
         <h3>Air Freight</h3>
         <p>The fastest solution for urgent cargo. Schedule-matched air bookings keep your time-sensitive cargo on track.</p>
-      </div>
-      <div class="card fade-up" style="transition-delay:200ms" onclick="location.href='services.html#inland'">
+      </a>
+      <a class="card fade-up" style="transition-delay:200ms" href="services.html#inland">
         <div class="card-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-local_shipping"/></svg></div>
         <h3>Inland Distribution</h3>
         <p>Door-to-door trucking network covering all of Mexico, delivering your cargo from the port to its final destination.</p>
-      </div>
+      </a>
     </div>
     <a href="services.html" class="learn-more-box fade-up">
       LEARN MORE
