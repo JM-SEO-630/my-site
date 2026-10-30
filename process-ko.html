@@ -75,7 +75,6 @@
 </script>
 <link rel="preload" href="/fonts/pretendard-1.3.9/PretendardVariable.subset.91.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="/fonts/pretendard-1.3.9/pretendard-subset.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
 @property --os-scroll-percent{syntax: "<number>"; inherits: true; initial-value: 0;}@property --os-viewport-percent{syntax: "<number>"; inherits: true; initial-value: 0;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -84,7 +83,7 @@ body{font-family:'Pretendard',sans-serif;background:#fff;color:#0a1628;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 :root{--cyan:#00BFFF;--navy:#0a1628;--surface:#f8f9fa;}
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;font-style:normal;line-height:1;vertical-align:middle;display:inline-block;}
+.material-symbols-outlined{display:inline-block;width:1em;height:1em;font-size:24px;line-height:1;vertical-align:middle;fill:currentColor;flex-shrink:0;}
 
 /* ── NAV (메인과 동일) ── */
 header{position:fixed;top:0;left:0;right:0;height:64px;background:var(--navy);display:flex;align-items:center;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4);}
@@ -344,6 +343,7 @@ document.addEventListener('click',function(e){
 </script>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-category" viewBox="0 -960 960 960"><path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/></symbol><symbol id="i-chat" viewBox="0 -960 960 960"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></symbol><symbol id="i-check_circle" viewBox="0 -960 960 960"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></symbol><symbol id="i-expand_more" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></symbol><symbol id="i-gavel" viewBox="0 -960 960 960"><path d="M160-120v-80h480v80H160Zm226-194L160-540l84-86 228 226-86 86Zm254-254L414-796l86-84 226 226-86 86Zm184 408L302-682l56-56 522 522-56 56Z"/></symbol><symbol id="i-inventory_2" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-451q-18-11-29-28.5T80-680v-120q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v120q0 23-11 40.5T840-611v451q0 33-23.5 56.5T760-80H200Zm0-520v440h560v-440H200Zm-40-80h640v-120H160v120Zm200 280h240v-80H360v80Zm120 20Z"/></symbol><symbol id="i-local_shipping" viewBox="0 -960 960 960"><path d="M155-195q-35-35-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35q-50 0-85-35Zm113.5-56.5Q280-263 280-280t-11.5-28.5Q257-320 240-320t-28.5 11.5Q200-297 200-280t11.5 28.5Q223-240 240-240t28.5-11.5ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm628.5 108.5Q760-263 760-280t-11.5-28.5Q737-320 720-320t-28.5 11.5Q680-297 680-280t11.5 28.5Q703-240 720-240t28.5-11.5ZM680-440h170l-90-120h-80v120ZM360-540Z"/></symbol><symbol id="i-location_on" viewBox="0 -960 960 960"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></symbol><symbol id="i-mail" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></symbol><symbol id="i-public" viewBox="0 -960 960 960"><path d="M324-111.5Q251-143 197-197t-85.5-127Q80-397 80-480t31.5-156Q143-709 197-763t127-85.5Q397-880 480-880t156 31.5Q709-817 763-763t85.5 127Q880-563 880-480t-31.5 156Q817-251 763-197t-127 85.5Q563-80 480-80t-156-31.5ZM440-162v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm276-102q41-45 62.5-100.5T800-480q0-98-54.5-179T600-776v16q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q26 0 47 15.5t29 40.5Z"/></symbol><symbol id="i-support_agent" viewBox="0 -960 960 960"><path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440ZM331.5-411.5Q320-423 320-440t11.5-28.5Q343-480 360-480t28.5 11.5Q400-457 400-440t-11.5 28.5Q377-400 360-400t-28.5-11.5Zm240 0Q560-423 560-440t11.5-28.5Q583-480 600-480t28.5 11.5Q640-457 640-440t-11.5 28.5Q617-400 600-400t-28.5-11.5ZM241-462q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/></symbol><symbol id="i-task_alt" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-18-2-36t-6-35l65-65q11 32 17 66t6 70q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-56-216L254-466l56-56 114 114 400-401 56 56-456 457Z"/></symbol><symbol id="i-verified" viewBox="0 -960 960 960"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 104 44 56-96 110-26-10-112 74-84-74-86 10-112-110-24-58-96-102 44-104-44-56 96-110 24 10 112-74 86 74 84-10 114 110 24 58 96Zm102-318Zm-42 142 226-226-56-58-170 170-86-84-56 56 142 142Z"/></symbol><symbol id="i-visibility" viewBox="0 -960 960 960"><path d="M607.5-372.5Q660-425 660-500t-52.5-127.5Q555-680 480-680t-127.5 52.5Q300-575 300-500t52.5 127.5Q405-320 480-320t127.5-52.5Zm-204-51Q372-455 372-500t31.5-76.5Q435-608 480-608t76.5 31.5Q588-545 588-500t-31.5 76.5Q525-392 480-392t-76.5-31.5ZM214-281.5Q94-363 40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200q-146 0-266-81.5ZM480-500Zm207.5 160.5Q782-399 832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280q113 0 207.5-59.5Z"/></symbol></svg>
 
 <!-- HEADER -->
 <header>
@@ -405,15 +405,15 @@ document.addEventListener('click',function(e){
           <p>화물 사양, 출발지, 도착지, 일정을 분석하는 것으로 시작합니다. 당사 팀은 비용, 속도, 규정 요건을 고려하여 해상, 항공 또는 복합 운송 중 최적의 운송 경로를 설계합니다.</p>
         </div>
         <div class="tl-node">
-          <div class="tl-circle"><span class="material-symbols-outlined">chat</span></div>
+          <div class="tl-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></div>
           <span class="tl-step-num">01</span>
         </div>
         <div class="tl-detail">
           <ul class="tl-bullets">
-            <li><span class="material-symbols-outlined">check_circle</span> 화물 유형 및 물량 분석</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 출발지–멕시코 운송 경로 선정</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 일정 및 예산 조율</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 인코텀즈(Incoterms) 자문</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 화물 유형 및 물량 분석</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 출발지–멕시코 운송 경로 선정</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 일정 및 예산 조율</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 인코텀즈(Incoterms) 자문</li>
           </ul>
         </div>
       </div>
@@ -426,14 +426,14 @@ document.addEventListener('click',function(e){
           <p>운임, 관세, 하역, 서류, 라스트마일 배송까지 모든 항목을 사전에 세부적으로 명시합니다.</p>
         </div>
         <div class="tl-node">
-          <div class="tl-circle"><span class="material-symbols-outlined">description</span></div>
+          <div class="tl-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-description"/></svg></div>
           <span class="tl-step-num">02</span>
         </div>
         <div class="tl-detail">
           <ul class="tl-bullets">
-            <li><span class="material-symbols-outlined">check_circle</span> 항목별 비용 명세</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 48시간 이내 견적 회신</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 다양한 서비스 레벨 옵션</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 항목별 비용 명세</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 48시간 이내 견적 회신</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 다양한 서비스 레벨 옵션</li>
           </ul>
         </div>
       </div>
@@ -446,15 +446,15 @@ document.addEventListener('click',function(e){
           <p>당사 팀이 화물 출발 전 모든 수출입 서류를 준비하고 검증합니다. 멕시코 SAT 및 VUCEM 사전 신고를 통해 입항지에서의 통관 지연을 최소화합니다.</p>
         </div>
         <div class="tl-node">
-          <div class="tl-circle"><span class="material-symbols-outlined">inventory_2</span></div>
+          <div class="tl-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-inventory_2"/></svg></div>
           <span class="tl-step-num">03</span>
         </div>
         <div class="tl-detail">
           <ul class="tl-bullets">
-            <li><span class="material-symbols-outlined">check_circle</span> 선하증권(B/L) / AWB 작성</li>
-            <li><span class="material-symbols-outlined">check_circle</span> SAT 및 VUCEM 사전 신고</li>
-            <li><span class="material-symbols-outlined">check_circle</span> NOM / NMX 인증 확인</li>
-            <li><span class="material-symbols-outlined">check_circle</span> CFDI 및 수입신고서(Pedimento) 관리</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 선하증권(B/L) / AWB 작성</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> SAT 및 VUCEM 사전 신고</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> NOM / NMX 인증 확인</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> CFDI 및 수입신고서(Pedimento) 관리</li>
           </ul>
         </div>
       </div>
@@ -467,15 +467,15 @@ document.addEventListener('click',function(e){
           <p>화물이 출발하면 당사 운영팀이 운송 진행 상황을 꼼꼼히 확인합니다. 주요 단계마다 진행 상황을 안내해 드리며, 조치가 필요한 사항이 발생하면 신속하게 대응합니다.</p>
         </div>
         <div class="tl-node">
-          <div class="tl-circle"><span class="material-symbols-outlined">local_shipping</span></div>
+          <div class="tl-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-local_shipping"/></svg></div>
           <span class="tl-step-num">04</span>
         </div>
         <div class="tl-detail">
           <ul class="tl-bullets">
-            <li><span class="material-symbols-outlined">check_circle</span> 컨테이너 / AWB 실시간 추적</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 선제적 ETA 알림</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 디머리지 및 디텐션 모니터링</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 24시간 연중무휴 운영 지원</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 컨테이너 / AWB 실시간 추적</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 선제적 ETA 알림</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 디머리지 및 디텐션 모니터링</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 24시간 연중무휴 운영 지원</li>
           </ul>
         </div>
       </div>
@@ -488,15 +488,15 @@ document.addEventListener('click',function(e){
           <p>화물 도착 시 공인 관세사(Agentes Aduanales)가 모든 통관 절차를 처리합니다. 통관 완료 후에는 당사 트럭 운송 네트워크가 멕시코 전 지역으로 배송하며, 배송 완료 증빙을 제공합니다.</p>
         </div>
         <div class="tl-node">
-          <div class="tl-circle"><span class="material-symbols-outlined">task_alt</span></div>
+          <div class="tl-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-task_alt"/></svg></div>
           <span class="tl-step-num">05</span>
         </div>
         <div class="tl-detail">
           <ul class="tl-bullets">
-            <li><span class="material-symbols-outlined">check_circle</span> 항만 통관 (전 항만)</li>
-            <li><span class="material-symbols-outlined">check_circle</span> 세관 검사(Reconocimiento aduanero) 지원</li>
-            <li><span class="material-symbols-outlined">check_circle</span> FTL / LTL 라스트마일 트럭 운송</li>
-            <li><span class="material-symbols-outlined">check_circle</span> POD(배송 증빙) 확인</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 항만 통관 (전 항만)</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> 세관 검사(Reconocimiento aduanero) 지원</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> FTL / LTL 라스트마일 트럭 운송</li>
+            <li><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg> POD(배송 증빙) 확인</li>
           </ul>
         </div>
       </div>
@@ -514,37 +514,37 @@ document.addEventListener('click',function(e){
     <div class="why-grid">
 
       <div class="why-card">
-        <div class="why-icon"><span class="material-symbols-outlined">verified</span></div>
+        <div class="why-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-verified"/></svg></div>
         <h4>투명한 견적</h4>
         <p>운임, 통관, 하역, 배송 비용을 견적서에 항목별로 명시해, 선적 전에 예상 비용을 명확히 확인하실 수 있습니다.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon"><span class="material-symbols-outlined">visibility</span></div>
+        <div class="why-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-visibility"/></svg></div>
         <h4>투명한 진행 상황 공유</h4>
         <p>부킹 확정부터 배송 완료 증빙까지, 주요 단계마다 화물의 진행 상황을 신속하게 공유합니다.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon"><span class="material-symbols-outlined">gavel</span></div>
+        <div class="why-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-gavel"/></svg></div>
         <h4>멕시코 통관 전문성</h4>
         <p>멕시코 공인 관세사(Agentes Aduanales)와 긴밀히 협력해 SAT, VUCEM, NOM 규정 준수를 처리하고 통관 지연을 최소화합니다.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon"><span class="material-symbols-outlined">public</span></div>
+        <div class="why-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-public"/></svg></div>
         <h4>아시아–멕시코 전문</h4>
         <p>만사니요, 베라크루스, 라사로 카르데나스를 포함한 한국&#8288;·&#8288;중국발 멕시코 노선에 대한 전문성을 갖추고 있으며, PIL, Wan Hai, Hapag-Lloyd, MSC, COSCO 등 주요 선사 이용 경험을 바탕으로 서비스를 제공합니다.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon"><span class="material-symbols-outlined">support_agent</span></div>
+        <div class="why-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-support_agent"/></svg></div>
         <h4>전담 담당자 배정</h4>
         <p>모든 고객에게 화물과 납기를 잘 아는 전담 담당자를 배정해, 하나의 창구로 빠르게 소통할 수 있습니다.</p>
       </div>
 
       <div class="why-card">
-        <div class="why-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+        <div class="why-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-local_shipping"/></svg></div>
         <h4>라스트마일 커버리지</h4>
         <p>당사 트럭 운송 네트워크는 북부 국경 거점부터 몬테레이, 멕시코시티 및 그 외 지역까지 멕시코의 모든 주요 산업 지역을 커버합니다.</p>
       </div>
@@ -565,7 +565,7 @@ document.addEventListener('click',function(e){
       <div class="faq-item">
         <div class="faq-q">
           아시아에서 멕시코까지 해상운송은 얼마나 걸리나요?
-          <span class="material-symbols-outlined">expand_more</span>
+          <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-expand_more"/></svg>
         </div>
         <div class="faq-a">한국&#8288;·&#8288;중국 주요 항만에서 만사니요(Manzanillo) 또는 베라크루스(Veracruz)까지의 FCL 운송 기간은 일반적으로 25~35일입니다. LCL 혼재 화물은 적입 및 CFS 처리로 인해 5~7일이 추가됩니다. 운송 기간은 선사와 경로에 따라 달라질 수 있으며, 정확한 스케줄은 견적 단계에서 확정해 드립니다.</div>
       </div>
@@ -573,7 +573,7 @@ document.addEventListener('click',function(e){
       <div class="faq-item">
         <div class="faq-q">
           멕시코 수입 시 필요한 서류는 무엇인가요?
-          <span class="material-symbols-outlined">expand_more</span>
+          <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-expand_more"/></svg>
         </div>
         <div class="faq-a">기본 서류는 상업송장(Commercial Invoice), 포장명세서(Packing List), 선하증권(B/L, 해상) 또는 항공화물운송장(AWB, 항공), 원산지증명서(특혜관세 적용 시), 그리고 규제 대상 품목의 경우 NOM/NMX 인증서입니다. 당사 통관팀이 출발 전 모든 서류를 준비하고 검토합니다.</div>
       </div>
@@ -581,7 +581,7 @@ document.addEventListener('click',function(e){
       <div class="faq-item">
         <div class="faq-q">
           위험물(DG / Hazmat) 운송도 가능한가요?
-          <span class="material-symbols-outlined">expand_more</span>
+          <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-expand_more"/></svg>
         </div>
         <div class="faq-a">네, 가능합니다. 항공운송의 경우 당사는 위험물 취급에 대한 IATA 인증을 보유하고 있습니다. 해상운송의 경우 선사 승인 및 관련 규정에 따라 IMO 분류 위험물을 처리합니다. 올바른 서류 준비와 경로 계획을 위해 상담 단계에서 모든 위험물 품목을 신고해 주시기 바랍니다.</div>
       </div>
@@ -589,7 +589,7 @@ document.addEventListener('click',function(e){
       <div class="faq-item">
         <div class="faq-q">
           멕시코시티 외 지역으로도 배송이 가능한가요?
-          <span class="material-symbols-outlined">expand_more</span>
+          <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-expand_more"/></svg>
         </div>
         <div class="faq-a">물론입니다. 당사 내륙 운송 네트워크는 멕시코 전 지역을 커버하며, 몬테레이, 과달라하라, 살티요, 티후아나 및 북부 국경 마킬라도라 지역 등 주요 산업 거점을 포함합니다. FTL과 LTL 옵션 모두 이용하실 수 있습니다.</div>
       </div>
@@ -597,7 +597,7 @@ document.addEventListener('click',function(e){
       <div class="faq-item">
         <div class="faq-q">
           견적은 어떻게 받을 수 있나요?
-          <span class="material-symbols-outlined">expand_more</span>
+          <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-expand_more"/></svg>
         </div>
         <div class="faq-a"><a href="contact-ko.html">문의하기</a> 페이지를 통해 견적을 요청하시거나, <a href="mailto:nosea.op@noseaglobal.com">nosea.op@noseaglobal.com</a>으로 직접 이메일을 보내주시면 됩니다.<br><br>
           보다 빠르고 정확한 견적을 위해 다음 정보를 함께 보내주시기 바랍니다:
@@ -615,7 +615,7 @@ document.addEventListener('click',function(e){
       <div class="faq-item">
         <div class="faq-q">
           멕시코 포워더는 어떻게 선택해야 하나요?
-          <span class="material-symbols-outlined">expand_more</span>
+          <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-expand_more"/></svg>
         </div>
         <div class="faq-a">멕시코 포워딩은 해상&#8288;·&#8288;항공운송, 통관, 내륙운송이 하나로 연결될 때 원활하게 진행됩니다. 따라서 이 모든 과정을 한 곳에서 일괄 처리하고, 상담부터 최종 배송까지 엔드투엔드로 관리하는 멕시코 포워더를 선택하는 것이 중요합니다. 또한 모든 비용 항목이 명시된 투명한 견적을 제공하는지 확인하십시오. Nosea Global은 해상&#8288;·&#8288;항공운송, 통관, 내륙운송을 일괄 관리하며, 48시간 이내에 상세 견적을 제공합니다.</div>
       </div>
@@ -631,11 +631,11 @@ document.addEventListener('click',function(e){
       <h2>멕시코 수출입 화물,<br><em>지금 운송을 시작하시겠습니까?</em></h2>
       <div class="cta-btns">
         <a href="contact-ko.html" class="btn-primary">
-          <span class="material-symbols-outlined" style="font-size:16px;">mail</span>
+          <svg class="material-symbols-outlined" style="font-size:16px;" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
           견적 문의
         </a>
         <a href="services-ko.html" class="btn-outline-light">
-          <span class="material-symbols-outlined" style="font-size:16px;">category</span>
+          <svg class="material-symbols-outlined" style="font-size:16px;" aria-hidden="true" focusable="false"><use href="#i-category"/></svg>
           서비스 보기
         </a>
       </div>
@@ -670,8 +670,8 @@ document.addEventListener('click',function(e){
     </div>
     <div class="footer-col">
       <h5>문의하기</h5>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">location_on</span><span>멕시코시티 본사 · 아시아 운영 지점</span></div>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">mail</span><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
+      <div class="footer-contact-item"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-location_on"/></svg><span>멕시코시티 본사 · 아시아 운영 지점</span></div>
+      <div class="footer-contact-item"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">

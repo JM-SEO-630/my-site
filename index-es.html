@@ -34,7 +34,6 @@
 <link rel="alternate" hreflang="en" href="https://noseaglobal.com/index.html"/>
 <link rel="preload" href="/fonts/pretendard-1.3.9/PretendardVariable.subset.91.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="/fonts/pretendard-1.3.9/pretendard-subset.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
 @property --os-scroll-percent{syntax: "<number>"; inherits: true; initial-value: 0;}@property --os-viewport-percent{syntax: "<number>"; inherits: true; initial-value: 0;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -43,7 +42,7 @@ body{font-family:'Pretendard',sans-serif;background:#fff;color:#0a1628;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 :root{--cyan:#00BFFF;--navy:#0a1628;--red:#E53E3E;--surface:#f8f9fa;}
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;font-style:normal;line-height:1;vertical-align:middle;display:inline-block;}
+.material-symbols-outlined{display:inline-block;width:1em;height:1em;font-size:24px;line-height:1;vertical-align:middle;fill:currentColor;flex-shrink:0;}
 
 /* Animations */
 @keyframes pulse-cyan{0%{transform:scale(.95);box-shadow:0 0 0 0 rgba(0,191,255,.7);}70%{transform:scale(1.1);box-shadow:0 0 0 10px rgba(0,191,255,0);}100%{transform:scale(.95);box-shadow:0 0 0 0 rgba(0,191,255,0);}}
@@ -400,6 +399,7 @@ document.addEventListener('click',function(e){
 </script>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-anchor" viewBox="0 -960 960 960"><path d="M355-102q-64-22-116-60t-85.5-89Q120-302 120-360v-120l160 120-62 62q29 51 92 88t130 47v-357H320v-80h120v-47q-35-13-57.5-43.5T360-760q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 69.5T520-647v47h120v80H520v357q67-10 130-47t92-88l-62-62 160-120v120q0 58-33.5 109T721-162q-52 38-116 60T480-80q-61 0-125-22Zm125-618q17 0 28.5-11.5T520-760q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760q0 17 11.5 28.5T480-720Z"/></symbol><symbol id="i-apartment" viewBox="0 -960 960 960"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></symbol><symbol id="i-arrow_forward" viewBox="0 -960 960 960"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></symbol><symbol id="i-border_outer" viewBox="0 -960 960 960"><path d="M200-200h560v-560H200v560Zm-80 80v-720h720v720H120Zm160-320v-80h80v80h-80Zm160 160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm0-160v-80h80v80h-80Zm160 160v-80h80v80h-80Z"/></symbol><symbol id="i-calculate" viewBox="0 -960 960 960"><path d="M320-240h60v-80h80v-60h-80v-80h-60v80h-80v60h80v80Zm200-30h200v-60H520v60Zm0-100h200v-60H520v60Zm44-152 56-56 56 56 42-42-56-58 56-56-42-42-56 56-56-56-42 42 56 56-56 58 42 42Zm-314-70h200v-60H250v60Zm-50 472q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></symbol><symbol id="i-chat" viewBox="0 -960 960 960"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></symbol><symbol id="i-description" viewBox="0 -960 960 960"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></symbol><symbol id="i-directions_boat" viewBox="0 -960 960 960"><path d="M152-80h-32v-80h32q48 0 91.5-10.5T341-204q38 19 66.5 31.5T480-160q44 0 72.5-12.5T619-204q53 23 97.5 33.5T809-160h31v80h-31q-49 0-95.5-9T622-116q-40 19-73 27t-69 8q-36 0-68.5-8T339-116q-45 18-91.5 27T152-80Zm223-200-45-40q-27 27-60.5 46T198-247l-85-273q-5-17 3-31t25-19l59-16v-134q0-33 23.5-56.5T280-800h100v-80h200v80h100q33 0 56.5 23.5T760-720v134l59 16q17 5 25 19t3 31l-85 273q-38-8-71.5-27T630-320l-45 40q-45 40-105 40t-105-40Zm107-40q31 0 55-20.5t44-43.5l46-53 41 42q11 11 22.5 20.5T713-355l46-149-279-73-278 73 46 149q11-10 22.5-19.5T293-395l41-42 46 53q20 24 45 44t57 20ZM280-607l200-53 200 53v-113H280v113Zm201 158Z"/></symbol><symbol id="i-flight" viewBox="0 -960 960 960"><path d="M280-80v-100l120-84v-144L80-280v-120l320-224v-176q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800v176l320 224v120L560-408v144l120 84v100l-200-60-200 60Z"/></symbol><symbol id="i-inventory_2" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-451q-18-11-29-28.5T80-680v-120q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v120q0 23-11 40.5T840-611v451q0 33-23.5 56.5T760-80H200Zm0-520v440h560v-440H200Zm-40-80h640v-120H160v120Zm200 280h240v-80H360v80Zm120 20Z"/></symbol><symbol id="i-local_shipping" viewBox="0 -960 960 960"><path d="M155-195q-35-35-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35q-50 0-85-35Zm113.5-56.5Q280-263 280-280t-11.5-28.5Q257-320 240-320t-28.5 11.5Q200-297 200-280t11.5 28.5Q223-240 240-240t28.5-11.5ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm628.5 108.5Q760-263 760-280t-11.5-28.5Q737-320 720-320t-28.5 11.5Q680-297 680-280t11.5 28.5Q703-240 720-240t28.5-11.5ZM680-440h170l-90-120h-80v120ZM360-540Z"/></symbol><symbol id="i-location_on" viewBox="0 -960 960 960"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></symbol><symbol id="i-mail" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></symbol><symbol id="i-public" viewBox="0 -960 960 960"><path d="M324-111.5Q251-143 197-197t-85.5-127Q80-397 80-480t31.5-156Q143-709 197-763t127-85.5Q397-880 480-880t156 31.5Q709-817 763-763t85.5 127Q880-563 880-480t-31.5 156Q817-251 763-197t-127 85.5Q563-80 480-80t-156-31.5ZM440-162v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm276-102q41-45 62.5-100.5T800-480q0-98-54.5-179T600-776v16q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q26 0 47 15.5t29 40.5Z"/></symbol><symbol id="i-task_alt" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q65 0 123 19t107 53l-58 59q-38-24-81-37.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-18-2-36t-6-35l65-65q11 32 17 66t6 70q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm-56-216L254-466l56-56 114 114 400-401 56 56-456 457Z"/></symbol><symbol id="i-warehouse" viewBox="0 -960 960 960"><path d="M160-200h80v-320h480v320h80v-426L480-754 160-626v426Zm-80 80v-560l400-160 400 160v560H640v-320H320v320H80Zm280 0v-80h80v80h-80Zm80-120v-80h80v80h-80Zm80 120v-80h80v80h-80ZM240-520h480-480Z"/></symbol></svg>
 
 <header>
   <nav>
@@ -484,24 +484,24 @@ document.addEventListener('click',function(e){
     </div>
     <div class="cards-grid">
       <div class="card fade-up" onclick="location.href='services-es.html#sea-freight'">
-        <div class="card-icon"><span class="material-symbols-outlined">directions_boat</span></div>
+        <div class="card-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-directions_boat"/></svg></div>
         <h3>Transporte Marítimo</h3>
         <p>Soluciones de transporte marítimo seguras y rentables que conectan los principales puertos del mundo directamente con los puertos costeros de México.</p>
       </div>
       <div class="card fade-up" style="transition-delay:100ms" onclick="location.href='services-es.html#air-freight'">
-        <div class="card-icon"><span class="material-symbols-outlined">flight</span></div>
+        <div class="card-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-flight"/></svg></div>
         <h3>Transporte Aéreo</h3>
         <p>La solución más rápida para carga urgente. Reservas aéreas ajustadas a su calendario para que su carga urgente llegue a tiempo.</p>
       </div>
       <div class="card fade-up" style="transition-delay:200ms" onclick="location.href='services-es.html#inland'">
-        <div class="card-icon"><span class="material-symbols-outlined">local_shipping</span></div>
+        <div class="card-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-local_shipping"/></svg></div>
         <h3>Distribución Terrestre</h3>
         <p>Red de transporte puerta a puerta que cubre todo México, entregando su carga desde el puerto hasta su destino final.</p>
       </div>
     </div>
     <a href="services-es.html" class="learn-more-box fade-up">
       VER MÁS
-      <span class="material-symbols-outlined">arrow_forward</span>
+      <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg>
     </a>
   </div>
 </section>
@@ -514,35 +514,35 @@ document.addEventListener('click',function(e){
     </div>
     <div class="steps-grid">
       <div class="process-step fade-up">
-        <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">chat</span></div></div>
+        <div class="step-circle-wrap"><div class="step-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-chat"/></svg></div></div>
         <div class="step-text">
           <h4>01. Consulta</h4>
           <p>Analizamos las especificaciones de la carga y los requisitos para planear la ruta óptima.</p>
         </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:100ms">
-        <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">description</span></div></div>
+        <div class="step-circle-wrap"><div class="step-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-description"/></svg></div></div>
         <div class="step-text">
           <h4>02. Cotización</h4>
           <p>Cotizaciones transparentes con cada costo desglosado.</p>
         </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:200ms">
-        <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">inventory_2</span></div></div>
+        <div class="step-circle-wrap"><div class="step-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-inventory_2"/></svg></div></div>
         <div class="step-text">
           <h4>03. Documentación</h4>
           <p>Preparación y verificación de toda la documentación legal de importación y exportación.</p>
         </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:300ms">
-        <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">local_shipping</span></div></div>
+        <div class="step-circle-wrap"><div class="step-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-local_shipping"/></svg></div></div>
         <div class="step-text">
           <h4>04. Tránsito</h4>
           <p>Monitoreo GPS en tiempo real y reportes del estado de la carga durante el viaje.</p>
         </div>
       </div>
       <div class="process-step fade-up" style="transition-delay:400ms">
-        <div class="step-circle-wrap"><div class="step-circle"><span class="material-symbols-outlined">task_alt</span></div></div>
+        <div class="step-circle-wrap"><div class="step-circle"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-task_alt"/></svg></div></div>
         <div class="step-text">
           <h4>05. Entrega</h4>
           <p>Despacho en destino final y confirmación de comprobante de entrega.</p>
@@ -565,7 +565,7 @@ document.addEventListener('click',function(e){
         <button class="rate-tab">Transporte Aéreo</button>
       </div>
       <div class="rate-body">
-        <span class="material-symbols-outlined">calculate</span>
+        <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-calculate"/></svg>
         <h4>¿Listo para enviar a México?</h4>
         <p>Haga clic en el botón a continuación para proporcionar los detalles de su envío y recibir una tarifa competitiva en 48 horas.</p>
         <a href="contact-es.html" class="btn-rate">Solicitar Cotización</a>
@@ -582,11 +582,11 @@ document.addEventListener('click',function(e){
         <h2 class="network-title">Red Local</h2>
         <p class="network-desc">Centros de operación estratégicamente ubicados en todo el territorio mexicano garantizan una logística de última milla y gestión fronteriza sin interrupciones.</p>
         <div>
-          <button class="region-btn active-region" data-region="all"><span>Todas las Regiones</span><span class="material-symbols-outlined">public</span></button>
-          <button class="region-btn" data-region="north"><span>Región Norte</span><span class="material-symbols-outlined">border_outer</span></button>
-          <button class="region-btn" data-region="mty"><span>Centro Monterrey</span><span class="material-symbols-outlined">warehouse</span></button>
-          <button class="region-btn" data-region="cdmx"><span>Centro / CDMX</span><span class="material-symbols-outlined">apartment</span></button>
-          <button class="region-btn" data-region="ports"><span>Puertos del Pacífico y Golfo</span><span class="material-symbols-outlined">anchor</span></button>
+          <button class="region-btn active-region" data-region="all"><span>Todas las Regiones</span><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-public"/></svg></button>
+          <button class="region-btn" data-region="north"><span>Región Norte</span><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-border_outer"/></svg></button>
+          <button class="region-btn" data-region="mty"><span>Centro Monterrey</span><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-warehouse"/></svg></button>
+          <button class="region-btn" data-region="cdmx"><span>Centro / CDMX</span><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-apartment"/></svg></button>
+          <button class="region-btn" data-region="ports"><span>Puertos del Pacífico y Golfo</span><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-anchor"/></svg></button>
         </div>
       </div>
       <div class="map-box fade-up">
@@ -630,8 +630,8 @@ document.addEventListener('click',function(e){
     </div>
     <div class="footer-col">
       <h5>Contacto</h5>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">location_on</span><span>HQ Ciudad de México · Sucursal de Operaciones Asia</span></div>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">mail</span><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
+      <div class="footer-contact-item"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-location_on"/></svg><span>HQ Ciudad de México · Sucursal de Operaciones Asia</span></div>
+      <div class="footer-contact-item"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">

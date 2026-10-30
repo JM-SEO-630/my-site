@@ -20,7 +20,6 @@
 <meta property="og:image" content="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=85&auto=format&fit=crop"/>
 <link rel="preload" href="/fonts/pretendard-1.3.9/PretendardVariable.subset.91.woff2" as="font" type="font/woff2" crossorigin/>
 <link rel="stylesheet" href="/fonts/pretendard-1.3.9/pretendard-subset.css"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
 @property --os-scroll-percent{syntax: "<number>"; inherits: true; initial-value: 0;}@property --os-viewport-percent{syntax: "<number>"; inherits: true; initial-value: 0;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -29,7 +28,7 @@ body{font-family:'Pretendard',sans-serif;background:#fff;color:#0a1628;}
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 :root{--cyan:#00BFFF;--navy:#0a1628;--surface:#f8f9fa;}
-.material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;font-style:normal;line-height:1;vertical-align:middle;display:inline-block;}
+.material-symbols-outlined{display:inline-block;width:1em;height:1em;font-size:24px;line-height:1;vertical-align:middle;fill:currentColor;flex-shrink:0;}
 
 /* ── NAV (메인과 동일) ── */
 header{position:fixed;top:0;left:0;right:0;height:64px;background:var(--navy);display:flex;align-items:center;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.4);}
@@ -350,6 +349,7 @@ document.addEventListener('click',function(e){
 </script>
 </head>
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><symbol id="i-alt_route" viewBox="0 -960 960 960"><path d="M440-80v-200q0-56-17-83t-45-53l57-57q12 11 23 23.5t22 26.5q14-19 28.5-33.5T538-485q38-35 69-81t33-161l-63 63-57-56 160-160 160 160-56 56-64-63q-2 143-44 203.5T592-425q-32 29-52 56.5T520-280v200h-80ZM248-633q-4-20-5.5-44t-2.5-50l-64 63-56-56 160-160 160 160-57 56-63-62q0 21 2 39.5t4 34.5l-78 19Zm86 176q-20-21-38.5-49T263-575l77-19q10 27 23 46t28 34l-57 57Z"/></symbol><symbol id="i-arrow_back" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></symbol><symbol id="i-arrow_forward" viewBox="0 -960 960 960"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></symbol><symbol id="i-check_circle" viewBox="0 -960 960 960"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol><symbol id="i-directions_boat" viewBox="0 -960 960 960"><path d="M152-80h-32v-80h32q48 0 91.5-10.5T341-204q38 19 66.5 31.5T480-160q44 0 72.5-12.5T619-204q53 23 97.5 33.5T809-160h31v80h-31q-49 0-95.5-9T622-116q-40 19-73 27t-69 8q-36 0-68.5-8T339-116q-45 18-91.5 27T152-80Zm223-200-45-40q-27 27-60.5 46T198-247l-85-273q-5-17 3-31t25-19l59-16v-134q0-33 23.5-56.5T280-800h100v-80h200v80h100q33 0 56.5 23.5T760-720v134l59 16q17 5 25 19t3 31l-85 273q-38-8-71.5-27T630-320l-45 40q-45 40-105 40t-105-40Zm107-40q31 0 55-20.5t44-43.5l46-53 41 42q11 11 22.5 20.5T713-355l46-149-279-73-278 73 46 149q11-10 22.5-19.5T293-395l41-42 46 53q20 24 45 44t57 20ZM280-607l200-53 200 53v-113H280v113Zm201 158Z"/></symbol><symbol id="i-flight" viewBox="0 -960 960 960"><path d="M280-80v-100l120-84v-144L80-280v-120l320-224v-176q0-33 23.5-56.5T480-880q33 0 56.5 23.5T560-800v176l320 224v120L560-408v144l120 84v100l-200-60-200 60Z"/></symbol><symbol id="i-location_on" viewBox="0 -960 960 960"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></symbol><symbol id="i-mail" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></symbol><symbol id="i-progress_activity" viewBox="0 -960 960 960"><path d="M325-111.5q-73-31.5-127.5-86t-86-127.5Q80-398 80-480.5t31.5-155q31.5-72.5 86-127t127.5-86Q398-880 480-880q17 0 28.5 11.5T520-840q0 17-11.5 28.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160q133 0 226.5-93.5T800-480q0-17 11.5-28.5T840-520q17 0 28.5 11.5T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480.5-80Q398-80 325-111.5Z"/></symbol><symbol id="i-send" viewBox="0 -960 960 960"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></symbol><symbol id="i-support_agent" viewBox="0 -960 960 960"><path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440ZM331.5-411.5Q320-423 320-440t11.5-28.5Q343-480 360-480t28.5 11.5Q400-457 400-440t-11.5 28.5Q377-400 360-400t-28.5-11.5Zm240 0Q560-423 560-440t11.5-28.5Q583-480 600-480t28.5 11.5Q640-457 640-440t-11.5 28.5Q617-400 600-400t-28.5-11.5ZM241-462q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/></symbol></svg>
 
 <!-- HEADER -->
 <header>
@@ -404,15 +404,15 @@ document.addEventListener('click',function(e){
         <p class="quote-sub">Choose the transport mode that fits your cargo.</p>
         <div class="option-grid">
           <button class="option-card" data-field="mode" data-value="Ocean Freight (FCL/LCL)">
-            <span class="material-symbols-outlined">directions_boat</span>
+            <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-directions_boat"/></svg>
             <span class="opt-text"><b>Ocean Freight</b><small>FCL / LCL · Cost-efficient</small></span>
           </button>
           <button class="option-card" data-field="mode" data-value="Air Freight">
-            <span class="material-symbols-outlined">flight</span>
+            <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-flight"/></svg>
             <span class="opt-text"><b>Air Freight</b><small>Fast transit time</small></span>
           </button>
           <button class="option-card" data-field="mode" data-value="Multimodal (Sea+Air)">
-            <span class="material-symbols-outlined">alt_route</span>
+            <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-alt_route"/></svg>
             <span class="opt-text"><b>Multimodal</b><small>Sea + Air · Balanced option</small></span>
           </button>
         </div>
@@ -420,7 +420,7 @@ document.addEventListener('click',function(e){
 
       <!-- Step 2: Route & Incoterms -->
       <div class="quote-step" data-step="2">
-        <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
+        <button class="step-back" data-back><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <span class="quote-step-tag">Step 2 of 5</span>
         <h2 class="quote-q">What's the route?</h2>
         <p class="quote-sub">Search by city or port name (e.g. Manzanillo, Shanghai).</p>
@@ -452,13 +452,13 @@ document.addEventListener('click',function(e){
           </select>
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Next<span class="material-symbols-outlined">arrow_forward</span></button>
+          <button class="btn-next" data-next disabled>Next<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
         </div>
       </div>
 
       <!-- Step 3: Cargo Details -->
       <div class="quote-step" data-step="3">
-        <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
+        <button class="step-back" data-back><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <span class="quote-step-tag">Step 3 of 5</span>
         <h2 class="quote-q">Tell us about your cargo</h2>
         <p class="quote-sub">Rough estimates are fine.</p>
@@ -478,13 +478,13 @@ document.addEventListener('click',function(e){
           <input type="text" class="field-input" data-field="quantity" placeholder="e.g. 20 boxes">
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Next<span class="material-symbols-outlined">arrow_forward</span></button>
+          <button class="btn-next" data-next disabled>Next<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_forward"/></svg></button>
         </div>
       </div>
 
       <!-- Step 4: Contact Info -->
       <div class="quote-step" data-step="4">
-        <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
+        <button class="step-back" data-back><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <span class="quote-step-tag">Step 4 of 5</span>
         <h2 class="quote-q">How can we reach you?</h2>
         <p class="quote-sub">Our team will review and respond shortly.</p>
@@ -505,20 +505,20 @@ document.addEventListener('click',function(e){
           <input type="email" class="field-input" data-field="email" placeholder="example@email.com">
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Send Quote Request<span class="material-symbols-outlined">send</span></button>
+          <button class="btn-next" data-next disabled>Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
         </div>
       </div>
 
       <!-- Step 5: Complete -->
       <div class="quote-step" data-step="5">
-        <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
+        <button class="step-back" data-back><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-arrow_back"/></svg></button>
         <div class="quote-complete">
-          <div class="quote-complete-icon"><span class="material-symbols-outlined">check_circle</span></div>
+          <div class="quote-complete-icon"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg></div>
           <h2 id="completeTitle">Your Quote Request is Ready</h2>
           <p id="completeSub">Review the details below, then click the button to send it directly to our team.<br>We'll respond within 24 hours.</p>
           <div class="summary-card" id="summaryCard"></div>
           <div class="quote-actions">
-            <button class="btn-next" id="sendEmailBtn">Send Quote Request<span class="material-symbols-outlined">send</span></button>
+            <button class="btn-next" id="sendEmailBtn">Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
           </div>
         </div>
       </div>
@@ -526,7 +526,7 @@ document.addEventListener('click',function(e){
     </div>
   </div>
   <div class="contact-person">
-    <span class="material-symbols-outlined">support_agent</span>
+    <svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-support_agent"/></svg>
     <span>Quote Contact: <a href="mailto:nosea.op@noseaglobal.com">nosea.op@noseaglobal.com</a></span>
   </div>
 </section>
@@ -557,8 +557,8 @@ document.addEventListener('click',function(e){
     </div>
     <div class="footer-col">
       <h5>Contact</h5>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">location_on</span><span>Mexico City HQ · Asia Operations Branch</span></div>
-      <div class="footer-contact-item"><span class="material-symbols-outlined">mail</span><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
+      <div class="footer-contact-item"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-location_on"/></svg><span>Mexico City HQ · Asia Operations Branch</span></div>
+      <div class="footer-contact-item"><svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><a href="mailto:nosea.op@noseaglobal.com" style="color:rgba(255,255,255,.6);">nosea.op@noseaglobal.com</a></div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -755,7 +755,7 @@ function renderSummary(){
 const sendEmailBtn=document.getElementById('sendEmailBtn');
 sendEmailBtn.addEventListener('click',async()=>{
   sendEmailBtn.disabled=true;
-  sendEmailBtn.innerHTML='Sending…<span class="material-symbols-outlined">progress_activity</span>';
+  sendEmailBtn.innerHTML='Sending…<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-progress_activity"/></svg>';
 
   const payload={
     _subject:'[Quote Request] '+(quoteData.company||quoteData.name||'New Inquiry'),
@@ -784,11 +784,11 @@ sendEmailBtn.addEventListener('click',async()=>{
 
     document.getElementById('completeTitle').textContent='Your Quote Request Has Been Sent';
     document.getElementById('completeSub').innerHTML='Your request was delivered directly to our team.<br>We\'ll respond within 24 hours.';
-    sendEmailBtn.innerHTML='Sent<span class="material-symbols-outlined">check_circle</span>';
+    sendEmailBtn.innerHTML='Sent<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-check_circle"/></svg>';
   }catch(err){
     gtag('event','quote_submit_error',{form_name:'quote_request'});
     sendEmailBtn.disabled=false;
-    sendEmailBtn.innerHTML='Send Quote Request<span class="material-symbols-outlined">send</span>';
+    sendEmailBtn.innerHTML='Send Quote Request<svg class="material-symbols-outlined" aria-hidden="true" focusable="false"><use href="#i-send"/></svg>';
     document.getElementById('completeSub').innerHTML='Something went wrong sending your request.<br>Please try again, or email us directly at <a href="mailto:nosea.op@noseaglobal.com">nosea.op@noseaglobal.com</a>.';
   }
 });
