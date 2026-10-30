@@ -296,6 +296,13 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.05);color:#
 .summary-row:last-child{border-bottom:none;}
 .summary-row span:first-child{color:#9aa3af;font-weight:700;flex-shrink:0;}
 .summary-row span:last-child{color:var(--navy);text-align:right;}
+.send-error{display:none;background:var(--surface);border-left:3px solid var(--navy);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.5rem;text-align:left;font-size:.85rem;color:var(--navy);line-height:1.6;}
+.send-error.show{display:block;}
+.send-error b{display:block;margin-bottom:.25rem;}
+.send-error a{color:var(--navy);font-weight:700;text-decoration:underline;}
+.btn-next.is-sending .material-symbols-outlined{animation:qspin 1s linear infinite;}
+@keyframes qspin{to{transform:rotate(360deg);}}
+.step-back.is-hidden{visibility:hidden;}
 .contact-person{width:100%;max-width:560px;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1.5rem;font-size:.82rem;color:#9aa3af;}
 .contact-person a{color:var(--cyan);font-weight:700;}
 .contact-person .material-symbols-outlined{font-size:1rem;}
@@ -474,18 +481,20 @@ select.field-input{appearance:none;background-image:url("data:image/svg+xml,%3Cs
           <input type="email" class="field-input" data-field="email" placeholder="example@email.com">
         </div>
         <div class="quote-actions">
-          <button class="btn-next" data-next disabled>Send Quote Request<span class="material-symbols-outlined">send</span></button>
+          <button class="btn-next" data-next disabled>Review Request<span class="material-symbols-outlined">arrow_forward</span></button>
         </div>
       </div>
 
-      <!-- Step 5: Complete -->
+      <!-- Step 5: Review & Send (nothing is sent until the button below is clicked) -->
       <div class="quote-step" data-step="5">
-        <button class="step-back" data-back><span class="material-symbols-outlined">arrow_back</span></button>
+        <button class="step-back" data-back id="reviewBackBtn"><span class="material-symbols-outlined">arrow_back</span></button>
         <div class="quote-complete">
-          <div class="quote-complete-icon"><span class="material-symbols-outlined">check_circle</span></div>
-          <h2 id="completeTitle">Your Quote Request is Ready</h2>
-          <p id="completeSub">Review the details below, then click the button to send it directly to our team.<br>We'll respond within 24 hours.</p>
+          <span class="quote-step-tag" id="completeTag">Step 5 of 5 · Final Step</span>
+          <div class="quote-complete-icon"><span class="material-symbols-outlined" id="completeIcon">rate_review</span></div>
+          <h2 id="completeTitle">Review and Send Your Request</h2>
+          <p id="completeSub" aria-live="polite">Your request has <b>not been sent yet</b>. Check the details below, then click "Send Quote Request" to deliver it to our team.<br>We'll respond within 24 hours.</p>
           <div class="summary-card" id="summaryCard"></div>
+          <div class="send-error" id="sendError" role="alert"></div>
           <div class="quote-actions">
             <button class="btn-next" id="sendEmailBtn">Send Quote Request<span class="material-symbols-outlined">send</span></button>
           </div>
@@ -651,12 +660,20 @@ const steps=document.querySelectorAll('.quote-step');
 const progressBar=document.getElementById('progressBar');
 let currentStep=1;
 const totalSteps=steps.length;
+let quoteSending=false; // true while the request is in flight
+let quoteSent=false;    // true only after formsubmit confirms success
 
 function goToStep(n){
+  if(n<1||n>totalSteps) return;
+  if(quoteSending||quoteSent) return; // lock the form while sending / after it was sent
   currentStep=n;
   steps.forEach(s=>s.classList.toggle('active',parseInt(s.dataset.step)===n));
-  progressBar.style.width=(n/totalSteps*100)+'%';
-  if(n===totalSteps) renderSummary();
+  // Final step is "review before sending": the bar only reaches 100% once the request is delivered
+  progressBar.style.width=(n===totalSteps?90:n/totalSteps*100)+'%';
+  if(n===totalSteps){
+    renderSummary();
+    document.getElementById('sendError').classList.remove('show');
+  }
 }
 
 function checkStepValid(stepEl){
@@ -721,9 +738,26 @@ function renderSummary(){
 }
 
 const sendEmailBtn=document.getElementById('sendEmailBtn');
+const sendError=document.getElementById('sendError');
+const reviewBackBtn=document.getElementById('reviewBackBtn');
+const SEND_TIMEOUT_MS=20000;
+
+// formsubmit.co ajax answers {"success":"true",...} (string); accept boolean true as well.
+// HTTP 200 alone is not enough: an inactive form or a blocked request can still return 200 with success "false".
+function isFormSubmitSuccess(body){
+  if(!body||typeof body!=='object') return false;
+  return body.success===true||String(body.success).toLowerCase()==='true';
+}
+
 sendEmailBtn.addEventListener('click',async()=>{
+  if(quoteSending||quoteSent) return; // prevent duplicate submissions
+  quoteSending=true;
   sendEmailBtn.disabled=true;
+  sendEmailBtn.classList.add('is-sending');
+  sendEmailBtn.setAttribute('aria-busy','true');
   sendEmailBtn.innerHTML='Sending…<span class="material-symbols-outlined">progress_activity</span>';
+  reviewBackBtn.disabled=true;
+  sendError.classList.remove('show');
 
   const payload={
     _subject:'[Quote Request] '+(quoteData.company||quoteData.name||'New Inquiry'),
@@ -741,21 +775,44 @@ sendEmailBtn.addEventListener('click',async()=>{
     'Email':quoteData.email||'-',
   };
 
+  let ok=false;
+  const ctrl=(typeof AbortController!=='undefined')?new AbortController():null;
+  const timer=ctrl?setTimeout(()=>ctrl.abort(),SEND_TIMEOUT_MS):null;
   try{
     const res=await fetch('https://formsubmit.co/ajax/operation.nosea@gmail.com',{
       method:'POST',
       headers:{'Content-Type':'application/json',Accept:'application/json'},
       body:JSON.stringify(payload),
+      signal:ctrl?ctrl.signal:undefined,
     });
-    if(!res.ok) throw new Error('Request failed');
+    let body=null;
+    try{ body=await res.json(); }catch(parseErr){ body=null; }
+    ok=res.ok&&isFormSubmitSuccess(body);
+  }catch(err){
+    ok=false;
+  }finally{
+    if(timer) clearTimeout(timer);
+    quoteSending=false;
+    sendEmailBtn.classList.remove('is-sending');
+    sendEmailBtn.removeAttribute('aria-busy');
+  }
 
+  if(ok){
+    quoteSent=true;
+    progressBar.style.width='100%';
+    document.getElementById('completeTag').textContent='Step 5 of 5 · Complete';
+    document.getElementById('completeIcon').textContent='check_circle';
     document.getElementById('completeTitle').textContent='Your Quote Request Has Been Sent';
     document.getElementById('completeSub').innerHTML='Your request was delivered directly to our team.<br>We\'ll respond within 24 hours.';
+    sendEmailBtn.disabled=true;
     sendEmailBtn.innerHTML='Sent<span class="material-symbols-outlined">check_circle</span>';
-  }catch(err){
+    reviewBackBtn.classList.add('is-hidden');
+  }else{
+    reviewBackBtn.disabled=false;
     sendEmailBtn.disabled=false;
-    sendEmailBtn.innerHTML='Send Quote Request<span class="material-symbols-outlined">send</span>';
-    document.getElementById('completeSub').innerHTML='Something went wrong sending your request.<br>Please try again, or email us directly at <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a>.';
+    sendEmailBtn.innerHTML='Try Again<span class="material-symbols-outlined">refresh</span>';
+    sendError.innerHTML='<b>Your request was not sent.</b>Please check your connection and click "Try Again", or email your request directly to <a href="mailto:operation.nosea@gmail.com">operation.nosea@gmail.com</a>.';
+    sendError.classList.add('show');
   }
 });
 </script>
